@@ -17,9 +17,10 @@ A full-stack TypeScript web application for exploring Wikipedia topics as an int
 app/          # routes, pages, and API handlers
 components/   # UI components
 lib/          # server/client shared utilities
-scripts/      # operational scripts (seed, migrations helpers)
+scripts/      # operational scripts (seed, data collection)
 types/        # shared TypeScript types
 api/          # typed client API wrappers
+data/         # generated graph artifacts
 ```
 
 ## Environment Variables
@@ -44,3 +45,27 @@ npm run seed
 ```
 
 Ensure a `wikipedia_edges` table exists with the expected schema.
+
+## Collect Wikipedia Graph Data
+
+Run the graph collector script (writes to `data/wiki_graph.json` by default):
+
+```bash
+npm run collect:wiki
+```
+
+Override defaults:
+
+```bash
+node scripts/collect-wikipedia-graph.js \
+  --seeds='["Artificial Intelligence","Physics"]' \
+  --max-articles=2000 \
+  --batch-size=20 \
+  --rate-limit-ms=250
+```
+
+Or use a seed file containing a JSON array of topic strings:
+
+```bash
+node scripts/collect-wikipedia-graph.js --seed-file ./data/seeds.json
+```
