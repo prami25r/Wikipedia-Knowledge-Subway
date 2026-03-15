@@ -23,7 +23,8 @@
     "sigma": "^3.0.1",
     "zod": "^3.24.2",
     "graphology-community-louvain": "^2.0.2",
-    "graphology-layout-forceatlas2": "^0.10.1"
+    "graphology-layout-forceatlas2": "^0.10.1",
+    "fuse.js": "^7.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.13.11",

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { fetchArticleDetails, fetchKnowledgeGraph } from "@/api/client";
 import { GraphRenderer, GraphRendererEdge, GraphRendererNode } from "@/components/GraphRenderer";
 import { StationPanel } from "@/components/StationPanel";
+import { StationSearchBar } from "@/components/StationSearchBar";
 import { createDemoGraphDTO } from "@/lib/graph";
 import { KnowledgeGraphDTO } from "@/types/graph";
 
@@ -47,6 +48,7 @@ export function GraphPanel() {
   const [stationError, setStationError] = useState<string | null>(null);
 
   const renderData = useMemo(() => mapToRenderData(graph), [graph]);
+  const stationNames = useMemo(() => renderData.nodes.map((node) => node.id), [renderData.nodes]);
 
   useEffect(() => {
     let isMounted = true;
@@ -117,15 +119,22 @@ export function GraphPanel() {
 
   return (
     <section className="space-y-4">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h2 className="text-xl font-semibold text-cyan-300">Subway Map</h2>
         {isLoading ? <p className="text-sm text-slate-400">Loading...</p> : null}
       </div>
 
+      <StationSearchBar stations={stationNames} onSelect={setSelectedTitle} />
+
       {error ? <p className="rounded bg-red-900/40 p-3 text-sm text-red-200">{error}</p> : null}
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(320px,1fr)]">
-        <GraphRenderer nodes={renderData.nodes} edges={renderData.edges} onNodeClick={setSelectedTitle} />
+        <GraphRenderer
+          nodes={renderData.nodes}
+          edges={renderData.edges}
+          onNodeClick={setSelectedTitle}
+          focusedNodeId={selectedTitle}
+        />
         <StationPanel
           title={selectedTitle}
           summary={selectedSummary}
