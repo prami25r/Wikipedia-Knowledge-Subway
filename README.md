@@ -85,3 +85,16 @@ Run ForceAtlas2 on `data/processed_graph.json`, iterate until convergence, norma
 ```bash
 npm run layout:graph
 ```
+
+## PostgreSQL Graph Schema (Supabase)
+
+Schema SQL is provided at `scripts/sql/graph_schema.sql` and includes:
+
+- `articles(id, title, summary, cluster, x, y, degree, created_at, updated_at)`
+- `links(id, source, target, created_at)`
+
+Apply it in Supabase SQL editor, then use the TypeScript data helpers in `lib/graph-data.ts`:
+
+- `insertArticles()`
+- `insertEdges()`
+- `getGraphData()`

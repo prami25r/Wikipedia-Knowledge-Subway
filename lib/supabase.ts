@@ -1,9 +1,10 @@
 import { createClient } from "@supabase/supabase-js";
 import { getServerEnv } from "@/lib/env";
+import type { Database } from "@/types/database";
 
 const serverEnv = getServerEnv();
 
-export const supabase = createClient(serverEnv.SUPABASE_URL, serverEnv.SUPABASE_ANON_KEY, {
+export const supabase = createClient<Database>(serverEnv.SUPABASE_URL, serverEnv.SUPABASE_ANON_KEY, {
   auth: {
     persistSession: false,
   },
