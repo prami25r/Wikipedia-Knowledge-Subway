@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef } from "react";
 import Graph from "graphology";
 
-export type GraphRendererNode = {
+type GraphRendererNode = {
   id: string;
   x: number;
   y: number;
@@ -11,7 +11,7 @@ export type GraphRendererNode = {
   degree: number;
 };
 
-export type GraphRendererEdge = {
+type GraphRendererEdge = {
   source: string;
   target: string;
   id?: string;
@@ -21,7 +21,6 @@ type GraphRendererProps = {
   nodes: GraphRendererNode[];
   edges: GraphRendererEdge[];
   className?: string;
-  onNodeClick?: (nodeId: string) => void;
 };
 
 const CLUSTER_COLORS = [
@@ -55,7 +54,7 @@ function getNodeSize(degree: number, minDegree: number, maxDegree: number) {
   return 4 + normalized * 14;
 }
 
-export function GraphRenderer({ nodes, edges, className, onNodeClick }: GraphRendererProps) {
+export function GraphRenderer({ nodes, edges, className }: GraphRendererProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const graph = useMemo(() => {
@@ -102,7 +101,7 @@ export function GraphRenderer({ nodes, edges, className, onNodeClick }: GraphRen
       return;
     }
 
-    let renderer: { kill: () => void; on: (event: string, handler: (payload: { node: string }) => void) => void } | null = null;
+    let renderer: { kill: () => void } | null = null;
 
     const setupRenderer = async () => {
       const { default: Sigma } = await import("sigma");
@@ -118,12 +117,6 @@ export function GraphRenderer({ nodes, edges, className, onNodeClick }: GraphRen
         zoomDuration: 250,
         zIndex: true,
       });
-
-      if (onNodeClick) {
-        renderer.on("clickNode", ({ node }) => {
-          onNodeClick(node);
-        });
-      }
     };
 
     void setupRenderer();
@@ -131,7 +124,7 @@ export function GraphRenderer({ nodes, edges, className, onNodeClick }: GraphRen
     return () => {
       renderer?.kill();
     };
-  }, [graph, onNodeClick]);
+  }, [graph]);
 
   return (
     <div
