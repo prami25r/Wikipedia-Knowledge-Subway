@@ -17,6 +17,13 @@ export type GraphRendererEdge = {
   id?: string;
 };
 
+type ClusterLabel = {
+  name: string;
+  x: number;
+  y: number;
+  color: string;
+};
+
 type GraphRendererProps = {
   nodes: GraphRendererNode[];
   edges: GraphRendererEdge[];
@@ -109,6 +116,17 @@ export function GraphRenderer({
     return instance;
   }, [nodes, edges]);
 
+  const bounds = useMemo(() => {
+    const xs = nodes.map((node) => node.x);
+    const ys = nodes.map((node) => node.y);
+    return {
+      minX: xs.length > 0 ? Math.min(...xs) : 0,
+      maxX: xs.length > 0 ? Math.max(...xs) : 1,
+      minY: ys.length > 0 ? Math.min(...ys) : 0,
+      maxY: ys.length > 0 ? Math.max(...ys) : 1,
+    };
+  }, [nodes]);
+
   useEffect(() => {
     if (!containerRef.current) return;
     let disposed = false;
@@ -119,13 +137,13 @@ export function GraphRenderer({
 
       const renderer = new Sigma(graph, containerRef.current, {
         allowInvalidContainer: false,
-        defaultEdgeType: "line",
+        defaultEdgeType: "curve",
         renderEdgeLabels: false,
-        labelDensity: 0.08,
-        labelGridCellSize: 120,
-        labelRenderedSizeThreshold: 12,
+        labelDensity: 0.06,
+        labelGridCellSize: 100,
+        labelRenderedSizeThreshold: 11,
         zoomToSizeRatioFunction: (ratio: number) => ratio,
-        zoomDuration: 250,
+        zoomDuration: 300,
         zIndex: true,
       });
 
@@ -160,7 +178,7 @@ export function GraphRenderer({
       if (graph.hasNode(nodeId)) {
         const attrs = graph.getNodeAttributes(nodeId);
         graph.setNodeAttribute(nodeId, "color", PATH_NODE_COLOR);
-        graph.setNodeAttribute(nodeId, "size", (attrs.baseSize ?? attrs.size) * 1.15);
+        graph.setNodeAttribute(nodeId, "size", (attrs.baseSize ?? attrs.size) * 1.18);
       }
     }
 
@@ -168,21 +186,39 @@ export function GraphRenderer({
     graph.forEachEdge((edge, attrs) => {
       if (highlightedEdgeSet.has(attrs.canonicalPathKey)) {
         graph.setEdgeAttribute(edge, "color", PATH_EDGE_COLOR);
-        graph.setEdgeAttribute(edge, "size", 2.8);
+        graph.setEdgeAttribute(edge, "size", 4.1);
       }
     });
 
     if (focusedNodeId && graph.hasNode(focusedNodeId)) {
       const focusNode = graph.getNodeAttributes(focusedNodeId);
       graph.setNodeAttribute(focusedNodeId, "color", HIGHLIGHT_COLOR);
-      graph.setNodeAttribute(focusedNodeId, "size", (focusNode.baseSize ?? focusNode.size) * 1.3);
+      graph.setNodeAttribute(focusedNodeId, "size", (focusNode.baseSize ?? focusNode.size) * 1.28);
 
       const renderer = rendererRef.current;
       if (renderer) {
-        renderer.getCamera().animate({ x: focusNode.x, y: focusNode.y, ratio: 0.35 }, { duration: 450 });
+        renderer.getCamera().animate({ x: focusNode.x, y: focusNode.y, ratio: 0.32 }, { duration: 450 });
       }
     }
   }, [focusedNodeId, highlightedNodeIds, highlightedPathEdgeKeys, graph]);
 
-  return <div ref={containerRef} className={className ?? "h-[620px] w-full rounded-lg border border-slate-700 bg-slate-950"} />;
+  return (
+    <div className="relative">
+      <div ref={containerRef} className={className ?? "h-[620px] w-full rounded-lg border border-slate-700 bg-slate-950"} />
+      {clusterLabels.map((label) => (
+        <div
+          key={label.name}
+          className="pointer-events-none absolute rounded-md border border-slate-700/80 bg-slate-900/80 px-2 py-1 text-xs font-semibold"
+          style={{
+            left: `${getPercent(label.x, bounds.minX, bounds.maxX)}%`,
+            top: `${getPercent(label.y, bounds.minY, bounds.maxY)}%`,
+            color: label.color,
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          {label.name}
+        </div>
+      ))}
+    </div>
+  );
 }
