@@ -69,3 +69,11 @@ Or use a seed file containing a JSON array of topic strings:
 ```bash
 node scripts/collect-wikipedia-graph.js --seed-file ./data/seeds.json
 ```
+
+## Process Collected Graph
+
+Compute degree, centrality, and Louvain communities from `data/wiki_graph.json` and export `data/processed_graph.json`:
+
+```bash
+npm run process:graph
+```

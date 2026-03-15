@@ -29,3 +29,36 @@ export type KnowledgeGraphDTO = {
   nodes: GraphNode[];
   edges: GraphEdge[];
 };
+
+export type RawWikiGraphNode = {
+  id: string;
+  summary: string;
+  categories: string[];
+};
+
+export type RawWikiGraphEdge = {
+  source: string;
+  target: string;
+};
+
+export type RawWikiGraph = {
+  nodes: RawWikiGraphNode[];
+  edges: RawWikiGraphEdge[];
+};
+
+export type ProcessedWikiGraphNode = {
+  id: string;
+  degree: number;
+  centrality: number;
+  cluster: number;
+};
+
+export type ProcessedWikiGraphEdge = {
+  source: string;
+  target: string;
+};
+
+export type ProcessedWikiGraph = {
+  nodes: ProcessedWikiGraphNode[];
+  edges: ProcessedWikiGraphEdge[];
+};
