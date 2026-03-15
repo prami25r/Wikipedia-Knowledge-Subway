@@ -50,7 +50,7 @@ export type ProcessedWikiGraphNode = {
   id: string;
   degree: number;
   centrality: number;
-  cluster: number;
+  cluster: number | string;
 };
 
 export type ProcessedWikiGraphEdge = {

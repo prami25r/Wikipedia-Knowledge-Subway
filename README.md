@@ -77,3 +77,11 @@ Compute degree, centrality, and Louvain communities from `data/wiki_graph.json` 
 ```bash
 npm run process:graph
 ```
+
+## Build Graph Layout
+
+Run ForceAtlas2 on `data/processed_graph.json`, iterate until convergence, normalize coordinates, and export `data/layout_graph.json`:
+
+```bash
+npm run layout:graph
+```
