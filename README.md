@@ -107,3 +107,13 @@ Apply it in Supabase SQL editor, then use the TypeScript data helpers in `lib/gr
   - Returns article details and paginated `connections` with `{ title, summary, connections, cluster, pagination }`
 
 Both routes include cache headers (`s-maxage` + `stale-while-revalidate`) for fast repeated reads.
+
+## Export Current Graph View
+
+From the Subway Map toolbar, click **Export PNG** to download a high-resolution image of the current visible graph, including:
+
+- visible nodes and edges
+- highlighted route path state
+- cluster labels
+- subway line legend
+

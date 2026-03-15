@@ -6,6 +6,7 @@ import { GraphRenderer, GraphRendererEdge, GraphRendererNode } from "@/component
 import { StationPanel } from "@/components/StationPanel";
 import { StationSearchBar } from "@/components/StationSearchBar";
 import { createDemoGraphDTO } from "@/lib/graph";
+import { exportGraphViewAsPng } from "@/lib/export-graph-png";
 import { buildPathEdgeKeySet, findShortestPath } from "@/lib/pathfinding";
 import { KnowledgeGraphDTO } from "@/types/graph";
 
@@ -14,23 +15,79 @@ type RenderData = {
   edges: GraphRendererEdge[];
 };
 
+type ClusterLabel = {
+  name: string;
+  x: number;
+  y: number;
+  color: string;
+};
+
 const DEFAULT_SUMMARY = "Select a station node to view article details and connected stations.";
+const LINE_COLORS = ["#22d3ee", "#38bdf8", "#818cf8", "#a78bfa", "#34d399", "#f97316", "#fb7185", "#facc15"] as const;
 
 function mapToRenderData(graph: KnowledgeGraphDTO): RenderData {
+  const groups = new Map<string, typeof graph.nodes>();
+
+  for (const node of graph.nodes) {
+    const cluster = node.attributes.color || "default";
+    const list = groups.get(cluster) ?? [];
+    list.push(node);
+    groups.set(cluster, list);
+  }
+
+  const nodes: GraphRendererNode[] = [];
+  const orderedClusters = Array.from(groups.keys());
+
+  orderedClusters.forEach((cluster, index) => {
+    const lineNodes = (groups.get(cluster) ?? []).slice().sort((a, b) => b.attributes.size - a.attributes.size);
+    const lineColor = LINE_COLORS[index % LINE_COLORS.length];
+
+    lineNodes.forEach((node, stationIndex) => {
+      const spacingX = 6;
+      const x = stationIndex * spacingX + Math.sin(stationIndex * 0.65) * 1.1;
+      const y = index * 8 + Math.sin(stationIndex * 0.45 + index) * 2.5;
+
+      nodes.push({
+        id: node.id,
+        x,
+        y,
+        cluster,
+        degree: Math.max(1, Math.round(node.attributes.size)),
+        color: lineColor,
+      });
+    });
+  });
+
   return {
-    nodes: graph.nodes.map((node) => ({
-      id: node.id,
-      x: node.attributes.x,
-      y: node.attributes.y,
-      cluster: node.attributes.color || "default",
-      degree: Math.max(1, Math.round(node.attributes.size)),
-    })),
+    nodes,
     edges: graph.edges.map((edge) => ({
       id: edge.id,
       source: edge.source,
       target: edge.target,
     })),
   };
+}
+
+function getClusterLabels(nodes: GraphRendererNode[]): ClusterLabel[] {
+  const grouped = new Map<string, GraphRendererNode[]>();
+
+  for (const node of nodes) {
+    const list = grouped.get(node.cluster) ?? [];
+    list.push(node);
+    grouped.set(node.cluster, list);
+  }
+
+  return Array.from(grouped.entries()).map(([cluster, clusterNodes]) => {
+    const avgX = clusterNodes.reduce((sum, node) => sum + node.x, 0) / clusterNodes.length;
+    const avgY = clusterNodes.reduce((sum, node) => sum + node.y, 0) / clusterNodes.length;
+
+    return {
+      name: cluster,
+      x: avgX,
+      y: avgY - 2.2,
+      color: clusterNodes[0]?.color || "#38bdf8",
+    };
+  });
 }
 
 function getWikipediaLink(title: string) {
@@ -41,6 +98,7 @@ export function GraphPanel() {
   const [graph, setGraph] = useState<KnowledgeGraphDTO>(createDemoGraphDTO);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [exportError, setExportError] = useState<string | null>(null);
 
   const [selectedTitle, setSelectedTitle] = useState<string>("Wikipedia");
   const [selectedSummary, setSelectedSummary] = useState<string>(DEFAULT_SUMMARY);
@@ -56,6 +114,7 @@ export function GraphPanel() {
   const renderData = useMemo(() => mapToRenderData(graph), [graph]);
   const stationNames = useMemo(() => renderData.nodes.map((node) => node.id), [renderData.nodes]);
   const highlightedPathEdgeKeys = useMemo(() => Array.from(buildPathEdgeKeySet(routePath)), [routePath]);
+  const clusterLabels = useMemo(() => getClusterLabels(renderData.nodes), [renderData.nodes]);
 
   useEffect(() => {
     let isMounted = true;
@@ -148,14 +207,54 @@ export function GraphPanel() {
     setSelectedTitle(path[path.length - 1]);
   }
 
+  function handleExportPng() {
+    setExportError(null);
+
+    try {
+      exportGraphViewAsPng({
+        nodes: renderData.nodes,
+        edges: renderData.edges,
+        selectedTitle,
+        routePath,
+        highlightedPathEdgeKeys,
+        clusterLabels,
+      });
+    } catch (exportFailure) {
+      setExportError(exportFailure instanceof Error ? exportFailure.message : "Failed to export graph image.");
+    }
+  }
+
   return (
     <section className="space-y-4">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h2 className="text-xl font-semibold text-cyan-300">Subway Map</h2>
-        {isLoading ? <p className="text-sm text-slate-400">Loading...</p> : null}
+        <div className="flex items-center gap-3">
+          {isLoading ? <p className="text-sm text-slate-400">Loading...</p> : null}
+          <button
+            type="button"
+            onClick={handleExportPng}
+            className="rounded-md border border-cyan-500/40 bg-cyan-500/10 px-3 py-2 text-sm font-medium text-cyan-200 hover:bg-cyan-500/20"
+          >
+            Export PNG
+          </button>
+        </div>
       </div>
 
+      {exportError ? <p className="rounded bg-red-900/40 p-3 text-sm text-red-200">{exportError}</p> : null}
+
       <StationSearchBar stations={stationNames} onSelect={setSelectedTitle} placeholder="Search stations..." value={selectedTitle} />
+
+      <div className="rounded-xl border border-slate-700 bg-slate-900/80 p-4">
+        <p className="mb-3 text-sm font-medium text-cyan-300">Subway Line Legend</p>
+        <div className="flex flex-wrap gap-2">
+          {clusterLabels.map((cluster) => (
+            <div key={cluster.name} className="inline-flex items-center gap-2 rounded-md border border-slate-700 bg-slate-950 px-2.5 py-1.5 text-xs text-slate-200">
+              <span className="h-1.5 w-6 rounded-full" style={{ backgroundColor: cluster.color }} />
+              <span>{cluster.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <div className="rounded-xl border border-slate-700 bg-slate-900/80 p-4">
         <p className="mb-3 text-sm font-medium text-cyan-300">Route Finder (BFS shortest path)</p>
@@ -190,6 +289,7 @@ export function GraphPanel() {
           focusedNodeId={selectedTitle}
           highlightedNodeIds={routePath}
           highlightedPathEdgeKeys={highlightedPathEdgeKeys}
+          clusterLabels={clusterLabels}
         />
         <StationPanel
           title={selectedTitle}

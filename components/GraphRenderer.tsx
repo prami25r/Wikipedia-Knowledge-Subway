@@ -9,6 +9,7 @@ export type GraphRendererNode = {
   y: number;
   cluster: string;
   degree: number;
+  color?: string;
 };
 
 export type GraphRendererEdge = {
@@ -31,6 +32,7 @@ type GraphRendererProps = {
   focusedNodeId?: string | null;
   highlightedNodeIds?: string[];
   highlightedPathEdgeKeys?: string[];
+  clusterLabels?: ClusterLabel[];
   onNodeClick?: (nodeId: string) => void;
 };
 
@@ -38,6 +40,7 @@ const CLUSTER_COLORS = ["#22d3ee", "#38bdf8", "#818cf8", "#a78bfa", "#c084fc", "
 const HIGHLIGHT_COLOR = "#f8fafc";
 const PATH_NODE_COLOR = "#f59e0b";
 const PATH_EDGE_COLOR = "#fbbf24";
+const INTERCHANGE_EDGE_COLOR = "#334155";
 
 function getClusterColor(cluster: string, clusterMap: Map<string, string>) {
   const existing = clusterMap.get(cluster);
@@ -48,13 +51,18 @@ function getClusterColor(cluster: string, clusterMap: Map<string, string>) {
 }
 
 function getNodeSize(degree: number, minDegree: number, maxDegree: number) {
-  if (maxDegree === minDegree) return 7;
+  if (maxDegree === minDegree) return 8;
   const normalized = (degree - minDegree) / (maxDegree - minDegree);
-  return 4 + normalized * 14;
+  return 5 + normalized * 11;
 }
 
 function toCanonicalEdgeKey(source: string, target: string) {
   return source < target ? `${source}::${target}` : `${target}::${source}`;
+}
+
+function getPercent(value: number, min: number, max: number) {
+  if (max <= min) return 50;
+  return ((value - min) / (max - min)) * 100;
 }
 
 export function GraphRenderer({
@@ -64,6 +72,7 @@ export function GraphRenderer({
   focusedNodeId,
   highlightedNodeIds = [],
   highlightedPathEdgeKeys = [],
+  clusterLabels = [],
   onNodeClick,
 }: GraphRendererProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -76,6 +85,7 @@ export function GraphRenderer({
   const graph = useMemo(() => {
     const instance = new Graph();
     const clusterMap = new Map<string, string>();
+    const clusterByNode = new Map<string, string>();
     const degrees = nodes.map((node) => node.degree);
     const minDegree = degrees.length > 0 ? Math.min(...degrees) : 0;
     const maxDegree = degrees.length > 0 ? Math.max(...degrees) : 1;
@@ -83,7 +93,8 @@ export function GraphRenderer({
     for (const node of nodes) {
       if (!instance.hasNode(node.id)) {
         const size = getNodeSize(node.degree, minDegree, maxDegree);
-        const color = getClusterColor(node.cluster, clusterMap);
+        const color = node.color ?? getClusterColor(node.cluster, clusterMap);
+        clusterByNode.set(node.id, node.cluster);
 
         instance.addNode(node.id, {
           label: node.id,
@@ -101,13 +112,21 @@ export function GraphRenderer({
 
     edges.forEach((edge, index) => {
       if (!instance.hasNode(edge.source) || !instance.hasNode(edge.target)) return;
+
+      const sourceCluster = clusterByNode.get(edge.source);
+      const targetCluster = clusterByNode.get(edge.target);
+      const isSameLine = sourceCluster && targetCluster && sourceCluster === targetCluster;
+      const lineColor = isSameLine ? instance.getNodeAttribute(edge.source, "baseColor") : INTERCHANGE_EDGE_COLOR;
+      const lineWidth = isSameLine ? 3.2 : 1.2;
+
       const edgeKey = edge.id ?? `${edge.source}->${edge.target}-${index}`;
       if (!instance.hasEdge(edgeKey)) {
         instance.addEdgeWithKey(edgeKey, edge.source, edge.target, {
-          color: "#334155",
-          size: 1,
-          baseColor: "#334155",
-          baseSize: 1,
+          type: "curve",
+          color: lineColor,
+          size: lineWidth,
+          baseColor: lineColor,
+          baseSize: lineWidth,
           canonicalPathKey: toCanonicalEdgeKey(edge.source, edge.target),
         });
       }
