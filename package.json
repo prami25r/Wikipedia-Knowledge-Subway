@@ -2,6 +2,7 @@
   "name": "wikipedia-knowledge-subway",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,7 +12,8 @@
     "seed": "tsx scripts/seed.ts",
     "collect:wiki": "node scripts/collect-wikipedia-graph.js",
     "process:graph": "tsx scripts/process-graph.ts",
-    "layout:graph": "tsx scripts/layout-graph.ts"
+    "layout:graph": "tsx scripts/layout-graph.ts",
+    "parse-wiki": "node scripts/parseWikiFiles.js"
   },
   "dependencies": {
     "@sigma/edge-curve": "^3.1.0",
@@ -28,7 +30,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@types/node": "^22.13.11",
+    "@types/node": "^22.19.15",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "autoprefixer": "^10.4.20",
@@ -36,7 +38,8 @@
     "eslint-config-next": "^15.2.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
+    "ts-node": "^10.9.2",
     "tsx": "^4.19.3",
-    "typescript": "^5.8.2"
+    "typescript": "^5.9.3"
   }
 }
