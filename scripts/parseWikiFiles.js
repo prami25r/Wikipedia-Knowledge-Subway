@@ -6,7 +6,9 @@ const outFile = path.join(process.cwd(), "data/articles.json");
 
 const parseTitle = (url) => {
   const slug = url.split("/wiki/")[1];
-  return decodeURIComponent(slug.replace(/_/g, " "));
+  return decodeURIComponent(slug.replace(/_/g, " "))
+    .replace(/\\/g, "")
+    .trim();
 };
 
 const parseFile = (filePath, line) => {
@@ -15,7 +17,8 @@ const parseFile = (filePath, line) => {
   const urls = content
     .split("\n")
     .map((l) => l.trim())
-    .filter((l) => l.startsWith("https://"));
+    .filter((l) => l.startsWith("https://"))
+    .filter((url) => !url.includes("Outline_of"));
 
   return urls.map((url) => ({
     id: parseTitle(url),
@@ -32,7 +35,11 @@ const buildDataset = () => {
   files.forEach((file) => {
     if (!file.endsWith(".md")) return;
 
-    const line = file.replace(".md", "").toLowerCase();
+    const line = file
+      .replace(".md", "")
+      .replace(/^#\s*/i, "")
+      .split(" ")[0]
+      .toLowerCase();
     const filePath = path.join(rawDir, file);
 
     nodes = nodes.concat(parseFile(filePath, line));

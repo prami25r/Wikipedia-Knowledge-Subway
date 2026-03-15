@@ -13,7 +13,9 @@
     "collect:wiki": "node scripts/collect-wikipedia-graph.js",
     "process:graph": "tsx scripts/process-graph.ts",
     "layout:graph": "tsx scripts/layout-graph.ts",
-    "parse-wiki": "node scripts/parseWikiFiles.js"
+    "parse-wiki": "node scripts/parseWikiFiles.js",
+    "build-graph": "node scripts/buildGraph.js",
+    "layout-graph": "node scripts/layoutGraph.js"
   },
   "dependencies": {
     "@sigma/edge-curve": "^3.1.0",
