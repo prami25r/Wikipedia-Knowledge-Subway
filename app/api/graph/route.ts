@@ -1,56 +1,54 @@
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
-import { createDemoGraphDTO } from "@/lib/graph";
 import { supabase } from "@/lib/supabase";
-import { KnowledgeGraphDTO } from "@/types/graph";
+import type { KnowledgeGraphDTO } from "@/types/graph";
 
-const CACHE_SECONDS = 60;
+const CACHE_SECONDS = 120;
+const MAX_PAGE_SIZE = 500;
+const DEFAULT_PAGE_SIZE = 100;
 
-type GraphRow = {
+type ArticleRow = {
   id: string;
-  source: string;
-  target: string;
-  source_label: string;
-  target_label: string;
+  title: string;
+  cluster: string | null;
+  x: number;
+  y: number;
+  degree: number;
 };
 
-function rowsToGraph(rows: GraphRow[]): KnowledgeGraphDTO {
-  const nodeMap = new Map<string, KnowledgeGraphDTO["nodes"][number]>();
+type LinkRow = {
+  source: string;
+  target: string;
+};
 
-  for (const row of rows) {
-    if (!nodeMap.has(row.source)) {
-      nodeMap.set(row.source, {
-        id: row.source,
-        attributes: {
-          label: row.source_label,
-          color: "#38bdf8",
-          x: Math.random() * 2,
-          y: Math.random() * 2,
-          size: 12,
-        },
-      });
-    }
-
-    if (!nodeMap.has(row.target)) {
-      nodeMap.set(row.target, {
-        id: row.target,
-        attributes: {
-          label: row.target_label,
-          color: "#818cf8",
-          x: Math.random() * 2,
-          y: Math.random() * 2,
-          size: 10,
-        },
-      });
-    }
+function parsePositiveInt(value: string | null, fallback: number): number {
+  if (!value) {
+    return fallback;
   }
 
+  const parsed = Number.parseInt(value, 10);
+  if (!Number.isFinite(parsed) || parsed <= 0) {
+    return fallback;
+  }
+
+  return parsed;
+}
+
+function toGraphDTO(nodes: ArticleRow[], links: LinkRow[]): KnowledgeGraphDTO {
   return {
-    nodes: Array.from(nodeMap.values()),
-    edges: rows.map((row, index) => ({
-      id: `${row.id}-${index}`,
-      source: row.source,
-      target: row.target,
+    nodes: nodes.map((node) => ({
+      id: node.id,
+      attributes: {
+        label: node.title,
+        x: node.x,
+        y: node.y,
+        size: Math.max(node.degree, 1),
+        color: "#38bdf8",
+      },
+    })),
+    edges: links.map((link, index) => ({
+      id: `edge-${index}-${link.source}-${link.target}`,
+      source: link.source,
+      target: link.target,
       attributes: {
         color: "#475569",
         size: 1,
@@ -59,45 +57,82 @@ function rowsToGraph(rows: GraphRow[]): KnowledgeGraphDTO {
   };
 }
 
-async function fetchSupabaseGraph(seed: string): Promise<KnowledgeGraphDTO | null> {
-  const { data, error } = await supabase
-    .from("wikipedia_edges")
-    .select("id,source,target,source_label,target_label")
-    .or(`source_label.ilike.%${seed}%,target_label.ilike.%${seed}%`)
-    .limit(100);
-
-  if (error || !data?.length) {
-    return null;
-  }
-
-  return rowsToGraph(data as GraphRow[]);
-}
-
-async function generateSummary(seed: string): Promise<string | null> {
-  if (!process.env.OPENAI_API_KEY) {
-    return null;
-  }
-
-  const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-  const completion = await client.responses.create({
-    model: "gpt-4.1-mini",
-    input: `Create one sentence describing how ${seed} might connect to nearby topics in a knowledge graph.`,
-  });
-
-  return completion.output_text || null;
-}
-
 export async function GET(request: NextRequest) {
-  const seed = request.nextUrl.searchParams.get("seed") ?? "Wikipedia";
+  const search = request.nextUrl.searchParams;
+  const page = parsePositiveInt(search.get("page"), 1);
+  const pageSize = Math.min(parsePositiveInt(search.get("pageSize"), DEFAULT_PAGE_SIZE), MAX_PAGE_SIZE);
+  const cluster = search.get("cluster")?.trim() || null;
 
-  try {
-    const graph = (await fetchSupabaseGraph(seed)) ?? createDemoGraphDTO();
-    const summary = await generateSummary(seed);
+  const from = (page - 1) * pageSize;
+  const to = from + pageSize - 1;
 
-    return NextResponse.json({ ...graph, summary }, { headers: { "Cache-Control": `s-maxage=${CACHE_SECONDS}` } });
-  } catch {
-    return NextResponse.json(createDemoGraphDTO(), {
-      headers: { "Cache-Control": `s-maxage=${CACHE_SECONDS}` },
-    });
+  let nodeQuery = supabase
+    .from("articles")
+    .select("id,title,cluster,x,y,degree", { count: "exact" })
+    .order("degree", { ascending: false })
+    .range(from, to);
+
+  if (cluster) {
+    nodeQuery = nodeQuery.eq("cluster", cluster);
   }
+
+  const { data: nodeRows, error: nodeError, count: totalNodes } = await nodeQuery;
+
+  if (nodeError) {
+    return NextResponse.json({ error: nodeError.message }, { status: 500 });
+  }
+
+  const nodes = (nodeRows ?? []) as ArticleRow[];
+
+  if (nodes.length === 0) {
+    return NextResponse.json(
+      {
+        nodes: [],
+        edges: [],
+        pagination: {
+          page,
+          pageSize,
+          totalNodes: totalNodes ?? 0,
+          totalPages: Math.max(Math.ceil((totalNodes ?? 0) / pageSize), 1),
+        },
+      },
+      {
+        headers: {
+          "Cache-Control": `public, s-maxage=${CACHE_SECONDS}, stale-while-revalidate=600`,
+        },
+      },
+    );
+  }
+
+  const nodeIds = nodes.map((node) => node.id);
+
+  const { data: links, error: linkError } = await supabase
+    .from("links")
+    .select("source,target")
+    .in("source", nodeIds)
+    .in("target", nodeIds)
+    .limit(pageSize * 4);
+
+  if (linkError) {
+    return NextResponse.json({ error: linkError.message }, { status: 500 });
+  }
+
+  const graph = toGraphDTO(nodes, (links ?? []) as LinkRow[]);
+
+  return NextResponse.json(
+    {
+      ...graph,
+      pagination: {
+        page,
+        pageSize,
+        totalNodes: totalNodes ?? 0,
+        totalPages: Math.max(Math.ceil((totalNodes ?? 0) / pageSize), 1),
+      },
+    },
+    {
+      headers: {
+        "Cache-Control": `public, s-maxage=${CACHE_SECONDS}, stale-while-revalidate=600`,
+      },
+    },
+  );
 }

@@ -98,3 +98,12 @@ Apply it in Supabase SQL editor, then use the TypeScript data helpers in `lib/gr
 - `insertArticles()`
 - `insertEdges()`
 - `getGraphData()`
+
+## API Endpoints
+
+- `GET /api/graph?page=1&pageSize=100&cluster=AI`
+  - Returns paginated graph payload with `{ nodes, edges, pagination }`
+- `GET /api/article/[title]?page=1&pageSize=50`
+  - Returns article details and paginated `connections` with `{ title, summary, connections, cluster, pagination }`
+
+Both routes include cache headers (`s-maxage` + `stale-while-revalidate`) for fast repeated reads.
