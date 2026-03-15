@@ -179,6 +179,9 @@ export function GraphRenderer({ nodes, edges, className, focusedNodeId, onNodeCl
       );
     }
   }, [focusedNodeId, graph]);
+      renderer?.kill();
+    };
+  }, [graph]);
 
   return (
     <div
