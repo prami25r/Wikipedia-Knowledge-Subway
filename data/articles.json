@@ -1,0 +1,5734 @@
+{
+  "nodes": [
+    {
+      "id": "The arts",
+      "url": "https://en.wikipedia.org/wiki/The\\_arts",
+      "line": "arts"
+    },
+    {
+      "id": "Music",
+      "url": "https://en.wikipedia.org/wiki/Music",
+      "line": "arts"
+    },
+    {
+      "id": "Outline of music",
+      "url": "https://en.wikipedia.org/wiki/Outline\\_of\\_music",
+      "line": "arts"
+    },
+    {
+      "id": "Literature",
+      "url": "https://en.wikipedia.org/wiki/Literature",
+      "line": "arts"
+    },
+    {
+      "id": "Outline of literature",
+      "url": "https://en.wikipedia.org/wiki/Outline\\_of\\_literature",
+      "line": "arts"
+    },
+    {
+      "id": "Painting",
+      "url": "https://en.wikipedia.org/wiki/Painting",
+      "line": "arts"
+    },
+    {
+      "id": "Outline of painting",
+      "url": "https://en.wikipedia.org/wiki/Outline\\_of\\_painting",
+      "line": "arts"
+    },
+    {
+      "id": "Visual arts",
+      "url": "https://en.wikipedia.org/wiki/Visual\\_arts",
+      "line": "arts"
+    },
+    {
+      "id": "Outline of the visual arts",
+      "url": "https://en.wikipedia.org/wiki/Outline\\_of\\_the\\_visual\\_arts",
+      "line": "arts"
+    },
+    {
+      "id": "Elements of music",
+      "url": "https://en.wikipedia.org/wiki/Elements\\_of\\_music",
+      "line": "arts"
+    },
+    {
+      "id": "Pitch (music)",
+      "url": "https://en.wikipedia.org/wiki/Pitch\\_(music)",
+      "line": "arts"
+    },
+    {
+      "id": "Melody",
+      "url": "https://en.wikipedia.org/wiki/Melody",
+      "line": "arts"
+    },
+    {
+      "id": "Harmony",
+      "url": "https://en.wikipedia.org/wiki/Harmony",
+      "line": "arts"
+    },
+    {
+      "id": "Rhythm",
+      "url": "https://en.wikipedia.org/wiki/Rhythm",
+      "line": "arts"
+    },
+    {
+      "id": "Timbre",
+      "url": "https://en.wikipedia.org/wiki/Timbre",
+      "line": "arts"
+    },
+    {
+      "id": "Musical form",
+      "url": "https://en.wikipedia.org/wiki/Musical\\_form",
+      "line": "arts"
+    },
+    {
+      "id": "Music theory",
+      "url": "https://en.wikipedia.org/wiki/Music\\_theory",
+      "line": "arts"
+    },
+    {
+      "id": "Scale (music)",
+      "url": "https://en.wikipedia.org/wiki/Scale\\_(music)",
+      "line": "arts"
+    },
+    {
+      "id": "Interval (music)",
+      "url": "https://en.wikipedia.org/wiki/Interval\\_(music)",
+      "line": "arts"
+    },
+    {
+      "id": "Chord (music)",
+      "url": "https://en.wikipedia.org/wiki/Chord\\_(music)",
+      "line": "arts"
+    },
+    {
+      "id": "Consonance and dissonance",
+      "url": "https://en.wikipedia.org/wiki/Consonance\\_and\\_dissonance",
+      "line": "arts"
+    },
+    {
+      "id": "Musical notation",
+      "url": "https://en.wikipedia.org/wiki/Musical\\_notation",
+      "line": "arts"
+    },
+    {
+      "id": "Composition (music)",
+      "url": "https://en.wikipedia.org/wiki/Composition\\_(music)",
+      "line": "arts"
+    },
+    {
+      "id": "Improvisation",
+      "url": "https://en.wikipedia.org/wiki/Improvisation",
+      "line": "arts"
+    },
+    {
+      "id": "Musical instrument",
+      "url": "https://en.wikipedia.org/wiki/Musical\\_instrument",
+      "line": "arts"
+    },
+    {
+      "id": "History of music",
+      "url": "https://en.wikipedia.org/wiki/History\\_of\\_music",
+      "line": "arts"
+    },
+    {
+      "id": "Classical music",
+      "url": "https://en.wikipedia.org/wiki/Classical\\_music",
+      "line": "arts"
+    },
+    {
+      "id": "Jazz",
+      "url": "https://en.wikipedia.org/wiki/Jazz",
+      "line": "arts"
+    },
+    {
+      "id": "Pop music",
+      "url": "https://en.wikipedia.org/wiki/Pop\\_music",
+      "line": "arts"
+    },
+    {
+      "id": "Rock music",
+      "url": "https://en.wikipedia.org/wiki/Rock\\_music",
+      "line": "arts"
+    },
+    {
+      "id": "Folk music",
+      "url": "https://en.wikipedia.org/wiki/Folk\\_music",
+      "line": "arts"
+    },
+    {
+      "id": "World music",
+      "url": "https://en.wikipedia.org/wiki/World\\_music",
+      "line": "arts"
+    },
+    {
+      "id": "Baroque music",
+      "url": "https://en.wikipedia.org/wiki/Baroque\\_music",
+      "line": "arts"
+    },
+    {
+      "id": "Romantic music",
+      "url": "https://en.wikipedia.org/wiki/Romantic\\_music",
+      "line": "arts"
+    },
+    {
+      "id": "20th-century classical music",
+      "url": "https://en.wikipedia.org/wiki/20th-century\\_classical\\_music",
+      "line": "arts"
+    },
+    {
+      "id": "Genre",
+      "url": "https://en.wikipedia.org/wiki/Genre",
+      "line": "arts"
+    },
+    {
+      "id": "Musical genre",
+      "url": "https://en.wikipedia.org/wiki/Musical\\_genre",
+      "line": "arts"
+    },
+    {
+      "id": "Orchestra",
+      "url": "https://en.wikipedia.org/wiki/Orchestra",
+      "line": "arts"
+    },
+    {
+      "id": "Symphony",
+      "url": "https://en.wikipedia.org/wiki/Symphony",
+      "line": "arts"
+    },
+    {
+      "id": "Concerto",
+      "url": "https://en.wikipedia.org/wiki/Concerto",
+      "line": "arts"
+    },
+    {
+      "id": "Opera",
+      "url": "https://en.wikipedia.org/wiki/Opera",
+      "line": "arts"
+    },
+    {
+      "id": "Sonata form",
+      "url": "https://en.wikipedia.org/wiki/Sonata\\_form",
+      "line": "arts"
+    },
+    {
+      "id": "Counterpoint",
+      "url": "https://en.wikipedia.org/wiki/Counterpoint",
+      "line": "arts"
+    },
+    {
+      "id": "Fugue",
+      "url": "https://en.wikipedia.org/wiki/Fugue",
+      "line": "arts"
+    },
+    {
+      "id": "Poetry",
+      "url": "https://en.wikipedia.org/wiki/Poetry",
+      "line": "arts"
+    },
+    {
+      "id": "Novel",
+      "url": "https://en.wikipedia.org/wiki/Novel",
+      "line": "arts"
+    },
+    {
+      "id": "Short story",
+      "url": "https://en.wikipedia.org/wiki/Short\\_story",
+      "line": "arts"
+    },
+    {
+      "id": "Drama",
+      "url": "https://en.wikipedia.org/wiki/Drama",
+      "line": "arts"
+    },
+    {
+      "id": "Play (theatre)",
+      "url": "https://en.wikipedia.org/wiki/Play\\_(theatre)",
+      "line": "arts"
+    },
+    {
+      "id": "Epic poetry",
+      "url": "https://en.wikipedia.org/wiki/Epic\\_poetry",
+      "line": "arts"
+    },
+    {
+      "id": "Lyric poetry",
+      "url": "https://en.wikipedia.org/wiki/Lyric\\_poetry",
+      "line": "arts"
+    },
+    {
+      "id": "Prose",
+      "url": "https://en.wikipedia.org/wiki/Prose",
+      "line": "arts"
+    },
+    {
+      "id": "Fiction",
+      "url": "https://en.wikipedia.org/wiki/Fiction",
+      "line": "arts"
+    },
+    {
+      "id": "Non-fiction",
+      "url": "https://en.wikipedia.org/wiki/Non-fiction",
+      "line": "arts"
+    },
+    {
+      "id": "Literary genre",
+      "url": "https://en.wikipedia.org/wiki/Literary\\_genre",
+      "line": "arts"
+    },
+    {
+      "id": "Romanticism",
+      "url": "https://en.wikipedia.org/wiki/Romanticism",
+      "line": "arts"
+    },
+    {
+      "id": "Realism (arts)",
+      "url": "https://en.wikipedia.org/wiki/Realism\\_(arts)",
+      "line": "arts"
+    },
+    {
+      "id": "Modernism",
+      "url": "https://en.wikipedia.org/wiki/Modernism",
+      "line": "arts"
+    },
+    {
+      "id": "Postmodern literature",
+      "url": "https://en.wikipedia.org/wiki/Postmodern\\_literature",
+      "line": "arts"
+    },
+    {
+      "id": "Literary theory",
+      "url": "https://en.wikipedia.org/wiki/Literary\\_theory",
+      "line": "arts"
+    },
+    {
+      "id": "Narrative",
+      "url": "https://en.wikipedia.org/wiki/Narrative",
+      "line": "arts"
+    },
+    {
+      "id": "Plot (narrative)",
+      "url": "https://en.wikipedia.org/wiki/Plot\\_(narrative)",
+      "line": "arts"
+    },
+    {
+      "id": "Character (arts)",
+      "url": "https://en.wikipedia.org/wiki/Character\\_(arts)",
+      "line": "arts"
+    },
+    {
+      "id": "Theme (narrative)",
+      "url": "https://en.wikipedia.org/wiki/Theme\\_(narrative)",
+      "line": "arts"
+    },
+    {
+      "id": "Point of view (literature)",
+      "url": "https://en.wikipedia.org/wiki/Point\\_of\\_view\\_(literature)",
+      "line": "arts"
+    },
+    {
+      "id": "Literary criticism",
+      "url": "https://en.wikipedia.org/wiki/Literary\\_criticism",
+      "line": "arts"
+    },
+    {
+      "id": "William Shakespeare",
+      "url": "https://en.wikipedia.org/wiki/William\\_Shakespeare",
+      "line": "arts"
+    },
+    {
+      "id": "Homer",
+      "url": "https://en.wikipedia.org/wiki/Homer",
+      "line": "arts"
+    },
+    {
+      "id": "Dante Alighieri",
+      "url": "https://en.wikipedia.org/wiki/Dante\\_Alighieri",
+      "line": "arts"
+    },
+    {
+      "id": "Miguel de Cervantes",
+      "url": "https://en.wikipedia.org/wiki/Miguel\\_de\\_Cervantes",
+      "line": "arts"
+    },
+    {
+      "id": "Leo Tolstoy",
+      "url": "https://en.wikipedia.org/wiki/Leo\\_Tolstoy",
+      "line": "arts"
+    },
+    {
+      "id": "History of painting",
+      "url": "https://en.wikipedia.org/wiki/History\\_of\\_painting",
+      "line": "arts"
+    },
+    {
+      "id": "Styles of painting",
+      "url": "https://en.wikipedia.org/wiki/Styles\\_of\\_painting",
+      "line": "arts"
+    },
+    {
+      "id": "Renaissance art",
+      "url": "https://en.wikipedia.org/wiki/Renaissance\\_art",
+      "line": "arts"
+    },
+    {
+      "id": "Baroque painting",
+      "url": "https://en.wikipedia.org/wiki/Baroque\\_painting",
+      "line": "arts"
+    },
+    {
+      "id": "Impressionism",
+      "url": "https://en.wikipedia.org/wiki/Impressionism",
+      "line": "arts"
+    },
+    {
+      "id": "Expressionism",
+      "url": "https://en.wikipedia.org/wiki/Expressionism",
+      "line": "arts"
+    },
+    {
+      "id": "Cubism",
+      "url": "https://en.wikipedia.org/wiki/Cubism",
+      "line": "arts"
+    },
+    {
+      "id": "Surrealism",
+      "url": "https://en.wikipedia.org/wiki/Surrealism",
+      "line": "arts"
+    },
+    {
+      "id": "Abstract art",
+      "url": "https://en.wikipedia.org/wiki/Abstract\\_art",
+      "line": "arts"
+    },
+    {
+      "id": "Modern art",
+      "url": "https://en.wikipedia.org/wiki/Modern\\_art",
+      "line": "arts"
+    },
+    {
+      "id": "Contemporary art",
+      "url": "https://en.wikipedia.org/wiki/Contemporary\\_art",
+      "line": "arts"
+    },
+    {
+      "id": "Oil paint",
+      "url": "https://en.wikipedia.org/wiki/Oil\\_paint",
+      "line": "arts"
+    },
+    {
+      "id": "Watercolor painting",
+      "url": "https://en.wikipedia.org/wiki/Watercolor\\_painting",
+      "line": "arts"
+    },
+    {
+      "id": "Acrylic paint",
+      "url": "https://en.wikipedia.org/wiki/Acrylic\\_paint",
+      "line": "arts"
+    },
+    {
+      "id": "Fresco",
+      "url": "https://en.wikipedia.org/wiki/Fresco",
+      "line": "arts"
+    },
+    {
+      "id": "Tempera",
+      "url": "https://en.wikipedia.org/wiki/Tempera",
+      "line": "arts"
+    },
+    {
+      "id": "Composition (visual arts)",
+      "url": "https://en.wikipedia.org/wiki/Composition\\_(visual\\_arts)",
+      "line": "arts"
+    },
+    {
+      "id": "Perspective (graphical)",
+      "url": "https://en.wikipedia.org/wiki/Perspective\\_(graphical)",
+      "line": "arts"
+    },
+    {
+      "id": "Color theory",
+      "url": "https://en.wikipedia.org/wiki/Color\\_theory",
+      "line": "arts"
+    },
+    {
+      "id": "Leonardo da Vinci",
+      "url": "https://en.wikipedia.org/wiki/Leonardo\\_da\\_Vinci",
+      "line": "arts"
+    },
+    {
+      "id": "Michelangelo",
+      "url": "https://en.wikipedia.org/wiki/Michelangelo",
+      "line": "arts"
+    },
+    {
+      "id": "Vincent van Gogh",
+      "url": "https://en.wikipedia.org/wiki/Vincent\\_van\\_Gogh",
+      "line": "arts"
+    },
+    {
+      "id": "Pablo Picasso",
+      "url": "https://en.wikipedia.org/wiki/Pablo\\_Picasso",
+      "line": "arts"
+    },
+    {
+      "id": "Rembrandt",
+      "url": "https://en.wikipedia.org/wiki/Rembrandt",
+      "line": "arts"
+    },
+    {
+      "id": "Claude Monet",
+      "url": "https://en.wikipedia.org/wiki/Claude\\_Monet",
+      "line": "arts"
+    },
+    {
+      "id": "Still life",
+      "url": "https://en.wikipedia.org/wiki/Still\\_life",
+      "line": "arts"
+    },
+    {
+      "id": "Landscape painting",
+      "url": "https://en.wikipedia.org/wiki/Landscape\\_painting",
+      "line": "arts"
+    },
+    {
+      "id": "Portrait",
+      "url": "https://en.wikipedia.org/wiki/Portrait",
+      "line": "arts"
+    },
+    {
+      "id": "Genre painting",
+      "url": "https://en.wikipedia.org/wiki/Genre\\_painting",
+      "line": "arts"
+    },
+    {
+      "id": "History painting",
+      "url": "https://en.wikipedia.org/wiki/History\\_painting",
+      "line": "arts"
+    },
+    {
+      "id": "Mural",
+      "url": "https://en.wikipedia.org/wiki/Mural",
+      "line": "arts"
+    },
+    {
+      "id": "Art movement",
+      "url": "https://en.wikipedia.org/wiki/Art\\_movement",
+      "line": "arts"
+    },
+    {
+      "id": "Aesthetics",
+      "url": "https://en.wikipedia.org/wiki/Aesthetics",
+      "line": "arts"
+    },
+    {
+      "id": "Art history",
+      "url": "https://en.wikipedia.org/wiki/Art\\_history",
+      "line": "arts"
+    },
+    {
+      "id": "Creativity",
+      "url": "https://en.wikipedia.org/wiki/Creativity",
+      "line": "arts"
+    },
+    {
+      "id": "Performing arts",
+      "url": "https://en.wikipedia.org/wiki/Performing\\_arts",
+      "line": "arts"
+    },
+    {
+      "id": "Outline of performing arts",
+      "url": "https://en.wikipedia.org/wiki/Outline\\_of\\_performing\\_arts",
+      "line": "arts"
+    },
+    {
+      "id": "Art",
+      "url": "https://en.wikipedia.org/wiki/Art",
+      "line": "arts"
+    },
+    {
+      "id": "Creative arts",
+      "url": "https://en.wikipedia.org/wiki/Creative\\_arts",
+      "line": "arts"
+    },
+    {
+      "id": "Musical composition",
+      "url": "https://en.wikipedia.org/wiki/Musical\\_composition",
+      "line": "arts"
+    },
+    {
+      "id": "Literary composition",
+      "url": "https://en.wikipedia.org/wiki/Literary\\_composition",
+      "line": "arts"
+    },
+    {
+      "id": "Visual arts",
+      "url": "https://en.wikipedia.org/wiki/Visual\\_arts",
+      "line": "arts"
+    },
+    {
+      "id": "Drawing",
+      "url": "https://en.wikipedia.org/wiki/Drawing",
+      "line": "arts"
+    },
+    {
+      "id": "Sculpture",
+      "url": "https://en.wikipedia.org/wiki/Sculpture",
+      "line": "arts"
+    },
+    {
+      "id": "Printmaking",
+      "url": "https://en.wikipedia.org/wiki/Printmaking",
+      "line": "arts"
+    },
+    {
+      "id": "Photography",
+      "url": "https://en.wikipedia.org/wiki/Photography",
+      "line": "arts"
+    },
+    {
+      "id": "Filmmaking",
+      "url": "https://en.wikipedia.org/wiki/Filmmaking",
+      "line": "arts"
+    },
+    {
+      "id": "Architecture",
+      "url": "https://en.wikipedia.org/wiki/Architecture",
+      "line": "arts"
+    },
+    {
+      "id": "Design",
+      "url": "https://en.wikipedia.org/wiki/Design",
+      "line": "arts"
+    },
+    {
+      "id": "Craft",
+      "url": "https://en.wikipedia.org/wiki/Craft",
+      "line": "arts"
+    },
+    {
+      "id": "Textile arts",
+      "url": "https://en.wikipedia.org/wiki/Textile\\_arts",
+      "line": "arts"
+    },
+    {
+      "id": "Ceramics (art)",
+      "url": "https://en.wikipedia.org/wiki/Ceramics\\_(art)",
+      "line": "arts"
+    },
+    {
+      "id": "Musicology",
+      "url": "https://en.wikipedia.org/wiki/Musicology",
+      "line": "arts"
+    },
+    {
+      "id": "Ethnomusicology",
+      "url": "https://en.wikipedia.org/wiki/Ethnomusicology",
+      "line": "arts"
+    },
+    {
+      "id": "Literary canon",
+      "url": "https://en.wikipedia.org/wiki/Literary\\_canon",
+      "line": "arts"
+    },
+    {
+      "id": "Western canon",
+      "url": "https://en.wikipedia.org/wiki/Western\\_canon",
+      "line": "arts"
+    },
+    {
+      "id": "World literature",
+      "url": "https://en.wikipedia.org/wiki/World\\_literature",
+      "line": "arts"
+    },
+    {
+      "id": "Postcolonial literature",
+      "url": "https://en.wikipedia.org/wiki/Postcolonial\\_literature",
+      "line": "arts"
+    },
+    {
+      "id": "Feminist literature",
+      "url": "https://en.wikipedia.org/wiki/Feminist\\_literature",
+      "line": "arts"
+    },
+    {
+      "id": "Biology",
+      "url": "https://en.wikipedia.org/wiki/Biology",
+      "line": "biology"
+    },
+    {
+      "id": "Genetics",
+      "url": "https://en.wikipedia.org/wiki/Genetics",
+      "line": "biology"
+    },
+    {
+      "id": "Evolution",
+      "url": "https://en.wikipedia.org/wiki/Evolution",
+      "line": "biology"
+    },
+    {
+      "id": "Microbiology",
+      "url": "https://en.wikipedia.org/wiki/Microbiology",
+      "line": "biology"
+    },
+    {
+      "id": "Gene",
+      "url": "https://en.wikipedia.org/wiki/Gene",
+      "line": "biology"
+    },
+    {
+      "id": "Allele",
+      "url": "https://en.wikipedia.org/wiki/Allele",
+      "line": "biology"
+    },
+    {
+      "id": "Genotype",
+      "url": "https://en.wikipedia.org/wiki/Genotype",
+      "line": "biology"
+    },
+    {
+      "id": "Phenotype",
+      "url": "https://en.wikipedia.org/wiki/Phenotype",
+      "line": "biology"
+    },
+    {
+      "id": "Heredity",
+      "url": "https://en.wikipedia.org/wiki/Heredity",
+      "line": "biology"
+    },
+    {
+      "id": "Mendelian inheritance",
+      "url": "https://en.wikipedia.org/wiki/Mendelian\\_inheritance",
+      "line": "biology"
+    },
+    {
+      "id": "DNA",
+      "url": "https://en.wikipedia.org/wiki/DNA",
+      "line": "biology"
+    },
+    {
+      "id": "RNA",
+      "url": "https://en.wikipedia.org/wiki/RNA",
+      "line": "biology"
+    },
+    {
+      "id": "Genetic code",
+      "url": "https://en.wikipedia.org/wiki/Genetic\\_code",
+      "line": "biology"
+    },
+    {
+      "id": "Gene expression",
+      "url": "https://en.wikipedia.org/wiki/Gene\\_expression",
+      "line": "biology"
+    },
+    {
+      "id": "Transcription (genetics)",
+      "url": "https://en.wikipedia.org/wiki/Transcription\\_(genetics)",
+      "line": "biology"
+    },
+    {
+      "id": "Translation (biology)",
+      "url": "https://en.wikipedia.org/wiki/Translation\\_(biology)",
+      "line": "biology"
+    },
+    {
+      "id": "Central dogma of molecular biology",
+      "url": "https://en.wikipedia.org/wiki/Central\\_dogma\\_of\\_molecular\\_biology",
+      "line": "biology"
+    },
+    {
+      "id": "Mutation",
+      "url": "https://en.wikipedia.org/wiki/Mutation",
+      "line": "biology"
+    },
+    {
+      "id": "Genetic variation",
+      "url": "https://en.wikipedia.org/wiki/Genetic\\_variation",
+      "line": "biology"
+    },
+    {
+      "id": "Epigenetics",
+      "url": "https://en.wikipedia.org/wiki/Epigenetics",
+      "line": "biology"
+    },
+    {
+      "id": "Population genetics",
+      "url": "https://en.wikipedia.org/wiki/Population\\_genetics",
+      "line": "biology"
+    },
+    {
+      "id": "Genetic drift",
+      "url": "https://en.wikipedia.org/wiki/Genetic\\_drift",
+      "line": "biology"
+    },
+    {
+      "id": "Natural selection",
+      "url": "https://en.wikipedia.org/wiki/Natural\\_selection",
+      "line": "biology"
+    },
+    {
+      "id": "Speciation",
+      "url": "https://en.wikipedia.org/wiki/Speciation",
+      "line": "biology"
+    },
+    {
+      "id": "Common descent",
+      "url": "https://en.wikipedia.org/wiki/Common\\_descent",
+      "line": "biology"
+    },
+    {
+      "id": "Last universal common ancestor",
+      "url": "https://en.wikipedia.org/wiki/Last\\_universal\\_common\\_ancestor",
+      "line": "biology"
+    },
+    {
+      "id": "Modern synthesis (20th century)",
+      "url": "https://en.wikipedia.org/wiki/Modern\\_synthesis\\_(20th\\_century)",
+      "line": "biology"
+    },
+    {
+      "id": "Extinction",
+      "url": "https://en.wikipedia.org/wiki/Extinction",
+      "line": "biology"
+    },
+    {
+      "id": "Biodiversity",
+      "url": "https://en.wikipedia.org/wiki/Biodiversity",
+      "line": "biology"
+    },
+    {
+      "id": "Microorganism",
+      "url": "https://en.wikipedia.org/wiki/Microorganism",
+      "line": "biology"
+    },
+    {
+      "id": "Bacteria",
+      "url": "https://en.wikipedia.org/wiki/Bacteria",
+      "line": "biology"
+    },
+    {
+      "id": "Archaea",
+      "url": "https://en.wikipedia.org/wiki/Archaea",
+      "line": "biology"
+    },
+    {
+      "id": "Virus",
+      "url": "https://en.wikipedia.org/wiki/Virus",
+      "line": "biology"
+    },
+    {
+      "id": "Prokaryote",
+      "url": "https://en.wikipedia.org/wiki/Prokaryote",
+      "line": "biology"
+    },
+    {
+      "id": "Eukaryote",
+      "url": "https://en.wikipedia.org/wiki/Eukaryote",
+      "line": "biology"
+    },
+    {
+      "id": "Fungi",
+      "url": "https://en.wikipedia.org/wiki/Fungi",
+      "line": "biology"
+    },
+    {
+      "id": "Protist",
+      "url": "https://en.wikipedia.org/wiki/Protist",
+      "line": "biology"
+    },
+    {
+      "id": "Bacteriology",
+      "url": "https://en.wikipedia.org/wiki/Bacteriology",
+      "line": "biology"
+    },
+    {
+      "id": "Virology",
+      "url": "https://en.wikipedia.org/wiki/Virology",
+      "line": "biology"
+    },
+    {
+      "id": "Mycology",
+      "url": "https://en.wikipedia.org/wiki/Mycology",
+      "line": "biology"
+    },
+    {
+      "id": "Parasitology",
+      "url": "https://en.wikipedia.org/wiki/Parasitology",
+      "line": "biology"
+    },
+    {
+      "id": "Microbial ecology",
+      "url": "https://en.wikipedia.org/wiki/Microbial\\_ecology",
+      "line": "biology"
+    },
+    {
+      "id": "Cell (biology)",
+      "url": "https://en.wikipedia.org/wiki/Cell\\_(biology)",
+      "line": "biology"
+    },
+    {
+      "id": "Chromosome",
+      "url": "https://en.wikipedia.org/wiki/Chromosome",
+      "line": "biology"
+    },
+    {
+      "id": "Genome",
+      "url": "https://en.wikipedia.org/wiki/Genome",
+      "line": "biology"
+    },
+    {
+      "id": "DNA replication",
+      "url": "https://en.wikipedia.org/wiki/DNA\\_replication",
+      "line": "biology"
+    },
+    {
+      "id": "Genetic recombination",
+      "url": "https://en.wikipedia.org/wiki/Genetic\\_recombination",
+      "line": "biology"
+    },
+    {
+      "id": "Polymerase chain reaction",
+      "url": "https://en.wikipedia.org/wiki/Polymerase\\_chain\\_reaction",
+      "line": "biology"
+    },
+    {
+      "id": "CRISPR",
+      "url": "https://en.wikipedia.org/wiki/CRISPR",
+      "line": "biology"
+    },
+    {
+      "id": "Gene therapy",
+      "url": "https://en.wikipedia.org/wiki/Gene\\_therapy",
+      "line": "biology"
+    },
+    {
+      "id": "Human Genome Project",
+      "url": "https://en.wikipedia.org/wiki/Human\\_Genome\\_Project",
+      "line": "biology"
+    },
+    {
+      "id": "Adaptation",
+      "url": "https://en.wikipedia.org/wiki/Adaptation",
+      "line": "biology"
+    },
+    {
+      "id": "Sexual selection",
+      "url": "https://en.wikipedia.org/wiki/Sexual\\_selection",
+      "line": "biology"
+    },
+    {
+      "id": "Kin selection",
+      "url": "https://en.wikipedia.org/wiki/Kin\\_selection",
+      "line": "biology"
+    },
+    {
+      "id": "Coevolution",
+      "url": "https://en.wikipedia.org/wiki/Coevolution",
+      "line": "biology"
+    },
+    {
+      "id": "Red Queen hypothesis",
+      "url": "https://en.wikipedia.org/wiki/Red\\_Queen\\_hypothesis",
+      "line": "biology"
+    },
+    {
+      "id": "Fossil",
+      "url": "https://en.wikipedia.org/wiki/Fossil",
+      "line": "biology"
+    },
+    {
+      "id": "Phylogenetic tree",
+      "url": "https://en.wikipedia.org/wiki/Phylogenetic\\_tree",
+      "line": "biology"
+    },
+    {
+      "id": "Molecular clock",
+      "url": "https://en.wikipedia.org/wiki/Molecular\\_clock",
+      "line": "biology"
+    },
+    {
+      "id": "Cambrian explosion",
+      "url": "https://en.wikipedia.org/wiki/Cambrian\\_explosion",
+      "line": "biology"
+    },
+    {
+      "id": "Endosymbiosis",
+      "url": "https://en.wikipedia.org/wiki/Endosymbiosis",
+      "line": "biology"
+    },
+    {
+      "id": "Horizontal gene transfer",
+      "url": "https://en.wikipedia.org/wiki/Horizontal\\_gene\\_transfer",
+      "line": "biology"
+    },
+    {
+      "id": "Microbial mat",
+      "url": "https://en.wikipedia.org/wiki/Microbial\\_mat",
+      "line": "biology"
+    },
+    {
+      "id": "Human microbiome",
+      "url": "https://en.wikipedia.org/wiki/Human\\_microbiome",
+      "line": "biology"
+    },
+    {
+      "id": "Antibiotic",
+      "url": "https://en.wikipedia.org/wiki/Antibiotic",
+      "line": "biology"
+    },
+    {
+      "id": "Fermentation",
+      "url": "https://en.wikipedia.org/wiki/Fermentation",
+      "line": "biology"
+    },
+    {
+      "id": "Bioremediation",
+      "url": "https://en.wikipedia.org/wiki/Bioremediation",
+      "line": "biology"
+    },
+    {
+      "id": "Koch's postulates",
+      "url": "https://en.wikipedia.org/wiki/Koch%27s\\_postulates",
+      "line": "biology"
+    },
+    {
+      "id": "Germ theory of disease",
+      "url": "https://en.wikipedia.org/wiki/Germ\\_theory\\_of\\_disease",
+      "line": "biology"
+    },
+    {
+      "id": "Pasteurization",
+      "url": "https://en.wikipedia.org/wiki/Pasteurization",
+      "line": "biology"
+    },
+    {
+      "id": "Antonie van Leeuwenhoek",
+      "url": "https://en.wikipedia.org/wiki/Antonie\\_van\\_Leeuwenhoek",
+      "line": "biology"
+    },
+    {
+      "id": "Louis Pasteur",
+      "url": "https://en.wikipedia.org/wiki/Louis\\_Pasteur",
+      "line": "biology"
+    },
+    {
+      "id": "Robert Koch",
+      "url": "https://en.wikipedia.org/wiki/Robert\\_Koch",
+      "line": "biology"
+    },
+    {
+      "id": "Gregor Mendel",
+      "url": "https://en.wikipedia.org/wiki/Gregor\\_Mendel",
+      "line": "biology"
+    },
+    {
+      "id": "Charles Darwin",
+      "url": "https://en.wikipedia.org/wiki/Charles\\_Darwin",
+      "line": "biology"
+    },
+    {
+      "id": "On the Origin of Species",
+      "url": "https://en.wikipedia.org/wiki/On\\_the\\_Origin\\_of\\_Species",
+      "line": "biology"
+    },
+    {
+      "id": "Protein",
+      "url": "https://en.wikipedia.org/wiki/Protein",
+      "line": "biology"
+    },
+    {
+      "id": "Enzyme",
+      "url": "https://en.wikipedia.org/wiki/Enzyme",
+      "line": "biology"
+    },
+    {
+      "id": "Amino acid",
+      "url": "https://en.wikipedia.org/wiki/Amino\\_acid",
+      "line": "biology"
+    },
+    {
+      "id": "Nucleotide",
+      "url": "https://en.wikipedia.org/wiki/Nucleotide",
+      "line": "biology"
+    },
+    {
+      "id": "Operon",
+      "url": "https://en.wikipedia.org/wiki/Operon",
+      "line": "biology"
+    },
+    {
+      "id": "Regulation of gene expression",
+      "url": "https://en.wikipedia.org/wiki/Regulation\\_of\\_gene\\_expression",
+      "line": "biology"
+    },
+    {
+      "id": "Epistasis",
+      "url": "https://en.wikipedia.org/wiki/Epistasis",
+      "line": "biology"
+    },
+    {
+      "id": "Genetic linkage",
+      "url": "https://en.wikipedia.org/wiki/Genetic\\_linkage",
+      "line": "biology"
+    },
+    {
+      "id": "Model organism",
+      "url": "https://en.wikipedia.org/wiki/Model\\_organism",
+      "line": "biology"
+    },
+    {
+      "id": "Drosophila melanogaster",
+      "url": "https://en.wikipedia.org/wiki/Drosophila\\_melanogaster",
+      "line": "biology"
+    },
+    {
+      "id": "Escherichia coli",
+      "url": "https://en.wikipedia.org/wiki/Escherichia\\_coli",
+      "line": "biology"
+    },
+    {
+      "id": "16S ribosomal RNA",
+      "url": "https://en.wikipedia.org/wiki/16S\\_ribosomal\\_RNA",
+      "line": "biology"
+    },
+    {
+      "id": "Nitrogen fixation",
+      "url": "https://en.wikipedia.org/wiki/Nitrogen\\_fixation",
+      "line": "biology"
+    },
+    {
+      "id": "Photosynthesis",
+      "url": "https://en.wikipedia.org/wiki/Photosynthesis",
+      "line": "biology"
+    },
+    {
+      "id": "Cell membrane",
+      "url": "https://en.wikipedia.org/wiki/Cell\\_membrane",
+      "line": "biology"
+    },
+    {
+      "id": "Mitochondrion",
+      "url": "https://en.wikipedia.org/wiki/Mitochondrion",
+      "line": "biology"
+    },
+    {
+      "id": "Chloroplast",
+      "url": "https://en.wikipedia.org/wiki/Chloroplast",
+      "line": "biology"
+    },
+    {
+      "id": "Mitosis",
+      "url": "https://en.wikipedia.org/wiki/Mitosis",
+      "line": "biology"
+    },
+    {
+      "id": "Meiosis",
+      "url": "https://en.wikipedia.org/wiki/Meiosis",
+      "line": "biology"
+    },
+    {
+      "id": "Cell cycle",
+      "url": "https://en.wikipedia.org/wiki/Cell\\_cycle",
+      "line": "biology"
+    },
+    {
+      "id": "Metabolism",
+      "url": "https://en.wikipedia.org/wiki/Metabolism",
+      "line": "biology"
+    },
+    {
+      "id": "Homeostasis",
+      "url": "https://en.wikipedia.org/wiki/Homeostasis",
+      "line": "biology"
+    },
+    {
+      "id": "Reproduction",
+      "url": "https://en.wikipedia.org/wiki/Reproduction",
+      "line": "biology"
+    },
+    {
+      "id": "Organism",
+      "url": "https://en.wikipedia.org/wiki/Organism",
+      "line": "biology"
+    },
+    {
+      "id": "Population",
+      "url": "https://en.wikipedia.org/wiki/Population",
+      "line": "biology"
+    },
+    {
+      "id": "Ecosystem",
+      "url": "https://en.wikipedia.org/wiki/Ecosystem",
+      "line": "biology"
+    },
+    {
+      "id": "Biosphere",
+      "url": "https://en.wikipedia.org/wiki/Biosphere",
+      "line": "biology"
+    },
+    {
+      "id": "Biotechnology",
+      "url": "https://en.wikipedia.org/wiki/Biotechnology",
+      "line": "biology"
+    },
+    {
+      "id": "Genomic imprinting",
+      "url": "https://en.wikipedia.org/wiki/Genomic\\_imprinting",
+      "line": "biology"
+    },
+    {
+      "id": "RNA interference",
+      "url": "https://en.wikipedia.org/wiki/RNA\\_interference",
+      "line": "biology"
+    },
+    {
+      "id": "Genomics",
+      "url": "https://en.wikipedia.org/wiki/Genomics",
+      "line": "biology"
+    },
+    {
+      "id": "Proteomics",
+      "url": "https://en.wikipedia.org/wiki/Proteomics",
+      "line": "biology"
+    },
+    {
+      "id": "Bioinformatics",
+      "url": "https://en.wikipedia.org/wiki/Bioinformatics",
+      "line": "biology"
+    },
+    {
+      "id": "Extended evolutionary synthesis",
+      "url": "https://en.wikipedia.org/wiki/Extended\\_evolutionary\\_synthesis",
+      "line": "biology"
+    },
+    {
+      "id": "Punctuated equilibrium",
+      "url": "https://en.wikipedia.org/wiki/Punctuated\\_equilibrium",
+      "line": "biology"
+    },
+    {
+      "id": "Mass extinction",
+      "url": "https://en.wikipedia.org/wiki/Mass\\_extinction",
+      "line": "biology"
+    },
+    {
+      "id": "Holocene extinction",
+      "url": "https://en.wikipedia.org/wiki/Holocene\\_extinction",
+      "line": "biology"
+    },
+    {
+      "id": "Abiogenesis",
+      "url": "https://en.wikipedia.org/wiki/Abiogenesis",
+      "line": "biology"
+    },
+    {
+      "id": "Origin of life",
+      "url": "https://en.wikipedia.org/wiki/Origin\\_of\\_life",
+      "line": "biology"
+    },
+    {
+      "id": "Bacteriophage",
+      "url": "https://en.wikipedia.org/wiki/Bacteriophage",
+      "line": "biology"
+    },
+    {
+      "id": "Prion",
+      "url": "https://en.wikipedia.org/wiki/Prion",
+      "line": "biology"
+    },
+    {
+      "id": "Microbial genetics",
+      "url": "https://en.wikipedia.org/wiki/Microbial\\_genetics",
+      "line": "biology"
+    },
+    {
+      "id": "Cellular microbiology",
+      "url": "https://en.wikipedia.org/wiki/Cellular\\_microbiology",
+      "line": "biology"
+    },
+    {
+      "id": "Protozoology",
+      "url": "https://en.wikipedia.org/wiki/Protozoology",
+      "line": "biology"
+    },
+    {
+      "id": "Phycology",
+      "url": "https://en.wikipedia.org/wiki/Phycology",
+      "line": "biology"
+    },
+    {
+      "id": "Immunology",
+      "url": "https://en.wikipedia.org/wiki/Immunology",
+      "line": "biology"
+    },
+    {
+      "id": "Pathogen",
+      "url": "https://en.wikipedia.org/wiki/Pathogen",
+      "line": "biology"
+    },
+    {
+      "id": "Probiotic",
+      "url": "https://en.wikipedia.org/wiki/Probiotic",
+      "line": "biology"
+    },
+    {
+      "id": "Food microbiology",
+      "url": "https://en.wikipedia.org/wiki/Food\\_microbiology",
+      "line": "biology"
+    },
+    {
+      "id": "Industrial microbiology",
+      "url": "https://en.wikipedia.org/wiki/Industrial\\_microbiology",
+      "line": "biology"
+    },
+    {
+      "id": "Economics",
+      "url": "https://en.wikipedia.org/wiki/Economics",
+      "line": "economics"
+    },
+    {
+      "id": "Microeconomics",
+      "url": "https://en.wikipedia.org/wiki/Microeconomics",
+      "line": "economics"
+    },
+    {
+      "id": "Macroeconomics",
+      "url": "https://en.wikipedia.org/wiki/Macroeconomics",
+      "line": "economics"
+    },
+    {
+      "id": "Market (economics)",
+      "url": "https://en.wikipedia.org/wiki/Market\\_(economics)",
+      "line": "economics"
+    },
+    {
+      "id": "Supply and demand",
+      "url": "https://en.wikipedia.org/wiki/Supply\\_and\\_demand",
+      "line": "economics"
+    },
+    {
+      "id": "Finance",
+      "url": "https://en.wikipedia.org/wiki/Finance",
+      "line": "economics"
+    },
+    {
+      "id": "Financial economics",
+      "url": "https://en.wikipedia.org/wiki/Financial\\_economics",
+      "line": "economics"
+    },
+    {
+      "id": "International trade",
+      "url": "https://en.wikipedia.org/wiki/International\\_trade",
+      "line": "economics"
+    },
+    {
+      "id": "Perfect competition",
+      "url": "https://en.wikipedia.org/wiki/Perfect\\_competition",
+      "line": "economics"
+    },
+    {
+      "id": "Monopoly",
+      "url": "https://en.wikipedia.org/wiki/Monopoly",
+      "line": "economics"
+    },
+    {
+      "id": "Oligopoly",
+      "url": "https://en.wikipedia.org/wiki/Oligopoly",
+      "line": "economics"
+    },
+    {
+      "id": "Monopolistic competition",
+      "url": "https://en.wikipedia.org/wiki/Monopolistic\\_competition",
+      "line": "economics"
+    },
+    {
+      "id": "Market structure",
+      "url": "https://en.wikipedia.org/wiki/Market\\_structure",
+      "line": "economics"
+    },
+    {
+      "id": "Market power",
+      "url": "https://en.wikipedia.org/wiki/Market\\_power",
+      "line": "economics"
+    },
+    {
+      "id": "Market failure",
+      "url": "https://en.wikipedia.org/wiki/Market\\_failure",
+      "line": "economics"
+    },
+    {
+      "id": "Externalities",
+      "url": "https://en.wikipedia.org/wiki/Externalities",
+      "line": "economics"
+    },
+    {
+      "id": "Public good (economics)",
+      "url": "https://en.wikipedia.org/wiki/Public\\_good\\_(economics)",
+      "line": "economics"
+    },
+    {
+      "id": "Information asymmetry",
+      "url": "https://en.wikipedia.org/wiki/Information\\_asymmetry",
+      "line": "economics"
+    },
+    {
+      "id": "Adverse selection",
+      "url": "https://en.wikipedia.org/wiki/Adverse\\_selection",
+      "line": "economics"
+    },
+    {
+      "id": "Moral hazard",
+      "url": "https://en.wikipedia.org/wiki/Moral\\_hazard",
+      "line": "economics"
+    },
+    {
+      "id": "Game theory",
+      "url": "https://en.wikipedia.org/wiki/Game\\_theory",
+      "line": "economics"
+    },
+    {
+      "id": "Behavioral economics",
+      "url": "https://en.wikipedia.org/wiki/Behavioral\\_economics",
+      "line": "economics"
+    },
+    {
+      "id": "Industrial organization",
+      "url": "https://en.wikipedia.org/wiki/Industrial\\_organization",
+      "line": "economics"
+    },
+    {
+      "id": "Welfare economics",
+      "url": "https://en.wikipedia.org/wiki/Welfare\\_economics",
+      "line": "economics"
+    },
+    {
+      "id": "Scarcity",
+      "url": "https://en.wikipedia.org/wiki/Scarcity",
+      "line": "economics"
+    },
+    {
+      "id": "Opportunity cost",
+      "url": "https://en.wikipedia.org/wiki/Opportunity\\_cost",
+      "line": "economics"
+    },
+    {
+      "id": "Elasticity (economics)",
+      "url": "https://en.wikipedia.org/wiki/Elasticity\\_(economics)",
+      "line": "economics"
+    },
+    {
+      "id": "Marginalism",
+      "url": "https://en.wikipedia.org/wiki/Marginalism",
+      "line": "economics"
+    },
+    {
+      "id": "Utility",
+      "url": "https://en.wikipedia.org/wiki/Utility",
+      "line": "economics"
+    },
+    {
+      "id": "Consumer surplus",
+      "url": "https://en.wikipedia.org/wiki/Consumer\\_surplus",
+      "line": "economics"
+    },
+    {
+      "id": "Producer surplus",
+      "url": "https://en.wikipedia.org/wiki/Producer\\_surplus",
+      "line": "economics"
+    },
+    {
+      "id": "Comparative advantage",
+      "url": "https://en.wikipedia.org/wiki/Comparative\\_advantage",
+      "line": "economics"
+    },
+    {
+      "id": "Absolute advantage",
+      "url": "https://en.wikipedia.org/wiki/Absolute\\_advantage",
+      "line": "economics"
+    },
+    {
+      "id": "Gains from trade",
+      "url": "https://en.wikipedia.org/wiki/Gains\\_from\\_trade",
+      "line": "economics"
+    },
+    {
+      "id": "Free trade",
+      "url": "https://en.wikipedia.org/wiki/Free\\_trade",
+      "line": "economics"
+    },
+    {
+      "id": "Protectionism",
+      "url": "https://en.wikipedia.org/wiki/Protectionism",
+      "line": "economics"
+    },
+    {
+      "id": "Tariff",
+      "url": "https://en.wikipedia.org/wiki/Tariff",
+      "line": "economics"
+    },
+    {
+      "id": "Quota",
+      "url": "https://en.wikipedia.org/wiki/Quota",
+      "line": "economics"
+    },
+    {
+      "id": "Balance of trade",
+      "url": "https://en.wikipedia.org/wiki/Balance\\_of\\_trade",
+      "line": "economics"
+    },
+    {
+      "id": "Trade bloc",
+      "url": "https://en.wikipedia.org/wiki/Trade\\_bloc",
+      "line": "economics"
+    },
+    {
+      "id": "Globalization",
+      "url": "https://en.wikipedia.org/wiki/Globalization",
+      "line": "economics"
+    },
+    {
+      "id": "Mercantilism",
+      "url": "https://en.wikipedia.org/wiki/Mercantilism",
+      "line": "economics"
+    },
+    {
+      "id": "Financial market",
+      "url": "https://en.wikipedia.org/wiki/Financial\\_market",
+      "line": "economics"
+    },
+    {
+      "id": "Stock market",
+      "url": "https://en.wikipedia.org/wiki/Stock\\_market",
+      "line": "economics"
+    },
+    {
+      "id": "Bond market",
+      "url": "https://en.wikipedia.org/wiki/Bond\\_market",
+      "line": "economics"
+    },
+    {
+      "id": "Money market",
+      "url": "https://en.wikipedia.org/wiki/Money\\_market",
+      "line": "economics"
+    },
+    {
+      "id": "Foreign exchange market",
+      "url": "https://en.wikipedia.org/wiki/Foreign\\_exchange\\_market",
+      "line": "economics"
+    },
+    {
+      "id": "Derivatives market",
+      "url": "https://en.wikipedia.org/wiki/Derivatives\\_market",
+      "line": "economics"
+    },
+    {
+      "id": "Commodity market",
+      "url": "https://en.wikipedia.org/wiki/Commodity\\_market",
+      "line": "economics"
+    },
+    {
+      "id": "Capital market",
+      "url": "https://en.wikipedia.org/wiki/Capital\\_market",
+      "line": "economics"
+    },
+    {
+      "id": "Money",
+      "url": "https://en.wikipedia.org/wiki/Money",
+      "line": "economics"
+    },
+    {
+      "id": "Monetary system",
+      "url": "https://en.wikipedia.org/wiki/Monetary\\_system",
+      "line": "economics"
+    },
+    {
+      "id": "Money supply",
+      "url": "https://en.wikipedia.org/wiki/Money\\_supply",
+      "line": "economics"
+    },
+    {
+      "id": "Inflation",
+      "url": "https://en.wikipedia.org/wiki/Inflation",
+      "line": "economics"
+    },
+    {
+      "id": "Deflation",
+      "url": "https://en.wikipedia.org/wiki/Deflation",
+      "line": "economics"
+    },
+    {
+      "id": "Monetary policy",
+      "url": "https://en.wikipedia.org/wiki/Monetary\\_policy",
+      "line": "economics"
+    },
+    {
+      "id": "Fiscal policy",
+      "url": "https://en.wikipedia.org/wiki/Fiscal\\_policy",
+      "line": "economics"
+    },
+    {
+      "id": "Central bank",
+      "url": "https://en.wikipedia.org/wiki/Central\\_bank",
+      "line": "economics"
+    },
+    {
+      "id": "Interest rate",
+      "url": "https://en.wikipedia.org/wiki/Interest\\_rate",
+      "line": "economics"
+    },
+    {
+      "id": "Exchange rate",
+      "url": "https://en.wikipedia.org/wiki/Exchange\\_rate",
+      "line": "economics"
+    },
+    {
+      "id": "Corporate finance",
+      "url": "https://en.wikipedia.org/wiki/Corporate\\_finance",
+      "line": "economics"
+    },
+    {
+      "id": "Personal finance",
+      "url": "https://en.wikipedia.org/wiki/Personal\\_finance",
+      "line": "economics"
+    },
+    {
+      "id": "Public finance",
+      "url": "https://en.wikipedia.org/wiki/Public\\_finance",
+      "line": "economics"
+    },
+    {
+      "id": "Capital structure",
+      "url": "https://en.wikipedia.org/wiki/Capital\\_structure",
+      "line": "economics"
+    },
+    {
+      "id": "Modern portfolio theory",
+      "url": "https://en.wikipedia.org/wiki/Modern\\_portfolio\\_theory",
+      "line": "economics"
+    },
+    {
+      "id": "Asset pricing",
+      "url": "https://en.wikipedia.org/wiki/Asset\\_pricing",
+      "line": "economics"
+    },
+    {
+      "id": "Risk management",
+      "url": "https://en.wikipedia.org/wiki/Risk\\_management",
+      "line": "economics"
+    },
+    {
+      "id": "Investment",
+      "url": "https://en.wikipedia.org/wiki/Investment",
+      "line": "economics"
+    },
+    {
+      "id": "Diversification (finance)",
+      "url": "https://en.wikipedia.org/wiki/Diversification\\_(finance)",
+      "line": "economics"
+    },
+    {
+      "id": "Stock",
+      "url": "https://en.wikipedia.org/wiki/Stock",
+      "line": "economics"
+    },
+    {
+      "id": "Bond (finance)",
+      "url": "https://en.wikipedia.org/wiki/Bond\\_(finance)",
+      "line": "economics"
+    },
+    {
+      "id": "Option (finance)",
+      "url": "https://en.wikipedia.org/wiki/Option\\_(finance)",
+      "line": "economics"
+    },
+    {
+      "id": "Futures contract",
+      "url": "https://en.wikipedia.org/wiki/Futures\\_contract",
+      "line": "economics"
+    },
+    {
+      "id": "Insurance",
+      "url": "https://en.wikipedia.org/wiki/Insurance",
+      "line": "economics"
+    },
+    {
+      "id": "Banking",
+      "url": "https://en.wikipedia.org/wiki/Banking",
+      "line": "economics"
+    },
+    {
+      "id": "Commercial bank",
+      "url": "https://en.wikipedia.org/wiki/Commercial\\_bank",
+      "line": "economics"
+    },
+    {
+      "id": "Investment bank",
+      "url": "https://en.wikipedia.org/wiki/Investment\\_bank",
+      "line": "economics"
+    },
+    {
+      "id": "Financial crisis",
+      "url": "https://en.wikipedia.org/wiki/Financial\\_crisis",
+      "line": "economics"
+    },
+    {
+      "id": "Business cycle",
+      "url": "https://en.wikipedia.org/wiki/Business\\_cycle",
+      "line": "economics"
+    },
+    {
+      "id": "Unemployment",
+      "url": "https://en.wikipedia.org/wiki/Unemployment",
+      "line": "economics"
+    },
+    {
+      "id": "Gross domestic product",
+      "url": "https://en.wikipedia.org/wiki/Gross\\_domestic\\_product",
+      "line": "economics"
+    },
+    {
+      "id": "Economic growth",
+      "url": "https://en.wikipedia.org/wiki/Economic\\_growth",
+      "line": "economics"
+    },
+    {
+      "id": "Recession",
+      "url": "https://en.wikipedia.org/wiki/Recession",
+      "line": "economics"
+    },
+    {
+      "id": "Adam Smith",
+      "url": "https://en.wikipedia.org/wiki/Adam\\_Smith",
+      "line": "economics"
+    },
+    {
+      "id": "David Ricardo",
+      "url": "https://en.wikipedia.org/wiki/David\\_Ricardo",
+      "line": "economics"
+    },
+    {
+      "id": "John Maynard Keynes",
+      "url": "https://en.wikipedia.org/wiki/John\\_Maynard\\_Keynes",
+      "line": "economics"
+    },
+    {
+      "id": "Milton Friedman",
+      "url": "https://en.wikipedia.org/wiki/Milton\\_Friedman",
+      "line": "economics"
+    },
+    {
+      "id": "Production (economics)",
+      "url": "https://en.wikipedia.org/wiki/Production\\_(economics)",
+      "line": "economics"
+    },
+    {
+      "id": "Consumption (economics)",
+      "url": "https://en.wikipedia.org/wiki/Consumption\\_(economics)",
+      "line": "economics"
+    },
+    {
+      "id": "Distribution (economics)",
+      "url": "https://en.wikipedia.org/wiki/Distribution\\_(economics)",
+      "line": "economics"
+    },
+    {
+      "id": "Factors of production",
+      "url": "https://en.wikipedia.org/wiki/Factors\\_of\\_production",
+      "line": "economics"
+    },
+    {
+      "id": "Human capital",
+      "url": "https://en.wikipedia.org/wiki/Human\\_capital",
+      "line": "economics"
+    },
+    {
+      "id": "Productivity (economics)",
+      "url": "https://en.wikipedia.org/wiki/Productivity\\_(economics)",
+      "line": "economics"
+    },
+    {
+      "id": "Profit (economics)",
+      "url": "https://en.wikipedia.org/wiki/Profit\\_(economics)",
+      "line": "economics"
+    },
+    {
+      "id": "Revenue",
+      "url": "https://en.wikipedia.org/wiki/Revenue",
+      "line": "economics"
+    },
+    {
+      "id": "Cost",
+      "url": "https://en.wikipedia.org/wiki/Cost",
+      "line": "economics"
+    },
+    {
+      "id": "Equilibrium (economics)",
+      "url": "https://en.wikipedia.org/wiki/Equilibrium\\_(economics)",
+      "line": "economics"
+    },
+    {
+      "id": "General equilibrium",
+      "url": "https://en.wikipedia.org/wiki/General\\_equilibrium",
+      "line": "economics"
+    },
+    {
+      "id": "Partial equilibrium",
+      "url": "https://en.wikipedia.org/wiki/Partial\\_equilibrium",
+      "line": "economics"
+    },
+    {
+      "id": "Pareto efficiency",
+      "url": "https://en.wikipedia.org/wiki/Pareto\\_efficiency",
+      "line": "economics"
+    },
+    {
+      "id": "Contract theory",
+      "url": "https://en.wikipedia.org/wiki/Contract\\_theory",
+      "line": "economics"
+    },
+    {
+      "id": "Labor economics",
+      "url": "https://en.wikipedia.org/wiki/Labor\\_economics",
+      "line": "economics"
+    },
+    {
+      "id": "Development economics",
+      "url": "https://en.wikipedia.org/wiki/Development\\_economics",
+      "line": "economics"
+    },
+    {
+      "id": "International economics",
+      "url": "https://en.wikipedia.org/wiki/International\\_economics",
+      "line": "economics"
+    },
+    {
+      "id": "Trade theory",
+      "url": "https://en.wikipedia.org/wiki/Trade\\_theory",
+      "line": "economics"
+    },
+    {
+      "id": "Heckscher–Ohlin model",
+      "url": "https://en.wikipedia.org/wiki/Heckscher–Ohlin\\_model",
+      "line": "economics"
+    },
+    {
+      "id": "Gravity model of trade",
+      "url": "https://en.wikipedia.org/wiki/Gravity\\_model\\_of\\_trade",
+      "line": "economics"
+    },
+    {
+      "id": "World Trade Organization",
+      "url": "https://en.wikipedia.org/wiki/World\\_Trade\\_Organization",
+      "line": "economics"
+    },
+    {
+      "id": "International Monetary Fund",
+      "url": "https://en.wikipedia.org/wiki/International\\_Monetary\\_Fund",
+      "line": "economics"
+    },
+    {
+      "id": "World Bank",
+      "url": "https://en.wikipedia.org/wiki/World\\_Bank",
+      "line": "economics"
+    },
+    {
+      "id": "Currency",
+      "url": "https://en.wikipedia.org/wiki/Currency",
+      "line": "economics"
+    },
+    {
+      "id": "Reserve currency",
+      "url": "https://en.wikipedia.org/wiki/Reserve\\_currency",
+      "line": "economics"
+    },
+    {
+      "id": "Bitcoin",
+      "url": "https://en.wikipedia.org/wiki/Bitcoin",
+      "line": "economics"
+    },
+    {
+      "id": "Cryptocurrency",
+      "url": "https://en.wikipedia.org/wiki/Cryptocurrency",
+      "line": "economics"
+    },
+    {
+      "id": "Financial inclusion",
+      "url": "https://en.wikipedia.org/wiki/Financial\\_inclusion",
+      "line": "economics"
+    },
+    {
+      "id": "Fintech",
+      "url": "https://en.wikipedia.org/wiki/Fintech",
+      "line": "economics"
+    },
+    {
+      "id": "Quantitative easing",
+      "url": "https://en.wikipedia.org/wiki/Quantitative\\_easing",
+      "line": "economics"
+    },
+    {
+      "id": "Austerity",
+      "url": "https://en.wikipedia.org/wiki/Austerity",
+      "line": "economics"
+    },
+    {
+      "id": "Keynesian economics",
+      "url": "https://en.wikipedia.org/wiki/Keynesian\\_economics",
+      "line": "economics"
+    },
+    {
+      "id": "Monetarism",
+      "url": "https://en.wikipedia.org/wiki/Monetarism",
+      "line": "economics"
+    },
+    {
+      "id": "Supply-side economics",
+      "url": "https://en.wikipedia.org/wiki/Supply-side\\_economics",
+      "line": "economics"
+    },
+    {
+      "id": "Neoclassical economics",
+      "url": "https://en.wikipedia.org/wiki/Neoclassical\\_economics",
+      "line": "economics"
+    },
+    {
+      "id": "New Keynesian economics",
+      "url": "https://en.wikipedia.org/wiki/New\\_Keynesian\\_economics",
+      "line": "economics"
+    },
+    {
+      "id": "Austrian School",
+      "url": "https://en.wikipedia.org/wiki/Austrian\\_School",
+      "line": "economics"
+    },
+    {
+      "id": "Market socialism",
+      "url": "https://en.wikipedia.org/wiki/Market\\_socialism",
+      "line": "economics"
+    },
+    {
+      "id": "Circular flow of income",
+      "url": "https://en.wikipedia.org/wiki/Circular\\_flow\\_of\\_income",
+      "line": "economics"
+    },
+    {
+      "id": "Wealth",
+      "url": "https://en.wikipedia.org/wiki/Wealth",
+      "line": "economics"
+    },
+    {
+      "id": "Poverty",
+      "url": "https://en.wikipedia.org/wiki/Poverty",
+      "line": "economics"
+    },
+    {
+      "id": "Inequality (economics)",
+      "url": "https://en.wikipedia.org/wiki/Inequality\\_(economics)",
+      "line": "economics"
+    },
+    {
+      "id": "Gini coefficient",
+      "url": "https://en.wikipedia.org/wiki/Gini\\_coefficient",
+      "line": "economics"
+    },
+    {
+      "id": "Lorenz curve",
+      "url": "https://en.wikipedia.org/wiki/Lorenz\\_curve",
+      "line": "economics"
+    },
+    {
+      "id": "Geography",
+      "url": "https://en.wikipedia.org/wiki/Geography",
+      "line": "geography"
+    },
+    {
+      "id": "Physical geography",
+      "url": "https://en.wikipedia.org/wiki/Physical\\_geography",
+      "line": "geography"
+    },
+    {
+      "id": "Human geography",
+      "url": "https://en.wikipedia.org/wiki/Human\\_geography",
+      "line": "geography"
+    },
+    {
+      "id": "Regional geography",
+      "url": "https://en.wikipedia.org/wiki/Regional\\_geography",
+      "line": "geography"
+    },
+    {
+      "id": "Technical geography",
+      "url": "https://en.wikipedia.org/wiki/Technical\\_geography",
+      "line": "geography"
+    },
+    {
+      "id": "Geology",
+      "url": "https://en.wikipedia.org/wiki/Geology",
+      "line": "geography"
+    },
+    {
+      "id": "Plate tectonics",
+      "url": "https://en.wikipedia.org/wiki/Plate\\_tectonics",
+      "line": "geography"
+    },
+    {
+      "id": "Geomorphology",
+      "url": "https://en.wikipedia.org/wiki/Geomorphology",
+      "line": "geography"
+    },
+    {
+      "id": "Hydrology",
+      "url": "https://en.wikipedia.org/wiki/Hydrology",
+      "line": "geography"
+    },
+    {
+      "id": "Climatology",
+      "url": "https://en.wikipedia.org/wiki/Climatology",
+      "line": "geography"
+    },
+    {
+      "id": "Oceanography",
+      "url": "https://en.wikipedia.org/wiki/Oceanography",
+      "line": "geography"
+    },
+    {
+      "id": "Biogeography",
+      "url": "https://en.wikipedia.org/wiki/Biogeography",
+      "line": "geography"
+    },
+    {
+      "id": "Pedology",
+      "url": "https://en.wikipedia.org/wiki/Pedology",
+      "line": "geography"
+    },
+    {
+      "id": "Urban geography",
+      "url": "https://en.wikipedia.org/wiki/Urban\\_geography",
+      "line": "geography"
+    },
+    {
+      "id": "Political geography",
+      "url": "https://en.wikipedia.org/wiki/Political\\_geography",
+      "line": "geography"
+    },
+    {
+      "id": "Economic geography",
+      "url": "https://en.wikipedia.org/wiki/Economic\\_geography",
+      "line": "geography"
+    },
+    {
+      "id": "Cultural geography",
+      "url": "https://en.wikipedia.org/wiki/Cultural\\_geography",
+      "line": "geography"
+    },
+    {
+      "id": "Cartography",
+      "url": "https://en.wikipedia.org/wiki/Cartography",
+      "line": "geography"
+    },
+    {
+      "id": "Geographic information system",
+      "url": "https://en.wikipedia.org/wiki/Geographic\\_information\\_system",
+      "line": "geography"
+    },
+    {
+      "id": "Remote sensing",
+      "url": "https://en.wikipedia.org/wiki/Remote\\_sensing",
+      "line": "geography"
+    },
+    {
+      "id": "Geodesy",
+      "url": "https://en.wikipedia.org/wiki/Geodesy",
+      "line": "geography"
+    },
+    {
+      "id": "Continent",
+      "url": "https://en.wikipedia.org/wiki/Continent",
+      "line": "geography"
+    },
+    {
+      "id": "Africa",
+      "url": "https://en.wikipedia.org/wiki/Africa",
+      "line": "geography"
+    },
+    {
+      "id": "Asia",
+      "url": "https://en.wikipedia.org/wiki/Asia",
+      "line": "geography"
+    },
+    {
+      "id": "Europe",
+      "url": "https://en.wikipedia.org/wiki/Europe",
+      "line": "geography"
+    },
+    {
+      "id": "North America",
+      "url": "https://en.wikipedia.org/wiki/North\\_America",
+      "line": "geography"
+    },
+    {
+      "id": "South America",
+      "url": "https://en.wikipedia.org/wiki/South\\_America",
+      "line": "geography"
+    },
+    {
+      "id": "Antarctica",
+      "url": "https://en.wikipedia.org/wiki/Antarctica",
+      "line": "geography"
+    },
+    {
+      "id": "Australia",
+      "url": "https://en.wikipedia.org/wiki/Australia",
+      "line": "geography"
+    },
+    {
+      "id": "Earth",
+      "url": "https://en.wikipedia.org/wiki/Earth",
+      "line": "geography"
+    },
+    {
+      "id": "Structure of the Earth",
+      "url": "https://en.wikipedia.org/wiki/Structure\\_of\\_the\\_Earth",
+      "line": "geography"
+    },
+    {
+      "id": "Crust (geology)",
+      "url": "https://en.wikipedia.org/wiki/Crust\\_(geology)",
+      "line": "geography"
+    },
+    {
+      "id": "Mantle (geology)",
+      "url": "https://en.wikipedia.org/wiki/Mantle\\_(geology)",
+      "line": "geography"
+    },
+    {
+      "id": "Outer core",
+      "url": "https://en.wikipedia.org/wiki/Outer\\_core",
+      "line": "geography"
+    },
+    {
+      "id": "Inner core",
+      "url": "https://en.wikipedia.org/wiki/Inner\\_core",
+      "line": "geography"
+    },
+    {
+      "id": "Rock (geology)",
+      "url": "https://en.wikipedia.org/wiki/Rock\\_(geology)",
+      "line": "geography"
+    },
+    {
+      "id": "Igneous rock",
+      "url": "https://en.wikipedia.org/wiki/Igneous\\_rock",
+      "line": "geography"
+    },
+    {
+      "id": "Sedimentary rock",
+      "url": "https://en.wikipedia.org/wiki/Sedimentary\\_rock",
+      "line": "geography"
+    },
+    {
+      "id": "Metamorphic rock",
+      "url": "https://en.wikipedia.org/wiki/Metamorphic\\_rock",
+      "line": "geography"
+    },
+    {
+      "id": "Mineral",
+      "url": "https://en.wikipedia.org/wiki/Mineral",
+      "line": "geography"
+    },
+    {
+      "id": "Mineralogy",
+      "url": "https://en.wikipedia.org/wiki/Mineralogy",
+      "line": "geography"
+    },
+    {
+      "id": "Petrology",
+      "url": "https://en.wikipedia.org/wiki/Petrology",
+      "line": "geography"
+    },
+    {
+      "id": "Stratigraphy",
+      "url": "https://en.wikipedia.org/wiki/Stratigraphy",
+      "line": "geography"
+    },
+    {
+      "id": "Structural geology",
+      "url": "https://en.wikipedia.org/wiki/Structural\\_geology",
+      "line": "geography"
+    },
+    {
+      "id": "Volcanology",
+      "url": "https://en.wikipedia.org/wiki/Volcanology",
+      "line": "geography"
+    },
+    {
+      "id": "Seismology",
+      "url": "https://en.wikipedia.org/wiki/Seismology",
+      "line": "geography"
+    },
+    {
+      "id": "Earthquake",
+      "url": "https://en.wikipedia.org/wiki/Earthquake",
+      "line": "geography"
+    },
+    {
+      "id": "Volcano",
+      "url": "https://en.wikipedia.org/wiki/Volcano",
+      "line": "geography"
+    },
+    {
+      "id": "Fault (geology)",
+      "url": "https://en.wikipedia.org/wiki/Fault\\_(geology)",
+      "line": "geography"
+    },
+    {
+      "id": "Uniformitarianism",
+      "url": "https://en.wikipedia.org/wiki/Uniformitarianism",
+      "line": "geography"
+    },
+    {
+      "id": "Law of superposition",
+      "url": "https://en.wikipedia.org/wiki/Law\\_of\\_superposition",
+      "line": "geography"
+    },
+    {
+      "id": "Geologic time scale",
+      "url": "https://en.wikipedia.org/wiki/Geologic\\_time\\_scale",
+      "line": "geography"
+    },
+    {
+      "id": "Pangea",
+      "url": "https://en.wikipedia.org/wiki/Pangea",
+      "line": "geography"
+    },
+    {
+      "id": "Continental drift",
+      "url": "https://en.wikipedia.org/wiki/Continental\\_drift",
+      "line": "geography"
+    },
+    {
+      "id": "United States",
+      "url": "https://en.wikipedia.org/wiki/United\\_States",
+      "line": "geography"
+    },
+    {
+      "id": "China",
+      "url": "https://en.wikipedia.org/wiki/China",
+      "line": "geography"
+    },
+    {
+      "id": "India",
+      "url": "https://en.wikipedia.org/wiki/India",
+      "line": "geography"
+    },
+    {
+      "id": "Russia",
+      "url": "https://en.wikipedia.org/wiki/Russia",
+      "line": "geography"
+    },
+    {
+      "id": "Brazil",
+      "url": "https://en.wikipedia.org/wiki/Brazil",
+      "line": "geography"
+    },
+    {
+      "id": "Japan",
+      "url": "https://en.wikipedia.org/wiki/Japan",
+      "line": "geography"
+    },
+    {
+      "id": "Germany",
+      "url": "https://en.wikipedia.org/wiki/Germany",
+      "line": "geography"
+    },
+    {
+      "id": "United Kingdom",
+      "url": "https://en.wikipedia.org/wiki/United\\_Kingdom",
+      "line": "geography"
+    },
+    {
+      "id": "France",
+      "url": "https://en.wikipedia.org/wiki/France",
+      "line": "geography"
+    },
+    {
+      "id": "Italy",
+      "url": "https://en.wikipedia.org/wiki/Italy",
+      "line": "geography"
+    },
+    {
+      "id": "Canada",
+      "url": "https://en.wikipedia.org/wiki/Canada",
+      "line": "geography"
+    },
+    {
+      "id": "Australia (continent)",
+      "url": "https://en.wikipedia.org/wiki/Australia\\_(continent)",
+      "line": "geography"
+    },
+    {
+      "id": "Mexico",
+      "url": "https://en.wikipedia.org/wiki/Mexico",
+      "line": "geography"
+    },
+    {
+      "id": "Indonesia",
+      "url": "https://en.wikipedia.org/wiki/Indonesia",
+      "line": "geography"
+    },
+    {
+      "id": "South Korea",
+      "url": "https://en.wikipedia.org/wiki/South\\_Korea",
+      "line": "geography"
+    },
+    {
+      "id": "Spain",
+      "url": "https://en.wikipedia.org/wiki/Spain",
+      "line": "geography"
+    },
+    {
+      "id": "New York City",
+      "url": "https://en.wikipedia.org/wiki/New\\_York\\_City",
+      "line": "geography"
+    },
+    {
+      "id": "Tokyo",
+      "url": "https://en.wikipedia.org/wiki/Tokyo",
+      "line": "geography"
+    },
+    {
+      "id": "Delhi",
+      "url": "https://en.wikipedia.org/wiki/Delhi",
+      "line": "geography"
+    },
+    {
+      "id": "Shanghai",
+      "url": "https://en.wikipedia.org/wiki/Shanghai",
+      "line": "geography"
+    },
+    {
+      "id": "Mumbai",
+      "url": "https://en.wikipedia.org/wiki/Mumbai",
+      "line": "geography"
+    },
+    {
+      "id": "São Paulo",
+      "url": "https://en.wikipedia.org/wiki/S%C3%A3o\\_Paulo",
+      "line": "geography"
+    },
+    {
+      "id": "Mexico City",
+      "url": "https://en.wikipedia.org/wiki/Mexico\\_City",
+      "line": "geography"
+    },
+    {
+      "id": "Cairo",
+      "url": "https://en.wikipedia.org/wiki/Cairo",
+      "line": "geography"
+    },
+    {
+      "id": "Dhaka",
+      "url": "https://en.wikipedia.org/wiki/Dhaka",
+      "line": "geography"
+    },
+    {
+      "id": "Beijing",
+      "url": "https://en.wikipedia.org/wiki/Beijing",
+      "line": "geography"
+    },
+    {
+      "id": "Osaka",
+      "url": "https://en.wikipedia.org/wiki/Osaka",
+      "line": "geography"
+    },
+    {
+      "id": "Chongqing",
+      "url": "https://en.wikipedia.org/wiki/Chongqing",
+      "line": "geography"
+    },
+    {
+      "id": "Karachi",
+      "url": "https://en.wikipedia.org/wiki/Karachi",
+      "line": "geography"
+    },
+    {
+      "id": "Istanbul",
+      "url": "https://en.wikipedia.org/wiki/Istanbul",
+      "line": "geography"
+    },
+    {
+      "id": "Lagos",
+      "url": "https://en.wikipedia.org/wiki/Lagos",
+      "line": "geography"
+    },
+    {
+      "id": "Kinshasa",
+      "url": "https://en.wikipedia.org/wiki/Kinshasa",
+      "line": "geography"
+    },
+    {
+      "id": "Tianjin",
+      "url": "https://en.wikipedia.org/wiki/Tianjin",
+      "line": "geography"
+    },
+    {
+      "id": "Paris",
+      "url": "https://en.wikipedia.org/wiki/Paris",
+      "line": "geography"
+    },
+    {
+      "id": "London",
+      "url": "https://en.wikipedia.org/wiki/London",
+      "line": "geography"
+    },
+    {
+      "id": "Los Angeles",
+      "url": "https://en.wikipedia.org/wiki/Los\\_Angeles",
+      "line": "geography"
+    },
+    {
+      "id": "Moscow",
+      "url": "https://en.wikipedia.org/wiki/Moscow",
+      "line": "geography"
+    },
+    {
+      "id": "List of countries by population",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_countries\\_by\\_population",
+      "line": "geography"
+    },
+    {
+      "id": "List of countries and dependencies by area",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_countries\\_and\\_dependencies\\_by\\_area",
+      "line": "geography"
+    },
+    {
+      "id": "List of countries by GDP (nominal)",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_countries\\_by\\_GDP\\_(nominal)",
+      "line": "geography"
+    },
+    {
+      "id": "List of largest cities",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_largest\\_cities",
+      "line": "geography"
+    },
+    {
+      "id": "Geography of India",
+      "url": "https://en.wikipedia.org/wiki/Geography\\_of\\_India",
+      "line": "geography"
+    },
+    {
+      "id": "Geography of China",
+      "url": "https://en.wikipedia.org/wiki/Geography\\_of\\_China",
+      "line": "geography"
+    },
+    {
+      "id": "Geography of the United States",
+      "url": "https://en.wikipedia.org/wiki/Geography\\_of\\_the\\_United\\_States",
+      "line": "geography"
+    },
+    {
+      "id": "Geography of Russia",
+      "url": "https://en.wikipedia.org/wiki/Geography\\_of\\_Russia",
+      "line": "geography"
+    },
+    {
+      "id": "Geography of Brazil",
+      "url": "https://en.wikipedia.org/wiki/Geography\\_of\\_Brazil",
+      "line": "geography"
+    },
+    {
+      "id": "Mountain",
+      "url": "https://en.wikipedia.org/wiki/Mountain",
+      "line": "geography"
+    },
+    {
+      "id": "River",
+      "url": "https://en.wikipedia.org/wiki/River",
+      "line": "geography"
+    },
+    {
+      "id": "Lake",
+      "url": "https://en.wikipedia.org/wiki/Lake",
+      "line": "geography"
+    },
+    {
+      "id": "Desert",
+      "url": "https://en.wikipedia.org/wiki/Desert",
+      "line": "geography"
+    },
+    {
+      "id": "Forest",
+      "url": "https://en.wikipedia.org/wiki/Forest",
+      "line": "geography"
+    },
+    {
+      "id": "Island",
+      "url": "https://en.wikipedia.org/wiki/Island",
+      "line": "geography"
+    },
+    {
+      "id": "Peninsula",
+      "url": "https://en.wikipedia.org/wiki/Peninsula",
+      "line": "geography"
+    },
+    {
+      "id": "Plain",
+      "url": "https://en.wikipedia.org/wiki/Plain",
+      "line": "geography"
+    },
+    {
+      "id": "Plateau",
+      "url": "https://en.wikipedia.org/wiki/Plateau",
+      "line": "geography"
+    },
+    {
+      "id": "Canyon",
+      "url": "https://en.wikipedia.org/wiki/Canyon",
+      "line": "geography"
+    },
+    {
+      "id": "Glacier",
+      "url": "https://en.wikipedia.org/wiki/Glacier",
+      "line": "geography"
+    },
+    {
+      "id": "Coast",
+      "url": "https://en.wikipedia.org/wiki/Coast",
+      "line": "geography"
+    },
+    {
+      "id": "Weathering",
+      "url": "https://en.wikipedia.org/wiki/Weathering",
+      "line": "geography"
+    },
+    {
+      "id": "Erosion",
+      "url": "https://en.wikipedia.org/wiki/Erosion",
+      "line": "geography"
+    },
+    {
+      "id": "Sediment",
+      "url": "https://en.wikipedia.org/wiki/Sediment",
+      "line": "geography"
+    },
+    {
+      "id": "Fold (geology)",
+      "url": "https://en.wikipedia.org/wiki/Fold\\_(geology)",
+      "line": "geography"
+    },
+    {
+      "id": "Orogeny",
+      "url": "https://en.wikipedia.org/wiki/Orogeny",
+      "line": "geography"
+    },
+    {
+      "id": "Subduction",
+      "url": "https://en.wikipedia.org/wiki/Subduction",
+      "line": "geography"
+    },
+    {
+      "id": "Seafloor spreading",
+      "url": "https://en.wikipedia.org/wiki/Seafloor\\_spreading",
+      "line": "geography"
+    },
+    {
+      "id": "Mid-ocean ridge",
+      "url": "https://en.wikipedia.org/wiki/Mid-ocean\\_ridge",
+      "line": "geography"
+    },
+    {
+      "id": "Himalayas",
+      "url": "https://en.wikipedia.org/wiki/Himalayas",
+      "line": "geography"
+    },
+    {
+      "id": "Andes",
+      "url": "https://en.wikipedia.org/wiki/Andes",
+      "line": "geography"
+    },
+    {
+      "id": "Rocky Mountains",
+      "url": "https://en.wikipedia.org/wiki/Rocky\\_Mountains",
+      "line": "geography"
+    },
+    {
+      "id": "Amazon River",
+      "url": "https://en.wikipedia.org/wiki/Amazon\\_River",
+      "line": "geography"
+    },
+    {
+      "id": "Nile",
+      "url": "https://en.wikipedia.org/wiki/Nile",
+      "line": "geography"
+    },
+    {
+      "id": "Mississippi River",
+      "url": "https://en.wikipedia.org/wiki/Mississippi\\_River",
+      "line": "geography"
+    },
+    {
+      "id": "Grand Canyon",
+      "url": "https://en.wikipedia.org/wiki/Grand\\_Canyon",
+      "line": "geography"
+    },
+    {
+      "id": "Mount Everest",
+      "url": "https://en.wikipedia.org/wiki/Mount\\_Everest",
+      "line": "geography"
+    },
+    {
+      "id": "Dead Sea",
+      "url": "https://en.wikipedia.org/wiki/Dead\\_Sea",
+      "line": "geography"
+    },
+    {
+      "id": "Great Barrier Reef",
+      "url": "https://en.wikipedia.org/wiki/Great\\_Barrier\\_Reef",
+      "line": "geography"
+    },
+    {
+      "id": "History",
+      "url": "https://en.wikipedia.org/wiki/History",
+      "line": "history"
+    },
+    {
+      "id": "Outline of history",
+      "url": "https://en.wikipedia.org/wiki/Outline\\_of\\_history",
+      "line": "history"
+    },
+    {
+      "id": "Human history",
+      "url": "https://en.wikipedia.org/wiki/Human\\_history",
+      "line": "history"
+    },
+    {
+      "id": "Ancient history",
+      "url": "https://en.wikipedia.org/wiki/Ancient\\_history",
+      "line": "history"
+    },
+    {
+      "id": "Classical antiquity",
+      "url": "https://en.wikipedia.org/wiki/Classical\\_antiquity",
+      "line": "history"
+    },
+    {
+      "id": "Middle Ages",
+      "url": "https://en.wikipedia.org/wiki/Middle\\_Ages",
+      "line": "history"
+    },
+    {
+      "id": "Early modern period",
+      "url": "https://en.wikipedia.org/wiki/Early\\_modern\\_period",
+      "line": "history"
+    },
+    {
+      "id": "Modern history",
+      "url": "https://en.wikipedia.org/wiki/Modern\\_history",
+      "line": "history"
+    },
+    {
+      "id": "Civilization",
+      "url": "https://en.wikipedia.org/wiki/Civilization",
+      "line": "history"
+    },
+    {
+      "id": "Cradle of civilization",
+      "url": "https://en.wikipedia.org/wiki/Cradle\\_of\\_civilization",
+      "line": "history"
+    },
+    {
+      "id": "Mesopotamia",
+      "url": "https://en.wikipedia.org/wiki/Mesopotamia",
+      "line": "history"
+    },
+    {
+      "id": "Ancient Egypt",
+      "url": "https://en.wikipedia.org/wiki/Ancient\\_Egypt",
+      "line": "history"
+    },
+    {
+      "id": "Indus Valley Civilisation",
+      "url": "https://en.wikipedia.org/wiki/Indus\\_Valley\\_Civilisation",
+      "line": "history"
+    },
+    {
+      "id": "Ancient China",
+      "url": "https://en.wikipedia.org/wiki/Ancient\\_China",
+      "line": "history"
+    },
+    {
+      "id": "Ancient Greece",
+      "url": "https://en.wikipedia.org/wiki/Ancient\\_Greece",
+      "line": "history"
+    },
+    {
+      "id": "Ancient Rome",
+      "url": "https://en.wikipedia.org/wiki/Ancient\\_Rome",
+      "line": "history"
+    },
+    {
+      "id": "Maya civilization",
+      "url": "https://en.wikipedia.org/wiki/Maya\\_civilization",
+      "line": "history"
+    },
+    {
+      "id": "Inca Empire",
+      "url": "https://en.wikipedia.org/wiki/Inca\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Aztec civilization",
+      "url": "https://en.wikipedia.org/wiki/Aztec\\_civilization",
+      "line": "history"
+    },
+    {
+      "id": "Olmec civilization",
+      "url": "https://en.wikipedia.org/wiki/Olmec\\_civilization",
+      "line": "history"
+    },
+    {
+      "id": "Sumer",
+      "url": "https://en.wikipedia.org/wiki/Sumer",
+      "line": "history"
+    },
+    {
+      "id": "Akkadian Empire",
+      "url": "https://en.wikipedia.org/wiki/Akkadian\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Babylonia",
+      "url": "https://en.wikipedia.org/wiki/Babylonia",
+      "line": "history"
+    },
+    {
+      "id": "Assyria",
+      "url": "https://en.wikipedia.org/wiki/Assyria",
+      "line": "history"
+    },
+    {
+      "id": "Persian Empire",
+      "url": "https://en.wikipedia.org/wiki/Persian\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Achaemenid Empire",
+      "url": "https://en.wikipedia.org/wiki/Achaemenid\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Parthian Empire",
+      "url": "https://en.wikipedia.org/wiki/Parthian\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Sasanian Empire",
+      "url": "https://en.wikipedia.org/wiki/Sasanian\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Macedonian Empire",
+      "url": "https://en.wikipedia.org/wiki/Macedonian\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Hellenistic period",
+      "url": "https://en.wikipedia.org/wiki/Hellenistic\\_period",
+      "line": "history"
+    },
+    {
+      "id": "Roman Empire",
+      "url": "https://en.wikipedia.org/wiki/Roman\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Byzantine Empire",
+      "url": "https://en.wikipedia.org/wiki/Byzantine\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Islamic Golden Age",
+      "url": "https://en.wikipedia.org/wiki/Islamic\\_Golden\\_Age",
+      "line": "history"
+    },
+    {
+      "id": "Mongol Empire",
+      "url": "https://en.wikipedia.org/wiki/Mongol\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Ottoman Empire",
+      "url": "https://en.wikipedia.org/wiki/Ottoman\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Mughal Empire",
+      "url": "https://en.wikipedia.org/wiki/Mughal\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "British Empire",
+      "url": "https://en.wikipedia.org/wiki/British\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Spanish Empire",
+      "url": "https://en.wikipedia.org/wiki/Spanish\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "French colonial empire",
+      "url": "https://en.wikipedia.org/wiki/French\\_colonial\\_empire",
+      "line": "history"
+    },
+    {
+      "id": "Russian Empire",
+      "url": "https://en.wikipedia.org/wiki/Russian\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Empire",
+      "url": "https://en.wikipedia.org/wiki/Empire",
+      "line": "history"
+    },
+    {
+      "id": "List of empires",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_empires",
+      "line": "history"
+    },
+    {
+      "id": "List of largest empires",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_largest\\_empires",
+      "line": "history"
+    },
+    {
+      "id": "Colonial empire",
+      "url": "https://en.wikipedia.org/wiki/Colonial\\_empire",
+      "line": "history"
+    },
+    {
+      "id": "War",
+      "url": "https://en.wikipedia.org/wiki/War",
+      "line": "history"
+    },
+    {
+      "id": "List of wars: before 1000",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_wars:\\_before\\_1000",
+      "line": "history"
+    },
+    {
+      "id": "List of wars: 1000–1499",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_wars:\\_1000%E2%80%931499",
+      "line": "history"
+    },
+    {
+      "id": "List of wars: 1500–1799",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_wars:\\_1500%E2%80%931799",
+      "line": "history"
+    },
+    {
+      "id": "List of wars: 1800–1899",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_wars:\\_1800%E2%80%931899",
+      "line": "history"
+    },
+    {
+      "id": "List of wars: 1900–1944",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_wars:\\_1900%E2%80%931944",
+      "line": "history"
+    },
+    {
+      "id": "List of wars: 1945–1989",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_wars:\\_1945%E2%80%931989",
+      "line": "history"
+    },
+    {
+      "id": "List of wars: 1990–2002",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_wars:\\_1990%E2%80%932002",
+      "line": "history"
+    },
+    {
+      "id": "List of wars: 2003–present",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_wars:\\_2003%E2%80%93present",
+      "line": "history"
+    },
+    {
+      "id": "World War I",
+      "url": "https://en.wikipedia.org/wiki/World\\_War\\_I",
+      "line": "history"
+    },
+    {
+      "id": "World War II",
+      "url": "https://en.wikipedia.org/wiki/World\\_War\\_II",
+      "line": "history"
+    },
+    {
+      "id": "Cold War",
+      "url": "https://en.wikipedia.org/wiki/Cold\\_War",
+      "line": "history"
+    },
+    {
+      "id": "Napoleonic Wars",
+      "url": "https://en.wikipedia.org/wiki/Napoleonic\\_Wars",
+      "line": "history"
+    },
+    {
+      "id": "Thirty Years' War",
+      "url": "https://en.wikipedia.org/wiki/Thirty\\_Years%27\\_War",
+      "line": "history"
+    },
+    {
+      "id": "Hundred Years' War",
+      "url": "https://en.wikipedia.org/wiki/Hundred\\_Years%27\\_War",
+      "line": "history"
+    },
+    {
+      "id": "Peloponnesian War",
+      "url": "https://en.wikipedia.org/wiki/Peloponnesian\\_War",
+      "line": "history"
+    },
+    {
+      "id": "Punic Wars",
+      "url": "https://en.wikipedia.org/wiki/Punic\\_Wars",
+      "line": "history"
+    },
+    {
+      "id": "Crusades",
+      "url": "https://en.wikipedia.org/wiki/Crusades",
+      "line": "history"
+    },
+    {
+      "id": "Mongol invasions and conquests",
+      "url": "https://en.wikipedia.org/wiki/Mongol\\_invasions\\_and\\_conquests",
+      "line": "history"
+    },
+    {
+      "id": "American Civil War",
+      "url": "https://en.wikipedia.org/wiki/American\\_Civil\\_War",
+      "line": "history"
+    },
+    {
+      "id": "Franco-Prussian War",
+      "url": "https://en.wikipedia.org/wiki/Franco-Prussian\\_War",
+      "line": "history"
+    },
+    {
+      "id": "Vietnam War",
+      "url": "https://en.wikipedia.org/wiki/Vietnam\\_War",
+      "line": "history"
+    },
+    {
+      "id": "Korean War",
+      "url": "https://en.wikipedia.org/wiki/Korean\\_War",
+      "line": "history"
+    },
+    {
+      "id": "Gulf War",
+      "url": "https://en.wikipedia.org/wiki/Gulf\\_War",
+      "line": "history"
+    },
+    {
+      "id": "Afghanistan conflict (1978–present)",
+      "url": "https://en.wikipedia.org/wiki/Afghanistan\\_conflict\\_(1978%E2%80%93present)",
+      "line": "history"
+    },
+    {
+      "id": "Syrian civil war",
+      "url": "https://en.wikipedia.org/wiki/Syrian\\_civil\\_war",
+      "line": "history"
+    },
+    {
+      "id": "Russo-Ukrainian War",
+      "url": "https://en.wikipedia.org/wiki/Russo-Ukrainian\\_War",
+      "line": "history"
+    },
+    {
+      "id": "Military history",
+      "url": "https://en.wikipedia.org/wiki/Military\\_history",
+      "line": "history"
+    },
+    {
+      "id": "History of warfare",
+      "url": "https://en.wikipedia.org/wiki/History\\_of\\_warfare",
+      "line": "history"
+    },
+    {
+      "id": "Ancient warfare",
+      "url": "https://en.wikipedia.org/wiki/Ancient\\_warfare",
+      "line": "history"
+    },
+    {
+      "id": "Medieval warfare",
+      "url": "https://en.wikipedia.org/wiki/Medieval\\_warfare",
+      "line": "history"
+    },
+    {
+      "id": "Early modern warfare",
+      "url": "https://en.wikipedia.org/wiki/Early\\_modern\\_warfare",
+      "line": "history"
+    },
+    {
+      "id": "Modern warfare",
+      "url": "https://en.wikipedia.org/wiki/Modern\\_warfare",
+      "line": "history"
+    },
+    {
+      "id": "Prehistoric warfare",
+      "url": "https://en.wikipedia.org/wiki/Prehistoric\\_warfare",
+      "line": "history"
+    },
+    {
+      "id": "Battle",
+      "url": "https://en.wikipedia.org/wiki/Battle",
+      "line": "history"
+    },
+    {
+      "id": "List of battles before 301",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_battles\\_before\\_301",
+      "line": "history"
+    },
+    {
+      "id": "List of battles 301–1300",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_battles\\_301%E2%80%931300",
+      "line": "history"
+    },
+    {
+      "id": "List of battles 1301–1600",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_battles\\_1301%E2%80%931600",
+      "line": "history"
+    },
+    {
+      "id": "List of battles 1601–1800",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_battles\\_1601%E2%80%931800",
+      "line": "history"
+    },
+    {
+      "id": "List of battles 1801–1900",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_battles\\_1801%E2%80%931900",
+      "line": "history"
+    },
+    {
+      "id": "List of battles 1901–2000",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_battles\\_1901%E2%80%932000",
+      "line": "history"
+    },
+    {
+      "id": "List of battles since 2001",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_battles\\_since\\_2001",
+      "line": "history"
+    },
+    {
+      "id": "Battle of Thermopylae",
+      "url": "https://en.wikipedia.org/wiki/Battle\\_of\\_Thermopylae",
+      "line": "history"
+    },
+    {
+      "id": "Battle of Gaugamela",
+      "url": "https://en.wikipedia.org/wiki/Battle\\_of\\_Gaugamela",
+      "line": "history"
+    },
+    {
+      "id": "Battle of Cannae",
+      "url": "https://en.wikipedia.org/wiki/Battle\\_of\\_Cannae",
+      "line": "history"
+    },
+    {
+      "id": "Battle of Actium",
+      "url": "https://en.wikipedia.org/wiki/Battle\\_of\\_Actium",
+      "line": "history"
+    },
+    {
+      "id": "Battle of Hastings",
+      "url": "https://en.wikipedia.org/wiki/Battle\\_of\\_Hastings",
+      "line": "history"
+    },
+    {
+      "id": "Battle of Grunwald",
+      "url": "https://en.wikipedia.org/wiki/Battle\\_of\\_Grunwald",
+      "line": "history"
+    },
+    {
+      "id": "Battle of Agincourt",
+      "url": "https://en.wikipedia.org/wiki/Battle\\_of\\_Agincourt",
+      "line": "history"
+    },
+    {
+      "id": "Battle of Waterloo",
+      "url": "https://en.wikipedia.org/wiki/Battle\\_of\\_Waterloo",
+      "line": "history"
+    },
+    {
+      "id": "Battle of Gettysburg",
+      "url": "https://en.wikipedia.org/wiki/Battle\\_of\\_Gettysburg",
+      "line": "history"
+    },
+    {
+      "id": "Battle of Stalingrad",
+      "url": "https://en.wikipedia.org/wiki/Battle\\_of\\_Stalingrad",
+      "line": "history"
+    },
+    {
+      "id": "Battle of Midway",
+      "url": "https://en.wikipedia.org/wiki/Battle\\_of\\_Midway",
+      "line": "history"
+    },
+    {
+      "id": "D-Day",
+      "url": "https://en.wikipedia.org/wiki/D-Day",
+      "line": "history"
+    },
+    {
+      "id": "Human evolution",
+      "url": "https://en.wikipedia.org/wiki/Human\\_evolution",
+      "line": "history"
+    },
+    {
+      "id": "Prehistory",
+      "url": "https://en.wikipedia.org/wiki/Prehistory",
+      "line": "history"
+    },
+    {
+      "id": "Neolithic Revolution",
+      "url": "https://en.wikipedia.org/wiki/Neolithic\\_Revolution",
+      "line": "history"
+    },
+    {
+      "id": "Bronze Age",
+      "url": "https://en.wikipedia.org/wiki/Bronze\\_Age",
+      "line": "history"
+    },
+    {
+      "id": "Iron Age",
+      "url": "https://en.wikipedia.org/wiki/Iron\\_Age",
+      "line": "history"
+    },
+    {
+      "id": "Axial Age",
+      "url": "https://en.wikipedia.org/wiki/Axial\\_Age",
+      "line": "history"
+    },
+    {
+      "id": "Fall of the Western Roman Empire",
+      "url": "https://en.wikipedia.org/wiki/Fall\\_of\\_the\\_Western\\_Roman\\_Empire",
+      "line": "history"
+    },
+    {
+      "id": "Black Death",
+      "url": "https://en.wikipedia.org/wiki/Black\\_Death",
+      "line": "history"
+    },
+    {
+      "id": "Age of Discovery",
+      "url": "https://en.wikipedia.org/wiki/Age\\_of\\_Discovery",
+      "line": "history"
+    },
+    {
+      "id": "Industrial Revolution",
+      "url": "https://en.wikipedia.org/wiki/Industrial\\_Revolution",
+      "line": "history"
+    },
+    {
+      "id": "Decolonization",
+      "url": "https://en.wikipedia.org/wiki/Decolonization",
+      "line": "history"
+    },
+    {
+      "id": "History of the world",
+      "url": "https://en.wikipedia.org/wiki/History\\_of\\_the\\_world",
+      "line": "history"
+    },
+    {
+      "id": "Timeline of world history",
+      "url": "https://en.wikipedia.org/wiki/Timeline\\_of\\_world\\_history",
+      "line": "history"
+    },
+    {
+      "id": "Ancient Near East",
+      "url": "https://en.wikipedia.org/wiki/Ancient\\_Near\\_East",
+      "line": "history"
+    },
+    {
+      "id": "History of India",
+      "url": "https://en.wikipedia.org/wiki/History\\_of\\_India",
+      "line": "history"
+    },
+    {
+      "id": "History of China",
+      "url": "https://en.wikipedia.org/wiki/History\\_of\\_China",
+      "line": "history"
+    },
+    {
+      "id": "History of Europe",
+      "url": "https://en.wikipedia.org/wiki/History\\_of\\_Europe",
+      "line": "history"
+    },
+    {
+      "id": "History of Africa",
+      "url": "https://en.wikipedia.org/wiki/History\\_of\\_Africa",
+      "line": "history"
+    },
+    {
+      "id": "History of the Americas",
+      "url": "https://en.wikipedia.org/wiki/History\\_of\\_the\\_Americas",
+      "line": "history"
+    },
+    {
+      "id": "History of Asia",
+      "url": "https://en.wikipedia.org/wiki/History\\_of\\_Asia",
+      "line": "history"
+    },
+    {
+      "id": "Mathematics",
+      "url": "https://en.wikipedia.org/wiki/Mathematics",
+      "line": "mathematics"
+    },
+    {
+      "id": "Algebra",
+      "url": "https://en.wikipedia.org/wiki/Algebra",
+      "line": "mathematics"
+    },
+    {
+      "id": "Abstract algebra",
+      "url": "https://en.wikipedia.org/wiki/Abstract\\_algebra",
+      "line": "mathematics"
+    },
+    {
+      "id": "Linear algebra",
+      "url": "https://en.wikipedia.org/wiki/Linear\\_algebra",
+      "line": "mathematics"
+    },
+    {
+      "id": "Group theory",
+      "url": "https://en.wikipedia.org/wiki/Group\\_theory",
+      "line": "mathematics"
+    },
+    {
+      "id": "Ring (mathematics)",
+      "url": "https://en.wikipedia.org/wiki/Ring\\_(mathematics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Field (mathematics)",
+      "url": "https://en.wikipedia.org/wiki/Field\\_(mathematics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Vector space",
+      "url": "https://en.wikipedia.org/wiki/Vector\\_space",
+      "line": "mathematics"
+    },
+    {
+      "id": "Matrix (mathematics)",
+      "url": "https://en.wikipedia.org/wiki/Matrix\\_(mathematics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Determinant",
+      "url": "https://en.wikipedia.org/wiki/Determinant",
+      "line": "mathematics"
+    },
+    {
+      "id": "Eigenvalues and eigenvectors",
+      "url": "https://en.wikipedia.org/wiki/Eigenvalues\\_and\\_eigenvectors",
+      "line": "mathematics"
+    },
+    {
+      "id": "Polynomial",
+      "url": "https://en.wikipedia.org/wiki/Polynomial",
+      "line": "mathematics"
+    },
+    {
+      "id": "Galois theory",
+      "url": "https://en.wikipedia.org/wiki/Galois\\_theory",
+      "line": "mathematics"
+    },
+    {
+      "id": "Commutative algebra",
+      "url": "https://en.wikipedia.org/wiki/Commutative\\_algebra",
+      "line": "mathematics"
+    },
+    {
+      "id": "Homological algebra",
+      "url": "https://en.wikipedia.org/wiki/Homological\\_algebra",
+      "line": "mathematics"
+    },
+    {
+      "id": "Calculus",
+      "url": "https://en.wikipedia.org/wiki/Calculus",
+      "line": "mathematics"
+    },
+    {
+      "id": "Differential calculus",
+      "url": "https://en.wikipedia.org/wiki/Differential\\_calculus",
+      "line": "mathematics"
+    },
+    {
+      "id": "Integral calculus",
+      "url": "https://en.wikipedia.org/wiki/Integral\\_calculus",
+      "line": "mathematics"
+    },
+    {
+      "id": "Limit (mathematics)",
+      "url": "https://en.wikipedia.org/wiki/Limit\\_(mathematics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Derivative",
+      "url": "https://en.wikipedia.org/wiki/Derivative",
+      "line": "mathematics"
+    },
+    {
+      "id": "Integral",
+      "url": "https://en.wikipedia.org/wiki/Integral",
+      "line": "mathematics"
+    },
+    {
+      "id": "Fundamental theorem of calculus",
+      "url": "https://en.wikipedia.org/wiki/Fundamental\\_theorem\\_of\\_calculus",
+      "line": "mathematics"
+    },
+    {
+      "id": "Multivariable calculus",
+      "url": "https://en.wikipedia.org/wiki/Multivariable\\_calculus",
+      "line": "mathematics"
+    },
+    {
+      "id": "Partial derivative",
+      "url": "https://en.wikipedia.org/wiki/Partial\\_derivative",
+      "line": "mathematics"
+    },
+    {
+      "id": "Multiple integral",
+      "url": "https://en.wikipedia.org/wiki/Multiple\\_integral",
+      "line": "mathematics"
+    },
+    {
+      "id": "Vector calculus",
+      "url": "https://en.wikipedia.org/wiki/Vector\\_calculus",
+      "line": "mathematics"
+    },
+    {
+      "id": "Real analysis",
+      "url": "https://en.wikipedia.org/wiki/Real\\_analysis",
+      "line": "mathematics"
+    },
+    {
+      "id": "Complex analysis",
+      "url": "https://en.wikipedia.org/wiki/Complex\\_analysis",
+      "line": "mathematics"
+    },
+    {
+      "id": "Functional analysis",
+      "url": "https://en.wikipedia.org/wiki/Functional\\_analysis",
+      "line": "mathematics"
+    },
+    {
+      "id": "Measure theory",
+      "url": "https://en.wikipedia.org/wiki/Measure\\_theory",
+      "line": "mathematics"
+    },
+    {
+      "id": "Differential equation",
+      "url": "https://en.wikipedia.org/wiki/Differential\\_equation",
+      "line": "mathematics"
+    },
+    {
+      "id": "Ordinary differential equation",
+      "url": "https://en.wikipedia.org/wiki/Ordinary\\_differential\\_equation",
+      "line": "mathematics"
+    },
+    {
+      "id": "Partial differential equation",
+      "url": "https://en.wikipedia.org/wiki/Partial\\_differential\\_equation",
+      "line": "mathematics"
+    },
+    {
+      "id": "Statistics",
+      "url": "https://en.wikipedia.org/wiki/Statistics",
+      "line": "mathematics"
+    },
+    {
+      "id": "Probability theory",
+      "url": "https://en.wikipedia.org/wiki/Probability\\_theory",
+      "line": "mathematics"
+    },
+    {
+      "id": "Probability",
+      "url": "https://en.wikipedia.org/wiki/Probability",
+      "line": "mathematics"
+    },
+    {
+      "id": "Random variable",
+      "url": "https://en.wikipedia.org/wiki/Random\\_variable",
+      "line": "mathematics"
+    },
+    {
+      "id": "Probability distribution",
+      "url": "https://en.wikipedia.org/wiki/Probability\\_distribution",
+      "line": "mathematics"
+    },
+    {
+      "id": "Normal distribution",
+      "url": "https://en.wikipedia.org/wiki/Normal\\_distribution",
+      "line": "mathematics"
+    },
+    {
+      "id": "Expected value",
+      "url": "https://en.wikipedia.org/wiki/Expected\\_value",
+      "line": "mathematics"
+    },
+    {
+      "id": "Variance",
+      "url": "https://en.wikipedia.org/wiki/Variance",
+      "line": "mathematics"
+    },
+    {
+      "id": "Central limit theorem",
+      "url": "https://en.wikipedia.org/wiki/Central\\_limit\\_theorem",
+      "line": "mathematics"
+    },
+    {
+      "id": "Bayes' theorem",
+      "url": "https://en.wikipedia.org/wiki/Bayes%27\\_theorem",
+      "line": "mathematics"
+    },
+    {
+      "id": "Statistical inference",
+      "url": "https://en.wikipedia.org/wiki/Statistical\\_inference",
+      "line": "mathematics"
+    },
+    {
+      "id": "Statistical hypothesis test",
+      "url": "https://en.wikipedia.org/wiki/Statistical\\_hypothesis\\_test",
+      "line": "mathematics"
+    },
+    {
+      "id": "Null hypothesis",
+      "url": "https://en.wikipedia.org/wiki/Null\\_hypothesis",
+      "line": "mathematics"
+    },
+    {
+      "id": "P-value",
+      "url": "https://en.wikipedia.org/wiki/P-value",
+      "line": "mathematics"
+    },
+    {
+      "id": "Confidence interval",
+      "url": "https://en.wikipedia.org/wiki/Confidence\\_interval",
+      "line": "mathematics"
+    },
+    {
+      "id": "Regression analysis",
+      "url": "https://en.wikipedia.org/wiki/Regression\\_analysis",
+      "line": "mathematics"
+    },
+    {
+      "id": "Linear regression",
+      "url": "https://en.wikipedia.org/wiki/Linear\\_regression",
+      "line": "mathematics"
+    },
+    {
+      "id": "Descriptive statistics",
+      "url": "https://en.wikipedia.org/wiki/Descriptive\\_statistics",
+      "line": "mathematics"
+    },
+    {
+      "id": "Mean",
+      "url": "https://en.wikipedia.org/wiki/Mean",
+      "line": "mathematics"
+    },
+    {
+      "id": "Median",
+      "url": "https://en.wikipedia.org/wiki/Median",
+      "line": "mathematics"
+    },
+    {
+      "id": "Mode (statistics)",
+      "url": "https://en.wikipedia.org/wiki/Mode\\_(statistics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Standard deviation",
+      "url": "https://en.wikipedia.org/wiki/Standard\\_deviation",
+      "line": "mathematics"
+    },
+    {
+      "id": "Correlation",
+      "url": "https://en.wikipedia.org/wiki/Correlation",
+      "line": "mathematics"
+    },
+    {
+      "id": "Analysis of variance",
+      "url": "https://en.wikipedia.org/wiki/Analysis\\_of\\_variance",
+      "line": "mathematics"
+    },
+    {
+      "id": "Chi-squared test",
+      "url": "https://en.wikipedia.org/wiki/Chi-squared\\_test",
+      "line": "mathematics"
+    },
+    {
+      "id": "Student's t-test",
+      "url": "https://en.wikipedia.org/wiki/Student%27s\\_t-test",
+      "line": "mathematics"
+    },
+    {
+      "id": "Mathematical analysis",
+      "url": "https://en.wikipedia.org/wiki/Mathematical\\_analysis",
+      "line": "mathematics"
+    },
+    {
+      "id": "Topology",
+      "url": "https://en.wikipedia.org/wiki/Topology",
+      "line": "mathematics"
+    },
+    {
+      "id": "Topological space",
+      "url": "https://en.wikipedia.org/wiki/Topological\\_space",
+      "line": "mathematics"
+    },
+    {
+      "id": "Compact space",
+      "url": "https://en.wikipedia.org/wiki/Compact\\_space",
+      "line": "mathematics"
+    },
+    {
+      "id": "Geometry",
+      "url": "https://en.wikipedia.org/wiki/Geometry",
+      "line": "mathematics"
+    },
+    {
+      "id": "Euclidean geometry",
+      "url": "https://en.wikipedia.org/wiki/Euclidean\\_geometry",
+      "line": "mathematics"
+    },
+    {
+      "id": "Non-Euclidean geometry",
+      "url": "https://en.wikipedia.org/wiki/Non-Euclidean\\_geometry",
+      "line": "mathematics"
+    },
+    {
+      "id": "Differential geometry",
+      "url": "https://en.wikipedia.org/wiki/Differential\\_geometry",
+      "line": "mathematics"
+    },
+    {
+      "id": "Algebraic geometry",
+      "url": "https://en.wikipedia.org/wiki/Algebraic\\_geometry",
+      "line": "mathematics"
+    },
+    {
+      "id": "Number theory",
+      "url": "https://en.wikipedia.org/wiki/Number\\_theory",
+      "line": "mathematics"
+    },
+    {
+      "id": "Prime number",
+      "url": "https://en.wikipedia.org/wiki/Prime\\_number",
+      "line": "mathematics"
+    },
+    {
+      "id": "Integer",
+      "url": "https://en.wikipedia.org/wiki/Integer",
+      "line": "mathematics"
+    },
+    {
+      "id": "Real number",
+      "url": "https://en.wikipedia.org/wiki/Real\\_number",
+      "line": "mathematics"
+    },
+    {
+      "id": "Complex number",
+      "url": "https://en.wikipedia.org/wiki/Complex\\_number",
+      "line": "mathematics"
+    },
+    {
+      "id": "Set theory",
+      "url": "https://en.wikipedia.org/wiki/Set\\_theory",
+      "line": "mathematics"
+    },
+    {
+      "id": "Discrete mathematics",
+      "url": "https://en.wikipedia.org/wiki/Discrete\\_mathematics",
+      "line": "mathematics"
+    },
+    {
+      "id": "Graph theory",
+      "url": "https://en.wikipedia.org/wiki/Graph\\_theory",
+      "line": "mathematics"
+    },
+    {
+      "id": "Combinatorics",
+      "url": "https://en.wikipedia.org/wiki/Combinatorics",
+      "line": "mathematics"
+    },
+    {
+      "id": "Logic",
+      "url": "https://en.wikipedia.org/wiki/Logic",
+      "line": "mathematics"
+    },
+    {
+      "id": "Mathematical logic",
+      "url": "https://en.wikipedia.org/wiki/Mathematical\\_logic",
+      "line": "mathematics"
+    },
+    {
+      "id": "Constant (mathematics)",
+      "url": "https://en.wikipedia.org/wiki/Constant\\_(mathematics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Pi",
+      "url": "https://en.wikipedia.org/wiki/Pi",
+      "line": "mathematics"
+    },
+    {
+      "id": "E (mathematical constant)",
+      "url": "https://en.wikipedia.org/wiki/E\\_(mathematical\\_constant)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Imaginary unit",
+      "url": "https://en.wikipedia.org/wiki/Imaginary\\_unit",
+      "line": "mathematics"
+    },
+    {
+      "id": "Golden ratio",
+      "url": "https://en.wikipedia.org/wiki/Golden\\_ratio",
+      "line": "mathematics"
+    },
+    {
+      "id": "Function (mathematics)",
+      "url": "https://en.wikipedia.org/wiki/Function\\_(mathematics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Variable (mathematics)",
+      "url": "https://en.wikipedia.org/wiki/Variable\\_(mathematics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Equation",
+      "url": "https://en.wikipedia.org/wiki/Equation",
+      "line": "mathematics"
+    },
+    {
+      "id": "Formula",
+      "url": "https://en.wikipedia.org/wiki/Formula",
+      "line": "mathematics"
+    },
+    {
+      "id": "Theorem",
+      "url": "https://en.wikipedia.org/wiki/Theorem",
+      "line": "mathematics"
+    },
+    {
+      "id": "Proof (mathematics)",
+      "url": "https://en.wikipedia.org/wiki/Proof\\_(mathematics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Axiom",
+      "url": "https://en.wikipedia.org/wiki/Axiom",
+      "line": "mathematics"
+    },
+    {
+      "id": "Conjecture",
+      "url": "https://en.wikipedia.org/wiki/Conjecture",
+      "line": "mathematics"
+    },
+    {
+      "id": "Recursion",
+      "url": "https://en.wikipedia.org/wiki/Recursion",
+      "line": "mathematics"
+    },
+    {
+      "id": "Mathematical induction",
+      "url": "https://en.wikipedia.org/wiki/Mathematical\\_induction",
+      "line": "mathematics"
+    },
+    {
+      "id": "Sequence",
+      "url": "https://en.wikipedia.org/wiki/Sequence",
+      "line": "mathematics"
+    },
+    {
+      "id": "Series (mathematics)",
+      "url": "https://en.wikipedia.org/wiki/Series\\_(mathematics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Fourier series",
+      "url": "https://en.wikipedia.org/wiki/Fourier\\_series",
+      "line": "mathematics"
+    },
+    {
+      "id": "Numerical analysis",
+      "url": "https://en.wikipedia.org/wiki/Numerical\\_analysis",
+      "line": "mathematics"
+    },
+    {
+      "id": "Linear programming",
+      "url": "https://en.wikipedia.org/wiki/Linear\\_programming",
+      "line": "mathematics"
+    },
+    {
+      "id": "Optimization (mathematics)",
+      "url": "https://en.wikipedia.org/wiki/Optimization\\_(mathematics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Game theory",
+      "url": "https://en.wikipedia.org/wiki/Game\\_theory",
+      "line": "mathematics"
+    },
+    {
+      "id": "Operations research",
+      "url": "https://en.wikipedia.org/wiki/Operations\\_research",
+      "line": "mathematics"
+    },
+    {
+      "id": "Mathematical model",
+      "url": "https://en.wikipedia.org/wiki/Mathematical\\_model",
+      "line": "mathematics"
+    },
+    {
+      "id": "Metric space",
+      "url": "https://en.wikipedia.org/wiki/Metric\\_space",
+      "line": "mathematics"
+    },
+    {
+      "id": "Continuity (mathematics)",
+      "url": "https://en.wikipedia.org/wiki/Continuity\\_(mathematics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Convergence (mathematics)",
+      "url": "https://en.wikipedia.org/wiki/Convergence\\_(mathematics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Law of large numbers",
+      "url": "https://en.wikipedia.org/wiki/Law\\_of\\_large\\_numbers",
+      "line": "mathematics"
+    },
+    {
+      "id": "Random walk",
+      "url": "https://en.wikipedia.org/wiki/Random\\_walk",
+      "line": "mathematics"
+    },
+    {
+      "id": "Markov chain",
+      "url": "https://en.wikipedia.org/wiki/Markov\\_chain",
+      "line": "mathematics"
+    },
+    {
+      "id": "Time series",
+      "url": "https://en.wikipedia.org/wiki/Time\\_series",
+      "line": "mathematics"
+    },
+    {
+      "id": "Principal component analysis",
+      "url": "https://en.wikipedia.org/wiki/Principal\\_component\\_analysis",
+      "line": "mathematics"
+    },
+    {
+      "id": "Maximum likelihood estimation",
+      "url": "https://en.wikipedia.org/wiki/Maximum\\_likelihood\\_estimation",
+      "line": "mathematics"
+    },
+    {
+      "id": "Bayesian statistics",
+      "url": "https://en.wikipedia.org/wiki/Bayesian\\_statistics",
+      "line": "mathematics"
+    },
+    {
+      "id": "Frequentist inference",
+      "url": "https://en.wikipedia.org/wiki/Frequentist\\_inference",
+      "line": "mathematics"
+    },
+    {
+      "id": "Linear algebraic group",
+      "url": "https://en.wikipedia.org/wiki/Linear\\_algebraic\\_group",
+      "line": "mathematics"
+    },
+    {
+      "id": "Lie group",
+      "url": "https://en.wikipedia.org/wiki/Lie\\_group",
+      "line": "mathematics"
+    },
+    {
+      "id": "Dynamical system",
+      "url": "https://en.wikipedia.org/wiki/Dynamical\\_system",
+      "line": "mathematics"
+    },
+    {
+      "id": "Fractal",
+      "url": "https://en.wikipedia.org/wiki/Fractal",
+      "line": "mathematics"
+    },
+    {
+      "id": "Chaos theory",
+      "url": "https://en.wikipedia.org/wiki/Chaos\\_theory",
+      "line": "mathematics"
+    },
+    {
+      "id": "Catastrophe theory",
+      "url": "https://en.wikipedia.org/wiki/Catastrophe\\_theory",
+      "line": "mathematics"
+    },
+    {
+      "id": "Knot theory",
+      "url": "https://en.wikipedia.org/wiki/Knot\\_theory",
+      "line": "mathematics"
+    },
+    {
+      "id": "Homotopy",
+      "url": "https://en.wikipedia.org/wiki/Homotopy",
+      "line": "mathematics"
+    },
+    {
+      "id": "Homology (mathematics)",
+      "url": "https://en.wikipedia.org/wiki/Homology\\_(mathematics)",
+      "line": "mathematics"
+    },
+    {
+      "id": "Poincaré conjecture",
+      "url": "https://en.wikipedia.org/wiki/Poincar%C3%A9\\_conjecture",
+      "line": "mathematics"
+    },
+    {
+      "id": "Riemann hypothesis",
+      "url": "https://en.wikipedia.org/wiki/Riemann\\_hypothesis",
+      "line": "mathematics"
+    },
+    {
+      "id": "P vs NP problem",
+      "url": "https://en.wikipedia.org/wiki/P vs NP\\_problem",
+      "line": "mathematics"
+    },
+    {
+      "id": "Philosophy",
+      "url": "https://en.wikipedia.org/wiki/Philosophy",
+      "line": "philosophy"
+    },
+    {
+      "id": "Outline of philosophy",
+      "url": "https://en.wikipedia.org/wiki/Outline\\_of\\_philosophy",
+      "line": "philosophy"
+    },
+    {
+      "id": "Logic",
+      "url": "https://en.wikipedia.org/wiki/Logic",
+      "line": "philosophy"
+    },
+    {
+      "id": "Outline of logic",
+      "url": "https://en.wikipedia.org/wiki/Outline\\_of\\_logic",
+      "line": "philosophy"
+    },
+    {
+      "id": "Ethics",
+      "url": "https://en.wikipedia.org/wiki/Ethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Outline of ethics",
+      "url": "https://en.wikipedia.org/wiki/Outline\\_of\\_ethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Epistemology",
+      "url": "https://en.wikipedia.org/wiki/Epistemology",
+      "line": "philosophy"
+    },
+    {
+      "id": "Outline of epistemology",
+      "url": "https://en.wikipedia.org/wiki/Outline\\_of\\_epistemology",
+      "line": "philosophy"
+    },
+    {
+      "id": "Metaphysics",
+      "url": "https://en.wikipedia.org/wiki/Metaphysics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Aesthetics",
+      "url": "https://en.wikipedia.org/wiki/Aesthetics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Philosophy of mind",
+      "url": "https://en.wikipedia.org/wiki/Philosophy\\_of\\_mind",
+      "line": "philosophy"
+    },
+    {
+      "id": "Philosophy of language",
+      "url": "https://en.wikipedia.org/wiki/Philosophy\\_of\\_language",
+      "line": "philosophy"
+    },
+    {
+      "id": "Philosophy of science",
+      "url": "https://en.wikipedia.org/wiki/Philosophy\\_of\\_science",
+      "line": "philosophy"
+    },
+    {
+      "id": "Political philosophy",
+      "url": "https://en.wikipedia.org/wiki/Political\\_philosophy",
+      "line": "philosophy"
+    },
+    {
+      "id": "Aristotle",
+      "url": "https://en.wikipedia.org/wiki/Aristotle",
+      "line": "philosophy"
+    },
+    {
+      "id": "Plato",
+      "url": "https://en.wikipedia.org/wiki/Plato",
+      "line": "philosophy"
+    },
+    {
+      "id": "Immanuel Kant",
+      "url": "https://en.wikipedia.org/wiki/Immanuel\\_Kant",
+      "line": "philosophy"
+    },
+    {
+      "id": "John Locke",
+      "url": "https://en.wikipedia.org/wiki/John\\_Locke",
+      "line": "philosophy"
+    },
+    {
+      "id": "David Hume",
+      "url": "https://en.wikipedia.org/wiki/David\\_Hume",
+      "line": "philosophy"
+    },
+    {
+      "id": "René Descartes",
+      "url": "https://en.wikipedia.org/wiki/René\\_Descartes",
+      "line": "philosophy"
+    },
+    {
+      "id": "Friedrich Nietzsche",
+      "url": "https://en.wikipedia.org/wiki/Friedrich\\_Nietzsche",
+      "line": "philosophy"
+    },
+    {
+      "id": "Ludwig Wittgenstein",
+      "url": "https://en.wikipedia.org/wiki/Ludwig\\_Wittgenstein",
+      "line": "philosophy"
+    },
+    {
+      "id": "Deductive reasoning",
+      "url": "https://en.wikipedia.org/wiki/Deductive\\_reasoning",
+      "line": "philosophy"
+    },
+    {
+      "id": "Inductive reasoning",
+      "url": "https://en.wikipedia.org/wiki/Inductive\\_reasoning",
+      "line": "philosophy"
+    },
+    {
+      "id": "Abductive reasoning",
+      "url": "https://en.wikipedia.org/wiki/Abductive\\_reasoning",
+      "line": "philosophy"
+    },
+    {
+      "id": "Formal logic",
+      "url": "https://en.wikipedia.org/wiki/Formal\\_logic",
+      "line": "philosophy"
+    },
+    {
+      "id": "Informal logic",
+      "url": "https://en.wikipedia.org/wiki/Informal\\_logic",
+      "line": "philosophy"
+    },
+    {
+      "id": "Propositional logic",
+      "url": "https://en.wikipedia.org/wiki/Propositional\\_logic",
+      "line": "philosophy"
+    },
+    {
+      "id": "Predicate logic",
+      "url": "https://en.wikipedia.org/wiki/Predicate\\_logic",
+      "line": "philosophy"
+    },
+    {
+      "id": "Modal logic",
+      "url": "https://en.wikipedia.org/wiki/Modal\\_logic",
+      "line": "philosophy"
+    },
+    {
+      "id": "First-order logic",
+      "url": "https://en.wikipedia.org/wiki/First-order\\_logic",
+      "line": "philosophy"
+    },
+    {
+      "id": "Second-order logic",
+      "url": "https://en.wikipedia.org/wiki/Second-order\\_logic",
+      "line": "philosophy"
+    },
+    {
+      "id": "Quantifier (logic)",
+      "url": "https://en.wikipedia.org/wiki/Quantifier\\_(logic)",
+      "line": "philosophy"
+    },
+    {
+      "id": "Logical connective",
+      "url": "https://en.wikipedia.org/wiki/Logical\\_connective",
+      "line": "philosophy"
+    },
+    {
+      "id": "Truth table",
+      "url": "https://en.wikipedia.org/wiki/Truth\\_table",
+      "line": "philosophy"
+    },
+    {
+      "id": "Validity (logic)",
+      "url": "https://en.wikipedia.org/wiki/Validity\\_(logic)",
+      "line": "philosophy"
+    },
+    {
+      "id": "Soundness",
+      "url": "https://en.wikipedia.org/wiki/Soundness",
+      "line": "philosophy"
+    },
+    {
+      "id": "Fallacy",
+      "url": "https://en.wikipedia.org/wiki/Fallacy",
+      "line": "philosophy"
+    },
+    {
+      "id": "Paradox",
+      "url": "https://en.wikipedia.org/wiki/Paradox",
+      "line": "philosophy"
+    },
+    {
+      "id": "Russell's paradox",
+      "url": "https://en.wikipedia.org/wiki/Russell%27s\\_paradox",
+      "line": "philosophy"
+    },
+    {
+      "id": "Liar paradox",
+      "url": "https://en.wikipedia.org/wiki/Liar\\_paradox",
+      "line": "philosophy"
+    },
+    {
+      "id": "Critical thinking",
+      "url": "https://en.wikipedia.org/wiki/Critical\\_thinking",
+      "line": "philosophy"
+    },
+    {
+      "id": "Argumentation theory",
+      "url": "https://en.wikipedia.org/wiki/Argumentation\\_theory",
+      "line": "philosophy"
+    },
+    {
+      "id": "Syllogism",
+      "url": "https://en.wikipedia.org/wiki/Syllogism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Modus ponens",
+      "url": "https://en.wikipedia.org/wiki/Modus\\_ponens",
+      "line": "philosophy"
+    },
+    {
+      "id": "Modus tollens",
+      "url": "https://en.wikipedia.org/wiki/Modus\\_tollens",
+      "line": "philosophy"
+    },
+    {
+      "id": "Normative ethics",
+      "url": "https://en.wikipedia.org/wiki/Normative\\_ethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Metaethics",
+      "url": "https://en.wikipedia.org/wiki/Metaethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Applied ethics",
+      "url": "https://en.wikipedia.org/wiki/Applied\\_ethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Deontological ethics",
+      "url": "https://en.wikipedia.org/wiki/Deontological\\_ethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Consequentialism",
+      "url": "https://en.wikipedia.org/wiki/Consequentialism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Virtue ethics",
+      "url": "https://en.wikipedia.org/wiki/Virtue\\_ethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Utilitarianism",
+      "url": "https://en.wikipedia.org/wiki/Utilitarianism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Kantian ethics",
+      "url": "https://en.wikipedia.org/wiki/Kantian\\_ethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Aristotelian ethics",
+      "url": "https://en.wikipedia.org/wiki/Aristotelian\\_ethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Care ethics",
+      "url": "https://en.wikipedia.org/wiki/Care\\_ethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Contractualism",
+      "url": "https://en.wikipedia.org/wiki/Contractualism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Moral realism",
+      "url": "https://en.wikipedia.org/wiki/Moral\\_realism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Moral anti-realism",
+      "url": "https://en.wikipedia.org/wiki/Moral\\_anti-realism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Moral relativism",
+      "url": "https://en.wikipedia.org/wiki/Moral\\_relativism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Moral nihilism",
+      "url": "https://en.wikipedia.org/wiki/Moral\\_nihilism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Value theory",
+      "url": "https://en.wikipedia.org/wiki/Value\\_theory",
+      "line": "philosophy"
+    },
+    {
+      "id": "Good (ethics)",
+      "url": "https://en.wikipedia.org/wiki/Good\\_(ethics)",
+      "line": "philosophy"
+    },
+    {
+      "id": "Evil",
+      "url": "https://en.wikipedia.org/wiki/Evil",
+      "line": "philosophy"
+    },
+    {
+      "id": "Right and wrong",
+      "url": "https://en.wikipedia.org/wiki/Right\\_and\\_wrong",
+      "line": "philosophy"
+    },
+    {
+      "id": "Morality",
+      "url": "https://en.wikipedia.org/wiki/Morality",
+      "line": "philosophy"
+    },
+    {
+      "id": "Bioethics",
+      "url": "https://en.wikipedia.org/wiki/Bioethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Environmental ethics",
+      "url": "https://en.wikipedia.org/wiki/Environmental\\_ethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Business ethics",
+      "url": "https://en.wikipedia.org/wiki/Business\\_ethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Animal ethics",
+      "url": "https://en.wikipedia.org/wiki/Animal\\_ethics",
+      "line": "philosophy"
+    },
+    {
+      "id": "Justice",
+      "url": "https://en.wikipedia.org/wiki/Justice",
+      "line": "philosophy"
+    },
+    {
+      "id": "Rights",
+      "url": "https://en.wikipedia.org/wiki/Rights",
+      "line": "philosophy"
+    },
+    {
+      "id": "Duty",
+      "url": "https://en.wikipedia.org/wiki/Duty",
+      "line": "philosophy"
+    },
+    {
+      "id": "Knowledge",
+      "url": "https://en.wikipedia.org/wiki/Knowledge",
+      "line": "philosophy"
+    },
+    {
+      "id": "Justified true belief",
+      "url": "https://en.wikipedia.org/wiki/Justified\\_true\\_belief",
+      "line": "philosophy"
+    },
+    {
+      "id": "Gettier problem",
+      "url": "https://en.wikipedia.org/wiki/Gettier\\_problem",
+      "line": "philosophy"
+    },
+    {
+      "id": "Skepticism",
+      "url": "https://en.wikipedia.org/wiki/Skepticism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Empiricism",
+      "url": "https://en.wikipedia.org/wiki/Empiricism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Rationalism",
+      "url": "https://en.wikipedia.org/wiki/Rationalism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Innatism",
+      "url": "https://en.wikipedia.org/wiki/Innatism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Foundationalism",
+      "url": "https://en.wikipedia.org/wiki/Foundationalism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Coherentism",
+      "url": "https://en.wikipedia.org/wiki/Coherentism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Infinitism",
+      "url": "https://en.wikipedia.org/wiki/Infinitism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Reliabilism",
+      "url": "https://en.wikipedia.org/wiki/Reliabilism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Virtue epistemology",
+      "url": "https://en.wikipedia.org/wiki/Virtue\\_epistemology",
+      "line": "philosophy"
+    },
+    {
+      "id": "Internalism and externalism",
+      "url": "https://en.wikipedia.org/wiki/Internalism\\_and\\_externalism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Evidence",
+      "url": "https://en.wikipedia.org/wiki/Evidence",
+      "line": "philosophy"
+    },
+    {
+      "id": "Perception",
+      "url": "https://en.wikipedia.org/wiki/Perception",
+      "line": "philosophy"
+    },
+    {
+      "id": "Reason",
+      "url": "https://en.wikipedia.org/wiki/Reason",
+      "line": "philosophy"
+    },
+    {
+      "id": "Memory",
+      "url": "https://en.wikipedia.org/wiki/Memory",
+      "line": "philosophy"
+    },
+    {
+      "id": "Testimony",
+      "url": "https://en.wikipedia.org/wiki/Testimony",
+      "line": "philosophy"
+    },
+    {
+      "id": "A priori and a posteriori",
+      "url": "https://en.wikipedia.org/wiki/A\\_priori\\_and\\_a\\_posteriori",
+      "line": "philosophy"
+    },
+    {
+      "id": "Analytic–synthetic distinction",
+      "url": "https://en.wikipedia.org/wiki/Analytic%E2%80%93synthetic\\_distinction",
+      "line": "philosophy"
+    },
+    {
+      "id": "Induction (philosophy)",
+      "url": "https://en.wikipedia.org/wiki/Induction\\_(philosophy)",
+      "line": "philosophy"
+    },
+    {
+      "id": "Problem of induction",
+      "url": "https://en.wikipedia.org/wiki/Problem\\_of\\_induction",
+      "line": "philosophy"
+    },
+    {
+      "id": "Solipsism",
+      "url": "https://en.wikipedia.org/wiki/Solipsism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Brain in a vat",
+      "url": "https://en.wikipedia.org/wiki/Brain\\_in\\_a\\_vat",
+      "line": "philosophy"
+    },
+    {
+      "id": "Cartesian doubt",
+      "url": "https://en.wikipedia.org/wiki/Cartesian\\_doubt",
+      "line": "philosophy"
+    },
+    {
+      "id": "Pragmatism",
+      "url": "https://en.wikipedia.org/wiki/Pragmatism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Phenomenology (philosophy)",
+      "url": "https://en.wikipedia.org/wiki/Phenomenology\\_(philosophy)",
+      "line": "philosophy"
+    },
+    {
+      "id": "Existentialism",
+      "url": "https://en.wikipedia.org/wiki/Existentialism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Analytic philosophy",
+      "url": "https://en.wikipedia.org/wiki/Analytic\\_philosophy",
+      "line": "philosophy"
+    },
+    {
+      "id": "Continental philosophy",
+      "url": "https://en.wikipedia.org/wiki/Continental\\_philosophy",
+      "line": "philosophy"
+    },
+    {
+      "id": "Socratic method",
+      "url": "https://en.wikipedia.org/wiki/Socratic\\_method",
+      "line": "philosophy"
+    },
+    {
+      "id": "Dialectic",
+      "url": "https://en.wikipedia.org/wiki/Dialectic",
+      "line": "philosophy"
+    },
+    {
+      "id": "Truth",
+      "url": "https://en.wikipedia.org/wiki/Truth",
+      "line": "philosophy"
+    },
+    {
+      "id": "Correspondence theory of truth",
+      "url": "https://en.wikipedia.org/wiki/Correspondence\\_theory\\_of\\_truth",
+      "line": "philosophy"
+    },
+    {
+      "id": "Coherence theory of truth",
+      "url": "https://en.wikipedia.org/wiki/Coherence\\_theory\\_of\\_truth",
+      "line": "philosophy"
+    },
+    {
+      "id": "Deflationary theory of truth",
+      "url": "https://en.wikipedia.org/wiki/Deflationary\\_theory\\_of\\_truth",
+      "line": "philosophy"
+    },
+    {
+      "id": "Philosophy of religion",
+      "url": "https://en.wikipedia.org/wiki/Philosophy\\_of\\_religion",
+      "line": "philosophy"
+    },
+    {
+      "id": "Free will",
+      "url": "https://en.wikipedia.org/wiki/Free\\_will",
+      "line": "philosophy"
+    },
+    {
+      "id": "Determinism",
+      "url": "https://en.wikipedia.org/wiki/Determinism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Compatibilism",
+      "url": "https://en.wikipedia.org/wiki/Compatibilism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Incompatibilism",
+      "url": "https://en.wikipedia.org/wiki/Incompatibilism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Consciousness",
+      "url": "https://en.wikipedia.org/wiki/Consciousness",
+      "line": "philosophy"
+    },
+    {
+      "id": "Identity (philosophy)",
+      "url": "https://en.wikipedia.org/wiki/Identity\\_(philosophy)",
+      "line": "philosophy"
+    },
+    {
+      "id": "Universals",
+      "url": "https://en.wikipedia.org/wiki/Universals",
+      "line": "philosophy"
+    },
+    {
+      "id": "Nominalism",
+      "url": "https://en.wikipedia.org/wiki/Nominalism",
+      "line": "philosophy"
+    },
+    {
+      "id": "Realism (philosophy)",
+      "url": "https://en.wikipedia.org/wiki/Realism\\_(philosophy)",
+      "line": "philosophy"
+    },
+    {
+      "id": "Physics",
+      "url": "https://en.wikipedia.org/wiki/Physics",
+      "line": "physics"
+    },
+    {
+      "id": "Classical mechanics",
+      "url": "https://en.wikipedia.org/wiki/Classical\\_mechanics",
+      "line": "physics"
+    },
+    {
+      "id": "Newton's laws of motion",
+      "url": "https://en.wikipedia.org/wiki/Newton%27s\\_laws\\_of\\_motion",
+      "line": "physics"
+    },
+    {
+      "id": "Universal gravitation",
+      "url": "https://en.wikipedia.org/wiki/Universal\\_gravitation",
+      "line": "physics"
+    },
+    {
+      "id": "Mechanics",
+      "url": "https://en.wikipedia.org/wiki/Mechanics",
+      "line": "physics"
+    },
+    {
+      "id": "Kinematics",
+      "url": "https://en.wikipedia.org/wiki/Kinematics",
+      "line": "physics"
+    },
+    {
+      "id": "Dynamics (mechanics)",
+      "url": "https://en.wikipedia.org/wiki/Dynamics\\_(mechanics)",
+      "line": "physics"
+    },
+    {
+      "id": "Statics",
+      "url": "https://en.wikipedia.org/wiki/Statics",
+      "line": "physics"
+    },
+    {
+      "id": "Lagrangian mechanics",
+      "url": "https://en.wikipedia.org/wiki/Lagrangian\\_mechanics",
+      "line": "physics"
+    },
+    {
+      "id": "Hamiltonian mechanics",
+      "url": "https://en.wikipedia.org/wiki/Hamiltonian\\_mechanics",
+      "line": "physics"
+    },
+    {
+      "id": "Celestial mechanics",
+      "url": "https://en.wikipedia.org/wiki/Celestial\\_mechanics",
+      "line": "physics"
+    },
+    {
+      "id": "Continuum mechanics",
+      "url": "https://en.wikipedia.org/wiki/Continuum\\_mechanics",
+      "line": "physics"
+    },
+    {
+      "id": "Solid mechanics",
+      "url": "https://en.wikipedia.org/wiki/Solid\\_mechanics",
+      "line": "physics"
+    },
+    {
+      "id": "Fluid mechanics",
+      "url": "https://en.wikipedia.org/wiki/Fluid\\_mechanics",
+      "line": "physics"
+    },
+    {
+      "id": "Fluid dynamics",
+      "url": "https://en.wikipedia.org/wiki/Fluid\\_dynamics",
+      "line": "physics"
+    },
+    {
+      "id": "Hydrostatics",
+      "url": "https://en.wikipedia.org/wiki/Hydrostatics",
+      "line": "physics"
+    },
+    {
+      "id": "Acoustics",
+      "url": "https://en.wikipedia.org/wiki/Acoustics",
+      "line": "physics"
+    },
+    {
+      "id": "Oscillation",
+      "url": "https://en.wikipedia.org/wiki/Oscillation",
+      "line": "physics"
+    },
+    {
+      "id": "Wave",
+      "url": "https://en.wikipedia.org/wiki/Wave",
+      "line": "physics"
+    },
+    {
+      "id": "Theory of relativity",
+      "url": "https://en.wikipedia.org/wiki/Theory\\_of\\_relativity",
+      "line": "physics"
+    },
+    {
+      "id": "Special relativity",
+      "url": "https://en.wikipedia.org/wiki/Special\\_relativity",
+      "line": "physics"
+    },
+    {
+      "id": "General relativity",
+      "url": "https://en.wikipedia.org/wiki/General\\_relativity",
+      "line": "physics"
+    },
+    {
+      "id": "Spacetime",
+      "url": "https://en.wikipedia.org/wiki/Spacetime",
+      "line": "physics"
+    },
+    {
+      "id": "Relativity of simultaneity",
+      "url": "https://en.wikipedia.org/wiki/Relativity\\_of\\_simultaneity",
+      "line": "physics"
+    },
+    {
+      "id": "Mass–energy equivalence",
+      "url": "https://en.wikipedia.org/wiki/Mass–energy\\_equivalence",
+      "line": "physics"
+    },
+    {
+      "id": "Lorentz transformation",
+      "url": "https://en.wikipedia.org/wiki/Lorentz\\_transformation",
+      "line": "physics"
+    },
+    {
+      "id": "Minkowski spacetime",
+      "url": "https://en.wikipedia.org/wiki/Minkowski\\_spacetime",
+      "line": "physics"
+    },
+    {
+      "id": "Gravitation",
+      "url": "https://en.wikipedia.org/wiki/Gravitation",
+      "line": "physics"
+    },
+    {
+      "id": "Gravitational field",
+      "url": "https://en.wikipedia.org/wiki/Gravitational\\_field",
+      "line": "physics"
+    },
+    {
+      "id": "Equivalence principle",
+      "url": "https://en.wikipedia.org/wiki/Equivalence\\_principle",
+      "line": "physics"
+    },
+    {
+      "id": "Black hole",
+      "url": "https://en.wikipedia.org/wiki/Black\\_hole",
+      "line": "physics"
+    },
+    {
+      "id": "Gravitational wave",
+      "url": "https://en.wikipedia.org/wiki/Gravitational\\_wave",
+      "line": "physics"
+    },
+    {
+      "id": "Quantum mechanics",
+      "url": "https://en.wikipedia.org/wiki/Quantum\\_mechanics",
+      "line": "physics"
+    },
+    {
+      "id": "Quantum physics",
+      "url": "https://en.wikipedia.org/wiki/Quantum\\_physics",
+      "line": "physics"
+    },
+    {
+      "id": "Schrödinger equation",
+      "url": "https://en.wikipedia.org/wiki/Schr%C3%B6dinger\\_equation",
+      "line": "physics"
+    },
+    {
+      "id": "Heisenberg uncertainty principle",
+      "url": "https://en.wikipedia.org/wiki/Heisenberg\\_uncertainty\\_principle",
+      "line": "physics"
+    },
+    {
+      "id": "Wave function",
+      "url": "https://en.wikipedia.org/wiki/Wave\\_function",
+      "line": "physics"
+    },
+    {
+      "id": "Quantum state",
+      "url": "https://en.wikipedia.org/wiki/Quantum\\_state",
+      "line": "physics"
+    },
+    {
+      "id": "Superposition principle",
+      "url": "https://en.wikipedia.org/wiki/Superposition\\_principle",
+      "line": "physics"
+    },
+    {
+      "id": "Quantum entanglement",
+      "url": "https://en.wikipedia.org/wiki/Quantum\\_entanglement",
+      "line": "physics"
+    },
+    {
+      "id": "Measurement problem",
+      "url": "https://en.wikipedia.org/wiki/Measurement\\_problem",
+      "line": "physics"
+    },
+    {
+      "id": "Interpretations of quantum mechanics",
+      "url": "https://en.wikipedia.org/wiki/Interpretations\\_of\\_quantum\\_mechanics",
+      "line": "physics"
+    },
+    {
+      "id": "Photoelectric effect",
+      "url": "https://en.wikipedia.org/wiki/Photoelectric\\_effect",
+      "line": "physics"
+    },
+    {
+      "id": "Compton scattering",
+      "url": "https://en.wikipedia.org/wiki/Compton\\_scattering",
+      "line": "physics"
+    },
+    {
+      "id": "Planck constant",
+      "url": "https://en.wikipedia.org/wiki/Planck\\_constant",
+      "line": "physics"
+    },
+    {
+      "id": "Uncertainty principle",
+      "url": "https://en.wikipedia.org/wiki/Uncertainty\\_principle",
+      "line": "physics"
+    },
+    {
+      "id": "Quantum field theory",
+      "url": "https://en.wikipedia.org/wiki/Quantum\\_field\\_theory",
+      "line": "physics"
+    },
+    {
+      "id": "Standard Model",
+      "url": "https://en.wikipedia.org/wiki/Standard\\_Model",
+      "line": "physics"
+    },
+    {
+      "id": "Elementary particle",
+      "url": "https://en.wikipedia.org/wiki/Elementary\\_particle",
+      "line": "physics"
+    },
+    {
+      "id": "Quark",
+      "url": "https://en.wikipedia.org/wiki/Quark",
+      "line": "physics"
+    },
+    {
+      "id": "Lepton",
+      "url": "https://en.wikipedia.org/wiki/Lepton",
+      "line": "physics"
+    },
+    {
+      "id": "Gauge boson",
+      "url": "https://en.wikipedia.org/wiki/Gauge\\_boson",
+      "line": "physics"
+    },
+    {
+      "id": "Higgs boson",
+      "url": "https://en.wikipedia.org/wiki/Higgs\\_boson",
+      "line": "physics"
+    },
+    {
+      "id": "Photon",
+      "url": "https://en.wikipedia.org/wiki/Photon",
+      "line": "physics"
+    },
+    {
+      "id": "Gluon",
+      "url": "https://en.wikipedia.org/wiki/Gluon",
+      "line": "physics"
+    },
+    {
+      "id": "W and Z bosons",
+      "url": "https://en.wikipedia.org/wiki/W\\_and\\_Z\\_bosons",
+      "line": "physics"
+    },
+    {
+      "id": "Fundamental interaction",
+      "url": "https://en.wikipedia.org/wiki/Fundamental\\_interaction",
+      "line": "physics"
+    },
+    {
+      "id": "Particle physics",
+      "url": "https://en.wikipedia.org/wiki/Particle\\_physics",
+      "line": "physics"
+    },
+    {
+      "id": "Nuclear physics",
+      "url": "https://en.wikipedia.org/wiki/Nuclear\\_physics",
+      "line": "physics"
+    },
+    {
+      "id": "Atomic physics",
+      "url": "https://en.wikipedia.org/wiki/Atomic\\_physics",
+      "line": "physics"
+    },
+    {
+      "id": "Molecular physics",
+      "url": "https://en.wikipedia.org/wiki/Molecular\\_physics",
+      "line": "physics"
+    },
+    {
+      "id": "Quantum optics",
+      "url": "https://en.wikipedia.org/wiki/Quantum\\_optics",
+      "line": "physics"
+    },
+    {
+      "id": "Quantum information",
+      "url": "https://en.wikipedia.org/wiki/Quantum\\_information",
+      "line": "physics"
+    },
+    {
+      "id": "Bose–Einstein condensate",
+      "url": "https://en.wikipedia.org/wiki/Bose%E2%80%93Einstein\\_condensate",
+      "line": "physics"
+    },
+    {
+      "id": "Superconductivity",
+      "url": "https://en.wikipedia.org/wiki/Superconductivity",
+      "line": "physics"
+    },
+    {
+      "id": "Superfluidity",
+      "url": "https://en.wikipedia.org/wiki/Superfluidity",
+      "line": "physics"
+    },
+    {
+      "id": "Fermionic condensate",
+      "url": "https://en.wikipedia.org/wiki/Fermionic\\_condensate",
+      "line": "physics"
+    },
+    {
+      "id": "Pauli exclusion principle",
+      "url": "https://en.wikipedia.org/wiki/Pauli\\_exclusion\\_principle",
+      "line": "physics"
+    },
+    {
+      "id": "Spin (physics)",
+      "url": "https://en.wikipedia.org/wiki/Spin\\_(physics)",
+      "line": "physics"
+    },
+    {
+      "id": "Antimatter",
+      "url": "https://en.wikipedia.org/wiki/Antimatter",
+      "line": "physics"
+    },
+    {
+      "id": "Neutrino",
+      "url": "https://en.wikipedia.org/wiki/Neutrino",
+      "line": "physics"
+    },
+    {
+      "id": "Thermodynamics",
+      "url": "https://en.wikipedia.org/wiki/Thermodynamics",
+      "line": "physics"
+    },
+    {
+      "id": "Statistical mechanics",
+      "url": "https://en.wikipedia.org/wiki/Statistical\\_mechanics",
+      "line": "physics"
+    },
+    {
+      "id": "Entropy",
+      "url": "https://en.wikipedia.org/wiki/Entropy",
+      "line": "physics"
+    },
+    {
+      "id": "Phase (matter)",
+      "url": "https://en.wikipedia.org/wiki/Phase\\_(matter)",
+      "line": "physics"
+    },
+    {
+      "id": "Electromagnetism",
+      "url": "https://en.wikipedia.org/wiki/Electromagnetism",
+      "line": "physics"
+    },
+    {
+      "id": "Maxwell's equations",
+      "url": "https://en.wikipedia.org/wiki/Maxwell%27s\\_equations",
+      "line": "physics"
+    },
+    {
+      "id": "Optics",
+      "url": "https://en.wikipedia.org/wiki/Optics",
+      "line": "physics"
+    },
+    {
+      "id": "Condensed matter physics",
+      "url": "https://en.wikipedia.org/wiki/Condensed\\_matter\\_physics",
+      "line": "physics"
+    },
+    {
+      "id": "Semiconductor",
+      "url": "https://en.wikipedia.org/wiki/Semiconductor",
+      "line": "physics"
+    },
+    {
+      "id": "Plasma (physics)",
+      "url": "https://en.wikipedia.org/wiki/Plasma\\_(physics)",
+      "line": "physics"
+    },
+    {
+      "id": "Astrophysics",
+      "url": "https://en.wikipedia.org/wiki/Astrophysics",
+      "line": "physics"
+    },
+    {
+      "id": "Cosmology",
+      "url": "https://en.wikipedia.org/wiki/Cosmology",
+      "line": "physics"
+    },
+    {
+      "id": "Big Bang",
+      "url": "https://en.wikipedia.org/wiki/Big\\_Bang",
+      "line": "physics"
+    },
+    {
+      "id": "Dark matter",
+      "url": "https://en.wikipedia.org/wiki/Dark\\_matter",
+      "line": "physics"
+    },
+    {
+      "id": "Dark energy",
+      "url": "https://en.wikipedia.org/wiki/Dark\\_energy",
+      "line": "physics"
+    },
+    {
+      "id": "Chaos theory",
+      "url": "https://en.wikipedia.org/wiki/Chaos\\_theory",
+      "line": "physics"
+    },
+    {
+      "id": "Feynman diagram",
+      "url": "https://en.wikipedia.org/wiki/Feynman\\_diagram",
+      "line": "physics"
+    },
+    {
+      "id": "Path integral formulation",
+      "url": "https://en.wikipedia.org/wiki/Path\\_integral\\_formulation",
+      "line": "physics"
+    },
+    {
+      "id": "Dirac equation",
+      "url": "https://en.wikipedia.org/wiki/Dirac\\_equation",
+      "line": "physics"
+    },
+    {
+      "id": "Klein–Gordon equation",
+      "url": "https://en.wikipedia.org/wiki/Klein–Gordon\\_equation",
+      "line": "physics"
+    },
+    {
+      "id": "Quantum tunnelling",
+      "url": "https://en.wikipedia.org/wiki/Quantum\\_tunnelling",
+      "line": "physics"
+    },
+    {
+      "id": "Bell's theorem",
+      "url": "https://en.wikipedia.org/wiki/Bell%27s\\_theorem",
+      "line": "physics"
+    },
+    {
+      "id": "No-cloning theorem",
+      "url": "https://en.wikipedia.org/wiki/No-cloning\\_theorem",
+      "line": "physics"
+    },
+    {
+      "id": "Decoherence",
+      "url": "https://en.wikipedia.org/wiki/Decoherence",
+      "line": "physics"
+    },
+    {
+      "id": "Gravitational lensing",
+      "url": "https://en.wikipedia.org/wiki/Gravitational\\_lensing",
+      "line": "physics"
+    },
+    {
+      "id": "Frame of reference",
+      "url": "https://en.wikipedia.org/wiki/Frame\\_of\\_reference",
+      "line": "physics"
+    },
+    {
+      "id": "Inertial frame of reference",
+      "url": "https://en.wikipedia.org/wiki/Inertial\\_frame\\_of\\_reference",
+      "line": "physics"
+    },
+    {
+      "id": "Non-inertial reference frame",
+      "url": "https://en.wikipedia.org/wiki/Non-inertial\\_reference\\_frame",
+      "line": "physics"
+    },
+    {
+      "id": "Coriolis force",
+      "url": "https://en.wikipedia.org/wiki/Coriolis\\_force",
+      "line": "physics"
+    },
+    {
+      "id": "Centrifugal force",
+      "url": "https://en.wikipedia.org/wiki/Centrifugal\\_force",
+      "line": "physics"
+    },
+    {
+      "id": "Angular momentum",
+      "url": "https://en.wikipedia.org/wiki/Angular\\_momentum",
+      "line": "physics"
+    },
+    {
+      "id": "Linear momentum",
+      "url": "https://en.wikipedia.org/wiki/Linear\\_momentum",
+      "line": "physics"
+    },
+    {
+      "id": "Conservation law",
+      "url": "https://en.wikipedia.org/wiki/Conservation\\_law",
+      "line": "physics"
+    },
+    {
+      "id": "Energy",
+      "url": "https://en.wikipedia.org/wiki/Energy",
+      "line": "physics"
+    },
+    {
+      "id": "Work (physics)",
+      "url": "https://en.wikipedia.org/wiki/Work\\_(physics)",
+      "line": "physics"
+    },
+    {
+      "id": "Power (physics)",
+      "url": "https://en.wikipedia.org/wiki/Power\\_(physics)",
+      "line": "physics"
+    },
+    {
+      "id": "Force",
+      "url": "https://en.wikipedia.org/wiki/Force",
+      "line": "physics"
+    },
+    {
+      "id": "Torque",
+      "url": "https://en.wikipedia.org/wiki/Torque",
+      "line": "physics"
+    },
+    {
+      "id": "Mass",
+      "url": "https://en.wikipedia.org/wiki/Mass",
+      "line": "physics"
+    },
+    {
+      "id": "Inertia",
+      "url": "https://en.wikipedia.org/wiki/Inertia",
+      "line": "physics"
+    },
+    {
+      "id": "Friction",
+      "url": "https://en.wikipedia.org/wiki/Friction",
+      "line": "physics"
+    },
+    {
+      "id": "Viscosity",
+      "url": "https://en.wikipedia.org/wiki/Viscosity",
+      "line": "physics"
+    },
+    {
+      "id": "Bernoulli's principle",
+      "url": "https://en.wikipedia.org/wiki/Bernoulli%27s\\_principle",
+      "line": "physics"
+    },
+    {
+      "id": "Navier–Stokes equations",
+      "url": "https://en.wikipedia.org/wiki/Navier–Stokes\\_equations",
+      "line": "physics"
+    },
+    {
+      "id": "Euler equations (fluid dynamics)",
+      "url": "https://en.wikipedia.org/wiki/Euler\\_equations\\_(fluid\\_dynamics)",
+      "line": "physics"
+    },
+    {
+      "id": "Kepler's laws of planetary motion",
+      "url": "https://en.wikipedia.org/wiki/Kepler%27s\\_laws\\_of\\_planetary\\_motion",
+      "line": "physics"
+    },
+    {
+      "id": "Three-body problem",
+      "url": "https://en.wikipedia.org/wiki/Three-body\\_problem",
+      "line": "physics"
+    },
+    {
+      "id": "Perturbation theory",
+      "url": "https://en.wikipedia.org/wiki/Perturbation\\_theory",
+      "line": "physics"
+    },
+    {
+      "id": "Schwarzschild metric",
+      "url": "https://en.wikipedia.org/wiki/Schwarzschild\\_metric",
+      "line": "physics"
+    },
+    {
+      "id": "Kerr metric",
+      "url": "https://en.wikipedia.org/wiki/Kerr\\_metric",
+      "line": "physics"
+    },
+    {
+      "id": "Cosmological constant",
+      "url": "https://en.wikipedia.org/wiki/Cosmological\\_constant",
+      "line": "physics"
+    },
+    {
+      "id": "Quantum gravity",
+      "url": "https://en.wikipedia.org/wiki/Quantum\\_gravity",
+      "line": "physics"
+    },
+    {
+      "id": "String theory",
+      "url": "https://en.wikipedia.org/wiki/String\\_theory",
+      "line": "physics"
+    },
+    {
+      "id": "Loop quantum gravity",
+      "url": "https://en.wikipedia.org/wiki/Loop\\_quantum\\_gravity",
+      "line": "physics"
+    },
+    {
+      "id": "AdS/CFT correspondence",
+      "url": "https://en.wikipedia.org/wiki/AdS/CFT\\_correspondence",
+      "line": "physics"
+    },
+    {
+      "id": "Computer science",
+      "url": "https://en.wikipedia.org/wiki/Computer\\_science",
+      "line": "technology"
+    },
+    {
+      "id": "Artificial intelligence",
+      "url": "https://en.wikipedia.org/wiki/Artificial\\_intelligence",
+      "line": "technology"
+    },
+    {
+      "id": "Algorithms",
+      "url": "https://en.wikipedia.org/wiki/Algorithms",
+      "line": "technology"
+    },
+    {
+      "id": "Data structure",
+      "url": "https://en.wikipedia.org/wiki/Data\\_structure",
+      "line": "technology"
+    },
+    {
+      "id": "Machine learning",
+      "url": "https://en.wikipedia.org/wiki/Machine\\_learning",
+      "line": "technology"
+    },
+    {
+      "id": "Computer vision",
+      "url": "https://en.wikipedia.org/wiki/Computer\\_vision",
+      "line": "technology"
+    },
+    {
+      "id": "Natural language processing",
+      "url": "https://en.wikipedia.org/wiki/Natural\\_language\\_processing",
+      "line": "technology"
+    },
+    {
+      "id": "Robotics",
+      "url": "https://en.wikipedia.org/wiki/Robotics",
+      "line": "technology"
+    },
+    {
+      "id": "Computer networking",
+      "url": "https://en.wikipedia.org/wiki/Computer\\_networking",
+      "line": "technology"
+    },
+    {
+      "id": "Computer security",
+      "url": "https://en.wikipedia.org/wiki/Computer\\_security",
+      "line": "technology"
+    },
+    {
+      "id": "Cryptography",
+      "url": "https://en.wikipedia.org/wiki/Cryptography",
+      "line": "technology"
+    },
+    {
+      "id": "Computer architecture",
+      "url": "https://en.wikipedia.org/wiki/Computer\\_architecture",
+      "line": "technology"
+    },
+    {
+      "id": "Operating system",
+      "url": "https://en.wikipedia.org/wiki/Operating\\_system",
+      "line": "technology"
+    },
+    {
+      "id": "Computer hardware",
+      "url": "https://en.wikipedia.org/wiki/Computer\\_hardware",
+      "line": "technology"
+    },
+    {
+      "id": "Computer software",
+      "url": "https://en.wikipedia.org/wiki/Computer\\_software",
+      "line": "technology"
+    },
+    {
+      "id": "Computer graphics",
+      "url": "https://en.wikipedia.org/wiki/Computer\\_graphics",
+      "line": "technology"
+    },
+    {
+      "id": "Parallel computing",
+      "url": "https://en.wikipedia.org/wiki/Parallel\\_computing",
+      "line": "technology"
+    },
+    {
+      "id": "Distributed computing",
+      "url": "https://en.wikipedia.org/wiki/Distributed\\_computing",
+      "line": "technology"
+    },
+    {
+      "id": "Programming language",
+      "url": "https://en.wikipedia.org/wiki/Programming\\_language",
+      "line": "technology"
+    },
+    {
+      "id": "Compiler",
+      "url": "https://en.wikipedia.org/wiki/Compiler",
+      "line": "technology"
+    },
+    {
+      "id": "Object-oriented programming",
+      "url": "https://en.wikipedia.org/wiki/Object-oriented\\_programming",
+      "line": "technology"
+    },
+    {
+      "id": "Software engineering",
+      "url": "https://en.wikipedia.org/wiki/Software\\_engineering",
+      "line": "technology"
+    },
+    {
+      "id": "Computer programming",
+      "url": "https://en.wikipedia.org/wiki/Computer\\_programming",
+      "line": "technology"
+    },
+    {
+      "id": "Computational complexity theory",
+      "url": "https://en.wikipedia.org/wiki/Computational\\_complexity\\_theory",
+      "line": "technology"
+    },
+    {
+      "id": "Quantum computing",
+      "url": "https://en.wikipedia.org/wiki/Quantum\\_computing",
+      "line": "technology"
+    },
+    {
+      "id": "Computability theory (computer science)",
+      "url": "https://en.wikipedia.org/wiki/Computability\\_theory\\_(computer\\_science)",
+      "line": "technology"
+    },
+    {
+      "id": "Automata theory",
+      "url": "https://en.wikipedia.org/wiki/Automata\\_theory",
+      "line": "technology"
+    },
+    {
+      "id": "Programming language theory",
+      "url": "https://en.wikipedia.org/wiki/Programming\\_language\\_theory",
+      "line": "technology"
+    },
+    {
+      "id": "Type theory",
+      "url": "https://en.wikipedia.org/wiki/Type\\_theory",
+      "line": "technology"
+    },
+    {
+      "id": "Formal methods",
+      "url": "https://en.wikipedia.org/wiki/Formal\\_methods",
+      "line": "technology"
+    },
+    {
+      "id": "Algorithm design",
+      "url": "https://en.wikipedia.org/wiki/Algorithm\\_design",
+      "line": "technology"
+    },
+    {
+      "id": "Human–computer interaction",
+      "url": "https://en.wikipedia.org/wiki/Human–computer\\_interaction",
+      "line": "technology"
+    },
+    {
+      "id": "Graph theory",
+      "url": "https://en.wikipedia.org/wiki/Graph\\_theory",
+      "line": "technology"
+    },
+    {
+      "id": "Discrete mathematics",
+      "url": "https://en.wikipedia.org/wiki/Discrete\\_mathematics",
+      "line": "technology"
+    },
+    {
+      "id": "Game theory",
+      "url": "https://en.wikipedia.org/wiki/Game\\_theory",
+      "line": "technology"
+    },
+    {
+      "id": "Mathematical logic",
+      "url": "https://en.wikipedia.org/wiki/Mathematical\\_logic",
+      "line": "technology"
+    },
+    {
+      "id": "Boolean logic",
+      "url": "https://en.wikipedia.org/wiki/Boolean\\_logic",
+      "line": "technology"
+    },
+    {
+      "id": "Computational science",
+      "url": "https://en.wikipedia.org/wiki/Computational\\_science",
+      "line": "technology"
+    },
+    {
+      "id": "Numerical analysis",
+      "url": "https://en.wikipedia.org/wiki/Numerical\\_analysis",
+      "line": "technology"
+    },
+    {
+      "id": "Data mining",
+      "url": "https://en.wikipedia.org/wiki/Data\\_mining",
+      "line": "technology"
+    },
+    {
+      "id": "Information retrieval",
+      "url": "https://en.wikipedia.org/wiki/Information\\_retrieval",
+      "line": "technology"
+    },
+    {
+      "id": "NoSQL",
+      "url": "https://en.wikipedia.org/wiki/NoSQL",
+      "line": "technology"
+    },
+    {
+      "id": "Relational database",
+      "url": "https://en.wikipedia.org/wiki/Relational\\_database",
+      "line": "technology"
+    },
+    {
+      "id": "Information technology",
+      "url": "https://en.wikipedia.org/wiki/Information\\_technology",
+      "line": "technology"
+    },
+    {
+      "id": "Internet",
+      "url": "https://en.wikipedia.org/wiki/Internet",
+      "line": "technology"
+    },
+    {
+      "id": "Cloud computing",
+      "url": "https://en.wikipedia.org/wiki/Cloud\\_computing",
+      "line": "technology"
+    },
+    {
+      "id": "Software development",
+      "url": "https://en.wikipedia.org/wiki/Software\\_development",
+      "line": "technology"
+    },
+    {
+      "id": "Version control",
+      "url": "https://en.wikipedia.org/wiki/Version\\_control",
+      "line": "technology"
+    },
+    {
+      "id": "Software testing",
+      "url": "https://en.wikipedia.org/wiki/Software\\_testing",
+      "line": "technology"
+    },
+    {
+      "id": "Debugging",
+      "url": "https://en.wikipedia.org/wiki/Debugging",
+      "line": "technology"
+    },
+    {
+      "id": "SQL",
+      "url": "https://en.wikipedia.org/wiki/SQL",
+      "line": "technology"
+    },
+    {
+      "id": "HTML",
+      "url": "https://en.wikipedia.org/wiki/HTML",
+      "line": "technology"
+    },
+    {
+      "id": "Abstraction (computer science)",
+      "url": "https://en.wikipedia.org/wiki/Abstraction\\_(computer\\_science)",
+      "line": "technology"
+    },
+    {
+      "id": "Recursion (computer science)",
+      "url": "https://en.wikipedia.org/wiki/Recursion\\_(computer\\_science)",
+      "line": "technology"
+    },
+    {
+      "id": "Control flow",
+      "url": "https://en.wikipedia.org/wiki/Control\\_flow",
+      "line": "technology"
+    },
+    {
+      "id": "Regular expression",
+      "url": "https://en.wikipedia.org/wiki/Regular\\_expression",
+      "line": "technology"
+    },
+    {
+      "id": "Interpreter (computing)",
+      "url": "https://en.wikipedia.org/wiki/Interpreter\\_(computing)",
+      "line": "technology"
+    },
+    {
+      "id": "Pointer (computer programming)",
+      "url": "https://en.wikipedia.org/wiki/Pointer\\_(computer\\_programming)",
+      "line": "technology"
+    },
+    {
+      "id": "Function (computer programming)",
+      "url": "https://en.wikipedia.org/wiki/Function\\_(computer\\_programming)",
+      "line": "technology"
+    },
+    {
+      "id": "Variable (computer science)",
+      "url": "https://en.wikipedia.org/wiki/Variable\\_(computer\\_science)",
+      "line": "technology"
+    },
+    {
+      "id": "Data type",
+      "url": "https://en.wikipedia.org/wiki/Data\\_type",
+      "line": "technology"
+    },
+    {
+      "id": "Subroutine",
+      "url": "https://en.wikipedia.org/wiki/Subroutine",
+      "line": "technology"
+    },
+    {
+      "id": "Library (computing)",
+      "url": "https://en.wikipedia.org/wiki/Library\\_(computing)",
+      "line": "technology"
+    },
+    {
+      "id": "Application programming interface",
+      "url": "https://en.wikipedia.org/wiki/Application\\_programming\\_interface",
+      "line": "technology"
+    },
+    {
+      "id": "Computer program",
+      "url": "https://en.wikipedia.org/wiki/Computer\\_program",
+      "line": "technology"
+    },
+    {
+      "id": "A* search algorithm",
+      "url": "https://en.wikipedia.org/wiki/A\\*\\_search\\_algorithm",
+      "line": "technology"
+    },
+    {
+      "id": "Heuristics",
+      "url": "https://en.wikipedia.org/wiki/Heuristics",
+      "line": "technology"
+    },
+    {
+      "id": "Genetic algorithm",
+      "url": "https://en.wikipedia.org/wiki/Genetic\\_algorithm",
+      "line": "technology"
+    },
+    {
+      "id": "Artificial neural network",
+      "url": "https://en.wikipedia.org/wiki/Artificial\\_neural\\_network",
+      "line": "technology"
+    },
+    {
+      "id": "Deep learning",
+      "url": "https://en.wikipedia.org/wiki/Deep\\_learning",
+      "line": "technology"
+    },
+    {
+      "id": "Convolutional neural network",
+      "url": "https://en.wikipedia.org/wiki/Convolutional\\_neural\\_network",
+      "line": "technology"
+    },
+    {
+      "id": "Backpropagation",
+      "url": "https://en.wikipedia.org/wiki/Backpropagation",
+      "line": "technology"
+    },
+    {
+      "id": "Bayesian network",
+      "url": "https://en.wikipedia.org/wiki/Bayesian\\_network",
+      "line": "technology"
+    },
+    {
+      "id": "Fuzzy logic",
+      "url": "https://en.wikipedia.org/wiki/Fuzzy\\_logic",
+      "line": "technology"
+    },
+    {
+      "id": "Swarm intelligence",
+      "url": "https://en.wikipedia.org/wiki/Swarm\\_intelligence",
+      "line": "technology"
+    },
+    {
+      "id": "Reinforcement learning",
+      "url": "https://en.wikipedia.org/wiki/Reinforcement\\_learning",
+      "line": "technology"
+    },
+    {
+      "id": "Turing test",
+      "url": "https://en.wikipedia.org/wiki/Turing\\_test",
+      "line": "technology"
+    },
+    {
+      "id": "Intelligent agent",
+      "url": "https://en.wikipedia.org/wiki/Intelligent\\_agent",
+      "line": "technology"
+    },
+    {
+      "id": "Large language model",
+      "url": "https://en.wikipedia.org/wiki/Large\\_language\\_model",
+      "line": "technology"
+    },
+    {
+      "id": "Machine translation",
+      "url": "https://en.wikipedia.org/wiki/Machine\\_translation",
+      "line": "technology"
+    },
+    {
+      "id": "Speech recognition",
+      "url": "https://en.wikipedia.org/wiki/Speech\\_recognition",
+      "line": "technology"
+    },
+    {
+      "id": "AlphaGo",
+      "url": "https://en.wikipedia.org/wiki/AlphaGo",
+      "line": "technology"
+    },
+    {
+      "id": "ChatGPT",
+      "url": "https://en.wikipedia.org/wiki/ChatGPT",
+      "line": "technology"
+    },
+    {
+      "id": "History of artificial intelligence",
+      "url": "https://en.wikipedia.org/wiki/History\\_of\\_artificial\\_intelligence",
+      "line": "technology"
+    },
+    {
+      "id": "Technological singularity",
+      "url": "https://en.wikipedia.org/wiki/Technological\\_singularity",
+      "line": "technology"
+    },
+    {
+      "id": "Strong AI",
+      "url": "https://en.wikipedia.org/wiki/Strong\\_AI",
+      "line": "technology"
+    },
+    {
+      "id": "Declarative programming",
+      "url": "https://en.wikipedia.org/wiki/Declarative\\_programming",
+      "line": "technology"
+    },
+    {
+      "id": "Imperative programming",
+      "url": "https://en.wikipedia.org/wiki/Imperative\\_programming",
+      "line": "technology"
+    },
+    {
+      "id": "Aspect-oriented programming",
+      "url": "https://en.wikipedia.org/wiki/Aspect-oriented\\_programming",
+      "line": "technology"
+    },
+    {
+      "id": "Concurrent programming",
+      "url": "https://en.wikipedia.org/wiki/Concurrent\\_programming",
+      "line": "technology"
+    },
+    {
+      "id": "Functional programming",
+      "url": "https://en.wikipedia.org/wiki/Functional\\_programming",
+      "line": "technology"
+    },
+    {
+      "id": "Logic programming",
+      "url": "https://en.wikipedia.org/wiki/Logic\\_programming",
+      "line": "technology"
+    },
+    {
+      "id": "Visual programming language",
+      "url": "https://en.wikipedia.org/wiki/Visual\\_programming\\_language",
+      "line": "technology"
+    },
+    {
+      "id": "Comparison of programming languages",
+      "url": "https://en.wikipedia.org/wiki/Comparison\\_of\\_programming\\_languages",
+      "line": "technology"
+    },
+    {
+      "id": "\"Hello, World!\" program",
+      "url": "https://en.wikipedia.org/wiki/\"Hello,\\_World!\"\\_program",
+      "line": "technology"
+    },
+    {
+      "id": "Pseudocode",
+      "url": "https://en.wikipedia.org/wiki/Pseudocode",
+      "line": "technology"
+    },
+    {
+      "id": "Agent-oriented programming",
+      "url": "https://en.wikipedia.org/wiki/Agent-oriented\\_programming",
+      "line": "technology"
+    },
+    {
+      "id": "Evolutionary computation",
+      "url": "https://en.wikipedia.org/wiki/Evolutionary\\_computation",
+      "line": "technology"
+    },
+    {
+      "id": "Automated reasoning",
+      "url": "https://en.wikipedia.org/wiki/Automated\\_reasoning",
+      "line": "technology"
+    },
+    {
+      "id": "Automated theorem proving",
+      "url": "https://en.wikipedia.org/wiki/Automated\\_theorem\\_proving",
+      "line": "technology"
+    },
+    {
+      "id": "Computational neuroscience",
+      "url": "https://en.wikipedia.org/wiki/Computational\\_neuroscience",
+      "line": "technology"
+    },
+    {
+      "id": "Bioinformatics",
+      "url": "https://en.wikipedia.org/wiki/Bioinformatics",
+      "line": "technology"
+    },
+    {
+      "id": "Computer algebra",
+      "url": "https://en.wikipedia.org/wiki/Computer\\_algebra",
+      "line": "technology"
+    },
+    {
+      "id": "Symbolic computation",
+      "url": "https://en.wikipedia.org/wiki/Symbolic\\_computation",
+      "line": "technology"
+    },
+    {
+      "id": "Quantum superposition",
+      "url": "https://en.wikipedia.org/wiki/Quantum\\_superposition",
+      "line": "technology"
+    },
+    {
+      "id": "List of unsolved problems in computer science",
+      "url": "https://en.wikipedia.org/wiki/List\\_of\\_unsolved\\_problems\\_in\\_computer\\_science",
+      "line": "technology"
+    },
+    {
+      "id": "Alan Turing",
+      "url": "https://en.wikipedia.org/wiki/Alan\\_Turing",
+      "line": "technology"
+    },
+    {
+      "id": "Cryptographic protocol",
+      "url": "https://en.wikipedia.org/wiki/Cryptographic\\_protocol",
+      "line": "technology"
+    },
+    {
+      "id": "Error correction",
+      "url": "https://en.wikipedia.org/wiki/Error\\_correction",
+      "line": "technology"
+    },
+    {
+      "id": "Image processing",
+      "url": "https://en.wikipedia.org/wiki/Image\\_processing",
+      "line": "technology"
+    },
+    {
+      "id": "Information visualization",
+      "url": "https://en.wikipedia.org/wiki/Information\\_visualization",
+      "line": "technology"
+    },
+    {
+      "id": "Concurrency (computer science)",
+      "url": "https://en.wikipedia.org/wiki/Concurrency\\_(computer\\_science)",
+      "line": "technology"
+    },
+    {
+      "id": "Structured Storage",
+      "url": "https://en.wikipedia.org/wiki/Structured\\_Storage",
+      "line": "technology"
+    },
+    {
+      "id": "Formal semantics (programming languages)",
+      "url": "https://en.wikipedia.org/wiki/Formal\\_semantics\\_(programming\\_languages)",
+      "line": "technology"
+    },
+    {
+      "id": "Reverse engineering",
+      "url": "https://en.wikipedia.org/wiki/Reverse\\_engineering",
+      "line": "technology"
+    },
+    {
+      "id": "Scientific modeling",
+      "url": "https://en.wikipedia.org/wiki/Scientific\\_modeling",
+      "line": "technology"
+    },
+    {
+      "id": "Protein folding",
+      "url": "https://en.wikipedia.org/wiki/Protein\\_folding",
+      "line": "technology"
+    },
+    {
+      "id": "Computational biology",
+      "url": "https://en.wikipedia.org/wiki/Computational\\_biology",
+      "line": "technology"
+    },
+    {
+      "id": "Computational linguistics",
+      "url": "https://en.wikipedia.org/wiki/Computational\\_linguistics",
+      "line": "technology"
+    },
+    {
+      "id": "Computational logic",
+      "url": "https://en.wikipedia.org/wiki/Computational\\_logic",
+      "line": "technology"
+    },
+    {
+      "id": "Software portability",
+      "url": "https://en.wikipedia.org/wiki/Software\\_portability",
+      "line": "technology"
+    },
+    {
+      "id": "Software reusability",
+      "url": "https://en.wikipedia.org/wiki/Software\\_reusability",
+      "line": "technology"
+    },
+    {
+      "id": "Formal verification",
+      "url": "https://en.wikipedia.org/wiki/Formal\\_verification",
+      "line": "technology"
+    },
+    {
+      "id": "Formal specification",
+      "url": "https://en.wikipedia.org/wiki/Formal\\_specification",
+      "line": "technology"
+    },
+    {
+      "id": "Software bug",
+      "url": "https://en.wikipedia.org/wiki/Software\\_bug",
+      "line": "technology"
+    },
+    {
+      "id": "Patch (computing)",
+      "url": "https://en.wikipedia.org/wiki/Patch\\_(computing)",
+      "line": "technology"
+    },
+    {
+      "id": "Exception handling",
+      "url": "https://en.wikipedia.org/wiki/Exception\\_handling",
+      "line": "technology"
+    },
+    {
+      "id": "Macro (computer science)",
+      "url": "https://en.wikipedia.org/wiki/Macro\\_(computer\\_science)",
+      "line": "technology"
+    },
+    {
+      "id": "Calling convention",
+      "url": "https://en.wikipedia.org/wiki/Calling\\_convention",
+      "line": "technology"
+    },
+    {
+      "id": "Bytecode",
+      "url": "https://en.wikipedia.org/wiki/Bytecode",
+      "line": "technology"
+    },
+    {
+      "id": "Object code",
+      "url": "https://en.wikipedia.org/wiki/Object\\_code",
+      "line": "technology"
+    },
+    {
+      "id": "Executable",
+      "url": "https://en.wikipedia.org/wiki/Executable",
+      "line": "technology"
+    },
+    {
+      "id": "Parameter (computer programming)",
+      "url": "https://en.wikipedia.org/wiki/Parameter\\_(computer\\_programming)",
+      "line": "technology"
+    },
+    {
+      "id": "Collation",
+      "url": "https://en.wikipedia.org/wiki/Collation",
+      "line": "technology"
+    },
+    {
+      "id": "AlphaGo",
+      "url": "https://en.wikipedia.org/wiki/AlphaGo",
+      "line": "technology"
+    },
+    {
+      "id": "ChatGPT",
+      "url": "https://en.wikipedia.org/wiki/ChatGPT",
+      "line": "technology"
+    },
+    {
+      "id": "Gmail",
+      "url": "https://en.wikipedia.org/wiki/Gmail",
+      "line": "technology"
+    },
+    {
+      "id": "MATLAB",
+      "url": "https://en.wikipedia.org/wiki/MATLAB",
+      "line": "technology"
+    },
+    {
+      "id": "Java virtual machine",
+      "url": "https://en.wikipedia.org/wiki/Java\\_virtual\\_machine",
+      "line": "technology"
+    },
+    {
+      "id": "VirtualBox",
+      "url": "https://en.wikipedia.org/wiki/VirtualBox",
+      "line": "technology"
+    }
+  ]
+}
