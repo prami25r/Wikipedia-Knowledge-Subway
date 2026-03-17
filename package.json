@@ -15,7 +15,9 @@
     "layout:graph": "tsx scripts/layout-graph.ts",
     "parse-wiki": "node scripts/parseWikiFiles.js",
     "build-graph": "node scripts/buildGraph.js",
-    "layout-graph": "node scripts/layoutGraph.js"
+    "layout-graph": "node scripts/layoutGraph.js",
+    "backend:dev": "tsx backend/src/server.ts",
+    "backend:test": "tsx --test backend/tests/**/*.test.ts"
   },
   "dependencies": {
     "@sigma/edge-curve": "^3.1.0",
