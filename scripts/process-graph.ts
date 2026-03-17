@@ -1,8 +1,12 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { UndirectedGraph } from "graphology";
-import louvain from "graphology-community-louvain";
-import type { RawWikiGraph, ProcessedWikiGraph, ProcessedWikiGraphNode } from "@/types/graph";
+import louvain from "graphology-communities-louvain";
+import type {
+  RawWikiGraph,
+  ProcessedWikiGraph,
+  ProcessedWikiGraphNode,
+} from "@/types/graph";
 
 const INPUT_PATH = path.join(process.cwd(), "data", "wiki_graph.json");
 const OUTPUT_PATH = path.join(process.cwd(), "data", "processed_graph.json");
@@ -92,7 +96,10 @@ function toProcessedGraph(graph: UndirectedGraph): ProcessedWikiGraph {
   };
 }
 
-async function writeOutputGraph(outputPath: string, graph: ProcessedWikiGraph): Promise<void> {
+async function writeOutputGraph(
+  outputPath: string,
+  graph: ProcessedWikiGraph,
+): Promise<void> {
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, JSON.stringify(graph, null, 2), "utf8");
 }

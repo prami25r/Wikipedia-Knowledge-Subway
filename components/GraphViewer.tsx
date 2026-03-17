@@ -4,7 +4,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Graph from "graphology";
 import { SearchBar } from "@/components/SearchBar";
 import { StationPanel } from "@/components/StationPanel";
-import { LayoutGraphData, LayoutGraphNode, loadGraphData } from "@/lib/loadGraph";
+import {
+  LayoutGraphData,
+  LayoutGraphNode,
+  loadGraphData,
+} from "@/lib/loadGraph";
 
 const CLUSTER_COLORS: Record<string, string> = {
   arts: "#ff006e",
@@ -25,7 +29,10 @@ type SigmaInstance = {
   kill: () => void;
   on: (event: string, cb: (payload: { node: string }) => void) => void;
   getCamera: () => {
-    animate: (state: { x: number; y: number; ratio?: number }, options?: { duration: number }) => void;
+    animate: (
+      state: { x: number; y: number; ratio?: number },
+      options?: { duration: number },
+    ) => void;
   };
   refresh: () => void;
 };
@@ -45,7 +52,9 @@ export function GraphViewer() {
   const [hoveredNodeId, setHoveredNodeId] = useState<string | null>(null);
 
   const nodeById = useMemo(() => {
-    return new Map<string, LayoutGraphNode>((dataset?.nodes ?? []).map((node) => [node.id, node]));
+    return new Map<string, LayoutGraphNode>(
+      (dataset?.nodes ?? []).map((node) => [node.id, node]),
+    );
   }, [dataset]);
 
   const searchItems = useMemo(
@@ -70,7 +79,11 @@ export function GraphViewer() {
         }
       } catch (loadError) {
         if (!isMounted) return;
-        setError(loadError instanceof Error ? loadError.message : "Failed to load graph.");
+        setError(
+          loadError instanceof Error
+            ? loadError.message
+            : "Failed to load graph.",
+        );
       }
     }
 
@@ -201,13 +214,20 @@ export function GraphViewer() {
     });
 
     if (hoveredNodeId && graph.hasNode(hoveredNodeId)) {
-      const neighborhood = new Set<string>([hoveredNodeId, ...graph.neighbors(hoveredNodeId)]);
+      const neighborhood = new Set<string>([
+        hoveredNodeId,
+        ...graph.neighbors(hoveredNodeId),
+      ]);
 
       graph.forEachNode((node, attrs) => {
         if (!neighborhood.has(node)) {
           graph.setNodeAttribute(node, "color", DIM_COLOR);
         } else {
-          graph.setNodeAttribute(node, "size", (attrs.baseSize ?? attrs.size) * 1.15);
+          graph.setNodeAttribute(
+            node,
+            "size",
+            (attrs.baseSize ?? attrs.size) * 1.15,
+          );
         }
       });
 
@@ -215,7 +235,11 @@ export function GraphViewer() {
         if (!neighborhood.has(source) || !neighborhood.has(target)) {
           graph.setEdgeAttribute(edge, "color", "#1e293b");
         } else {
-          graph.setEdgeAttribute(edge, "size", (attrs.baseSize ?? attrs.size) + 0.8);
+          graph.setEdgeAttribute(
+            edge,
+            "size",
+            (attrs.baseSize ?? attrs.size) + 0.8,
+          );
         }
       });
     }
@@ -223,13 +247,19 @@ export function GraphViewer() {
     if (selectedNodeId && graph.hasNode(selectedNodeId)) {
       const attrs = graph.getNodeAttributes(selectedNodeId);
       graph.setNodeAttribute(selectedNodeId, "color", "#f8fafc");
-      graph.setNodeAttribute(selectedNodeId, "size", (attrs.baseSize ?? attrs.size) * 1.28);
+      graph.setNodeAttribute(
+        selectedNodeId,
+        "size",
+        (attrs.baseSize ?? attrs.size) * 1.28,
+      );
     }
 
     renderer.refresh();
   }, [hoveredNodeId, selectedNodeId]);
 
-  const selectedNode = selectedNodeId ? nodeById.get(selectedNodeId) ?? null : null;
+  const selectedNode = selectedNodeId
+    ? (nodeById.get(selectedNodeId) ?? null)
+    : null;
 
   function centerOnNode(nodeId: string) {
     const graph = graphRef.current;
@@ -251,15 +281,29 @@ export function GraphViewer() {
   }
 
   if (error) {
-    return <p className="rounded bg-red-900/40 p-3 text-sm text-red-200">{error}</p>;
+    return (
+      <p className="rounded bg-red-900/40 p-3 text-sm text-red-200">{error}</p>
+    );
   }
 
   return (
     <section className="space-y-4">
       <SearchBar items={searchItems} onSelect={centerOnNode} />
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,2fr)_320px]">
-        <div ref={containerRef} className="h-[720px] w-full rounded-lg border border-slate-700 bg-slate-950" />
-        {selectedNode ? <StationPanel title={selectedNode.label} cluster={selectedNode.cluster} /> : null}
+        <div
+          ref={containerRef}
+          className="h-[720px] w-full rounded-lg border border-slate-700 bg-slate-950"
+        />
+        {selectedNode ? (
+          <StationPanel
+            title={selectedNode.label}
+            summary="Loading article summary..."
+            relatedStations={[]}
+            wikipediaUrl={`https://en.wikipedia.org/wiki/${encodeURIComponent(selectedNode.label.replace(/\s+/g, "_"))}`}
+            cluster={selectedNode.cluster}
+            isLoading={true}
+          />
+        ) : null}
       </div>
     </section>
   );
