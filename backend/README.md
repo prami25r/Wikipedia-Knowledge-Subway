@@ -44,3 +44,8 @@ Production-oriented backend modules for graph exploration APIs.
 npm run backend:dev
 npm run backend:test
 ```
+
+
+## Canonical dataset source
+
+Use only `public/data/layout_graph.json` as the backend runtime dataset source to avoid duplicate-file merge conflicts.

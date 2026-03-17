@@ -117,3 +117,20 @@ From the Subway Map toolbar, click **Export PNG** to download a high-resolution 
 - cluster labels
 - subway line legend
 
+
+
+## Backend (Conflict-Resolved Baseline)
+
+The backend implementation lives in `backend/` and is started with:
+
+```bash
+npm run backend:dev
+```
+
+Backend test suite:
+
+```bash
+npm run backend:test
+```
+
+This repository treats `public/data/layout_graph.json` as the canonical graph dataset path for the backend graph loader.

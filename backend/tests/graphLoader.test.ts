@@ -16,3 +16,10 @@ test('graph loader loads dataset and builds graph with degrees', () => {
   const sampleNode = normalizeNodeId(dataset.nodes[0].id);
   assert.equal(typeof graph.getNodeAttribute(sampleNode, 'degree'), 'number');
 });
+
+
+test('loadGraphDataset uses canonical public dataset', () => {
+  const dataset = loadGraphDataset();
+  assert.ok(Array.isArray(dataset.nodes));
+  assert.ok(Array.isArray(dataset.edges));
+});
