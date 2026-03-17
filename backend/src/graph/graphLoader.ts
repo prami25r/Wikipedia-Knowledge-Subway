@@ -1,13 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import Graph from 'graphology';
 import type { GraphDataset } from '../types/graph.js';
+import { normalizeNodeId } from '../utils/id.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-export function loadGraphDataset(filePath = path.resolve(__dirname, '../../data/layout_graph.json')): GraphDataset {
+export function loadGraphDataset(filePath = path.join(process.cwd(), 'public/data/layout_graph.json')): GraphDataset {
   const raw = fs.readFileSync(filePath, 'utf8');
   const parsed = JSON.parse(raw) as GraphDataset;
 
@@ -22,27 +19,39 @@ export function buildGraph(dataset: GraphDataset): Graph {
   const graph = new Graph({ multi: false, type: 'undirected' });
 
   for (const node of dataset.nodes) {
-    if (!graph.hasNode(node.id)) {
-      graph.addNode(node.id, {
-        id: node.id,
-        label: node.label,
-        cluster: node.cluster,
-        x: node.x,
-        y: node.y,
-      });
-    }
+    const normalizedId = normalizeNodeId(node.id);
+    if (!normalizedId || graph.hasNode(normalizedId)) continue;
+
+    graph.addNode(normalizedId, {
+      id: normalizedId,
+      sourceId: node.id,
+      label: node.label,
+      cluster: node.cluster,
+      x: node.x,
+      y: node.y,
+    });
   }
 
   for (const edge of dataset.edges) {
-    if (!graph.hasNode(edge.source) || !graph.hasNode(edge.target)) continue;
-    if (!graph.hasEdge(edge.source, edge.target)) {
-      graph.addUndirectedEdge(edge.source, edge.target);
+    const source = normalizeNodeId(edge.source);
+    const target = normalizeNodeId(edge.target);
+    if (!source || !target) continue;
+    if (!graph.hasNode(source) || !graph.hasNode(target)) continue;
+    if (!graph.hasEdge(source, target)) {
+      graph.addUndirectedEdge(source, target);
     }
   }
 
   graph.forEachNode((nodeKey) => {
     graph.mergeNodeAttributes(nodeKey, { degree: graph.degree(nodeKey) });
   });
+
+  // eslint-disable-next-line no-console
+  console.log(`[graphLoader] loaded nodes=${graph.order} edges=${graph.size}`);
+
+  if (graph.order === 0 || graph.size === 0) {
+    throw new Error('Graph dataset is empty after loading.');
+  }
 
   return graph;
 }

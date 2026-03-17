@@ -1,6 +1,7 @@
 import type { AppContext } from './context.js';
 import { ApiError } from '../middleware/errorHandler.js';
 import { stationIdParamSchema } from './validators.js';
+import { normalizeNodeId } from '../utils/id.js';
 
 export async function stationHandler(context: AppContext, params: Record<string, unknown>) {
   const parsed = stationIdParamSchema.safeParse(params);
@@ -8,13 +9,27 @@ export async function stationHandler(context: AppContext, params: Record<string,
     throw new ApiError(400, 'INVALID_PARAMS', 'Invalid station id parameter', parsed.error.flatten());
   }
 
-  const station = context.graphService.getNode(parsed.data.id);
-  if (!station) {
-    throw new ApiError(404, 'STATION_NOT_FOUND', `Station ${parsed.data.id} was not found`);
+  const rawId = String(parsed.data.id);
+  const id = normalizeNodeId(rawId);
+
+  // eslint-disable-next-line no-console
+  console.log(`[station] lookup raw="${rawId}" normalized="${id}"`);
+
+  if (!id) {
+    throw new ApiError(400, 'INVALID_PARAMS', 'Station id must not be empty.');
   }
 
-  const metadata = await context.metadataService.getStationMetadata(parsed.data.id);
-  const neighbors = context.graphService.getNeighbors(parsed.data.id).map((neighbor) => ({
+  if (!context.graphService.hasNode(id)) {
+    throw new ApiError(404, 'STATION_NOT_FOUND', `Station ${rawId} was not found`);
+  }
+
+  const station = context.graphService.getNode(id);
+  if (!station) {
+    throw new ApiError(404, 'STATION_NOT_FOUND', `Station ${rawId} was not found`);
+  }
+
+  const metadata = await context.metadataService.getStationMetadata(id);
+  const neighbors = context.graphService.getNeighbors(id).map((neighbor) => ({
     id: neighbor.id,
     title: neighbor.label,
     cluster: neighbor.cluster,

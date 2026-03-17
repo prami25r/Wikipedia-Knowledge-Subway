@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import type { StationMetadata } from '../types/graph.js';
+import { normalizeNodeId } from '../utils/id.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -39,8 +40,8 @@ export class MetadataService {
     const parsed = JSON.parse(raw) as LocalArticlesFile;
 
     for (const article of parsed.nodes ?? []) {
-      this.localMap.set(article.id, {
-        id: article.id,
+      this.localMap.set(normalizeNodeId(article.id), {
+        id: normalizeNodeId(article.id),
         title: article.id,
         summary: '',
         categories: article.line ? [article.line] : [],
@@ -51,16 +52,18 @@ export class MetadataService {
   }
 
   async getStationMetadata(id: string): Promise<StationMetadata> {
+    const normalizedId = normalizeNodeId(id);
+
     if (this.supabase) {
       const { data } = await this.supabase
         .from('wikipedia_articles')
         .select('id,title,summary,categories,wikipedia_url')
-        .eq('id', id)
+        .eq('id', normalizedId)
         .maybeSingle();
 
       if (data) {
         return {
-          id: data.id,
+          id: normalizeNodeId(data.id),
           title: data.title,
           summary: data.summary ?? '',
           categories: data.categories ?? [],
@@ -70,8 +73,8 @@ export class MetadataService {
     }
 
     return (
-      this.localMap.get(id) ?? {
-        id,
+      this.localMap.get(normalizedId) ?? {
+        id: normalizedId,
         title: id,
         summary: '',
         categories: [],

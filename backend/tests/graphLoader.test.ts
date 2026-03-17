@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { buildGraph, loadGraphDataset } from '../src/graph/graphLoader.js';
+import { normalizeNodeId } from '../src/utils/id.js';
 
 test('graph loader loads dataset and builds graph with degrees', () => {
   const dataset = loadGraphDataset();
@@ -12,6 +13,13 @@ test('graph loader loads dataset and builds graph with degrees', () => {
   assert.ok(graph.order <= dataset.nodes.length);
   assert.ok(graph.size > 0);
 
-  const sampleNode = dataset.nodes[0].id;
+  const sampleNode = normalizeNodeId(dataset.nodes[0].id);
   assert.equal(typeof graph.getNodeAttribute(sampleNode, 'degree'), 'number');
+});
+
+
+test('loadGraphDataset uses canonical public dataset', () => {
+  const dataset = loadGraphDataset();
+  assert.ok(Array.isArray(dataset.nodes));
+  assert.ok(Array.isArray(dataset.edges));
 });

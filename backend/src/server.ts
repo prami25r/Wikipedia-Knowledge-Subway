@@ -8,7 +8,7 @@ import { routeHandler } from './api/route.js';
 import { searchHandler } from './api/search.js';
 import { stationHandler } from './api/station.js';
 import { statsHandler } from './api/stats.js';
-import { toErrorResponse, ApiError } from './middleware/errorHandler.js';
+import { ApiError, toErrorResponse } from './middleware/errorHandler.js';
 import { checkRateLimit } from './middleware/rateLimiter.js';
 
 const PORT = Number(process.env.PORT ?? 4000);
@@ -22,6 +22,11 @@ function sendJson(res: http.ServerResponse, status: number, payload: unknown): v
 const server = http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url ?? '/', `http://${req.headers.host}`);
+    const pathname = url.pathname.replace(/\/+$/, '') || '/';
+
+    // eslint-disable-next-line no-console
+    console.log(`[request] ${req.method} ${pathname}`);
+
     const clientId = req.socket.remoteAddress ?? 'unknown';
 
     if (!checkRateLimit(clientId)) {
@@ -32,28 +37,36 @@ const server = http.createServer(async (req, res) => {
       throw new ApiError(405, 'METHOD_NOT_ALLOWED', 'Only GET endpoints are exposed.');
     }
 
-    if (url.pathname === '/health') return sendJson(res, 200, { status: 'ok' });
-    if (url.pathname === '/api/graph') return sendJson(res, 200, getGraphHandler(context));
-    if (url.pathname === '/api/search') return sendJson(res, 200, searchHandler(context, Object.fromEntries(url.searchParams.entries())));
-    if (url.pathname === '/api/route') return sendJson(res, 200, routeHandler(context, Object.fromEntries(url.searchParams.entries())));
-    if (url.pathname === '/api/stats') return sendJson(res, 200, statsHandler(context));
-    if (url.pathname === '/api/export/graph.json') return sendJson(res, 200, exportGraphJsonHandler(context));
-    if (url.pathname === '/api/export/stations.csv') {
+    if (pathname === '/health') return sendJson(res, 200, { status: 'ok' });
+
+    // Static routes first
+    if (pathname === '/api/graph') return sendJson(res, 200, getGraphHandler(context));
+    if (pathname === '/api/search') return sendJson(res, 200, searchHandler(context, Object.fromEntries(url.searchParams.entries())));
+    if (pathname === '/api/route') return sendJson(res, 200, routeHandler(context, Object.fromEntries(url.searchParams.entries())));
+    if (pathname === '/api/stats') return sendJson(res, 200, statsHandler(context));
+    if (pathname === '/api/export/graph.json') return sendJson(res, 200, exportGraphJsonHandler(context));
+    if (pathname === '/api/export/stations.csv') {
       res.writeHead(200, { 'Content-Type': 'text/csv' });
       return res.end(exportStationsCsvHandler(context));
     }
 
-    if (url.pathname.startsWith('/api/station/')) {
-      const id = decodeURIComponent(url.pathname.replace('/api/station/', ''));
+    if (pathname.startsWith('/api/station/')) {
+      const id = decodeURIComponent(pathname.split('/').pop() || '');
+      if (!id.trim()) {
+        throw new ApiError(400, 'INVALID_PARAMS', 'Station id must not be empty.');
+      }
       return sendJson(res, 200, await stationHandler(context, { id }));
     }
 
-    if (url.pathname.startsWith('/api/neighbors/')) {
-      const id = decodeURIComponent(url.pathname.replace('/api/neighbors/', ''));
+    if (pathname.startsWith('/api/neighbors/')) {
+      const id = decodeURIComponent(pathname.split('/').pop() || '');
+      if (!id.trim()) {
+        throw new ApiError(400, 'INVALID_PARAMS', 'Node id must not be empty.');
+      }
       return sendJson(res, 200, neighborsHandler(context, { id }));
     }
 
-    throw new ApiError(404, 'NOT_FOUND', `Route not found: ${url.pathname}`);
+    throw new ApiError(404, 'NOT_FOUND', `Route not found: ${pathname}`);
   } catch (err) {
     const response = toErrorResponse(err);
     sendJson(res, response.status, response.body);
