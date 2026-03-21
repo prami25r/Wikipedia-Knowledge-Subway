@@ -38,6 +38,16 @@ npm install
 npm run dev
 ```
 
+
+## Frontend architecture
+
+- `lib/backend-api.ts`: centralized API service layer with lightweight response caching.
+- `lib/frontend-store.ts`: global client state store for selected station, route path, hover state, and graph data.
+- `components/GraphCanvas.tsx`: Sigma.js canvas with zoom/pan, hover highlighting, selection, and route edge highlighting.
+- `components/SearchBar.tsx`: debounced fuzzy backend search and jump-to-node selection.
+- `components/StationPanel.tsx`: dynamic station metadata panel from backend station endpoint.
+- `components/RouteViewer.tsx`: route controls that call shortest-path API and animate/highlight path.
+
 ## Seed Supabase
 
 ```bash
@@ -117,3 +127,20 @@ From the Subway Map toolbar, click **Export PNG** to download a high-resolution 
 - cluster labels
 - subway line legend
 
+
+
+## Backend (Conflict-Resolved Baseline)
+
+The backend implementation lives in `backend/` and is started with:
+
+```bash
+npm run backend:dev
+```
+
+Backend test suite:
+
+```bash
+npm run backend:test
+```
+
+This repository treats `public/data/layout_graph.json` as the canonical graph dataset path for the backend graph loader.

@@ -42,6 +42,12 @@ const PATH_NODE_COLOR = "#f59e0b";
 const PATH_EDGE_COLOR = "#fbbf24";
 const INTERCHANGE_EDGE_COLOR = "#334155";
 
+type SigmaRendererLike = {
+  kill: () => void;
+  on: (event: string, handler: (payload: { node: string }) => void) => void;
+  getCamera: () => { animate: (state: { x: number; y: number; ratio?: number }, options?: { duration: number }) => void };
+};
+
 function getClusterColor(cluster: string, clusterMap: Map<string, string>) {
   const existing = clusterMap.get(cluster);
   if (existing) return existing;
@@ -76,11 +82,7 @@ export function GraphRenderer({
   onNodeClick,
 }: GraphRendererProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const rendererRef = useRef<{
-    kill: () => void;
-    on: (event: string, handler: (payload: { node: string }) => void) => void;
-    getCamera: () => { animate: (state: { x: number; y: number; ratio?: number }, options?: { duration: number }) => void };
-  } | null>(null);
+  const rendererRef = useRef<SigmaRendererLike | null>(null);
 
   const graph = useMemo(() => {
     const instance = new Graph();
@@ -166,11 +168,13 @@ export function GraphRenderer({
         zIndex: true,
       });
 
+      const sigmaRenderer = renderer as unknown as SigmaRendererLike;
+
       if (onNodeClick) {
-        renderer.on("clickNode", ({ node }) => onNodeClick(node));
+        sigmaRenderer.on("clickNode", ({ node }) => onNodeClick(node));
       }
 
-      rendererRef.current = renderer;
+      rendererRef.current = sigmaRenderer;
     };
 
     void setupRenderer();

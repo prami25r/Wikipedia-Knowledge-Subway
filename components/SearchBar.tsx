@@ -1,45 +1,50 @@
-"use client";
+'use client';
 
-import { useMemo, useState } from "react";
-import Fuse from "fuse.js";
+import { useEffect, useState } from 'react';
+import { backendApi } from '@/lib/backend-api';
+import { subwayActions } from '@/lib/frontend-store';
+import type { BackendSearchItem } from '@/types/backend';
 
-type SearchItem = {
-  id: string;
-  label: string;
-};
+function useDebounced<T>(value: T, delay = 220): T {
+  const [debounced, setDebounced] = useState(value);
+  useEffect(() => {
+    const id = window.setTimeout(() => setDebounced(value), delay);
+    return () => window.clearTimeout(id);
+  }, [value, delay]);
+  return debounced;
+}
 
-type SearchBarProps = {
-  items: SearchItem[];
-  onSelect: (itemId: string) => void;
-};
-
-export function SearchBar({ items, onSelect }: SearchBarProps) {
-  const [query, setQuery] = useState("");
+export function SearchBar() {
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState<BackendSearchItem[]>([]);
   const [open, setOpen] = useState(false);
+  const debounced = useDebounced(query);
 
-  const fuse = useMemo(
-    () =>
-      new Fuse(items, {
-        keys: ["label", "id"],
-        threshold: 0.35,
-        ignoreLocation: true,
-      }),
-    [items],
-  );
+  useEffect(() => {
+    let active = true;
 
-  const suggestions = useMemo(() => {
-    if (!query.trim()) {
-      return items.slice(0, 8);
-    }
+    const run = async () => {
+      if (!debounced.trim()) {
+        setResults([]);
+        return;
+      }
+      try {
+        const response = await backendApi.search(debounced);
+        if (active) setResults(response.results.slice(0, 8));
+      } catch {
+        if (active) setResults([]);
+      }
+    };
 
-    return fuse
-      .search(query)
-      .slice(0, 8)
-      .map((entry) => entry.item);
-  }, [fuse, items, query]);
+    void run();
+
+    return () => {
+      active = false;
+    };
+  }, [debounced]);
 
   return (
-    <div className="relative w-full max-w-xl">
+    <div className='relative w-full'>
       <input
         value={query}
         onChange={(event) => {
@@ -48,28 +53,28 @@ export function SearchBar({ items, onSelect }: SearchBarProps) {
         }}
         onFocus={() => setOpen(true)}
         onBlur={() => setTimeout(() => setOpen(false), 120)}
-        placeholder="Search stations..."
-        className="w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-600/30"
+        placeholder='Search stations...'
+        className='w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-slate-100 focus:border-cyan-500 focus:outline-none'
       />
-      {open && suggestions.length > 0 ? (
-        <ul className="absolute z-30 mt-2 w-full overflow-hidden rounded-lg border border-slate-700 bg-slate-900 shadow-xl">
-          {suggestions.map((item) => (
-            <li key={item.id}>
-              <button
-                type="button"
-                className="w-full border-b border-slate-800 px-4 py-2 text-left text-sm text-slate-200 hover:bg-slate-800"
-                onMouseDown={(event) => event.preventDefault()}
-                onClick={() => {
-                  setQuery(item.label);
-                  setOpen(false);
-                  onSelect(item.id);
-                }}
-              >
-                {item.label}
-              </button>
-            </li>
+      {open && results.length > 0 ? (
+        <div className='absolute z-20 mt-2 w-full overflow-hidden rounded-lg border border-slate-700 bg-slate-900'>
+          {results.map((item) => (
+            <button
+              key={item.id}
+              type='button'
+              className='block w-full border-b border-slate-800 px-4 py-2 text-left text-sm text-slate-100 hover:bg-slate-800'
+              onMouseDown={(event) => event.preventDefault()}
+              onClick={() => {
+                setQuery(item.title);
+                setOpen(false);
+                subwayActions.selectNode(item.id);
+              }}
+            >
+              {item.title}
+              <span className='ml-2 text-xs text-slate-400'>({item.cluster})</span>
+            </button>
           ))}
-        </ul>
+        </div>
       ) : null}
     </div>
   );
