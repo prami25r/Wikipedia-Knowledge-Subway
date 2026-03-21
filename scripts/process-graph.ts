@@ -2,11 +2,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { UndirectedGraph } from "graphology";
 import louvain from "graphology-communities-louvain";
-import type {
-  RawWikiGraph,
-  ProcessedWikiGraph,
-  ProcessedWikiGraphNode,
-} from "@/types/graph";
+import type { RawWikiGraph, ProcessedWikiGraph, ProcessedWikiGraphNode } from "@/types/graph";
 
 const INPUT_PATH = path.join(process.cwd(), "data", "wiki_graph.json");
 const OUTPUT_PATH = path.join(process.cwd(), "data", "processed_graph.json");
