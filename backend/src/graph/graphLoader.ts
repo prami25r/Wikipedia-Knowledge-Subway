@@ -1,14 +1,21 @@
 import fs from 'node:fs';
 import path from 'node:path';
+<<<<<<< HEAD
 import { fileURLToPath } from 'node:url';
+=======
+>>>>>>> main
 import Graph from 'graphology';
 import type { GraphDataset } from '../types/graph.js';
 import { normalizeNodeId } from '../utils/id.js';
 
+<<<<<<< HEAD
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export function loadGraphDataset(filePath = path.resolve(__dirname, '../../data/layout_graph.json')): GraphDataset {
+=======
+export function loadGraphDataset(filePath = path.join(process.cwd(), 'public/data/layout_graph.json')): GraphDataset {
+>>>>>>> main
   const raw = fs.readFileSync(filePath, 'utf8');
   const parsed = JSON.parse(raw) as GraphDataset;
 

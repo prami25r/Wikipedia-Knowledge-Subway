@@ -33,7 +33,11 @@ export class MetadataService {
   }
 
   private loadLocalData(): void {
+<<<<<<< HEAD
     const filePath = path.resolve(__dirname, '../../data/articles.json');
+=======
+    const filePath = path.resolve(__dirname, '../../../data/articles.json');
+>>>>>>> main
     if (!fs.existsSync(filePath)) return;
 
     const raw = fs.readFileSync(filePath, 'utf8');
