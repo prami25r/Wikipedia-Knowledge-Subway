@@ -92,7 +92,10 @@ function toProcessedGraph(graph: UndirectedGraph): ProcessedWikiGraph {
   };
 }
 
-async function writeOutputGraph(outputPath: string, graph: ProcessedWikiGraph): Promise<void> {
+async function writeOutputGraph(
+  outputPath: string,
+  graph: ProcessedWikiGraph,
+): Promise<void> {
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, JSON.stringify(graph, null, 2), "utf8");
 }

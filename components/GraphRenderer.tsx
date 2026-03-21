@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useRef } from "react";
+
+import type { Sigma } from "sigma";
+
 import Graph from "graphology";
 
 export type GraphRendererNode = {
@@ -36,7 +39,18 @@ type GraphRendererProps = {
   onNodeClick?: (nodeId: string) => void;
 };
 
-const CLUSTER_COLORS = ["#22d3ee", "#38bdf8", "#818cf8", "#a78bfa", "#c084fc", "#fb7185", "#f97316", "#34d399", "#facc15", "#60a5fa"] as const;
+const CLUSTER_COLORS = [
+  "#22d3ee",
+  "#38bdf8",
+  "#818cf8",
+  "#a78bfa",
+  "#c084fc",
+  "#fb7185",
+  "#f97316",
+  "#34d399",
+  "#facc15",
+  "#60a5fa",
+] as const;
 const HIGHLIGHT_COLOR = "#f8fafc";
 const PATH_NODE_COLOR = "#f59e0b";
 const PATH_EDGE_COLOR = "#fbbf24";
@@ -113,12 +127,16 @@ export function GraphRenderer({
     }
 
     edges.forEach((edge, index) => {
-      if (!instance.hasNode(edge.source) || !instance.hasNode(edge.target)) return;
+      if (!instance.hasNode(edge.source) || !instance.hasNode(edge.target))
+        return;
 
       const sourceCluster = clusterByNode.get(edge.source);
       const targetCluster = clusterByNode.get(edge.target);
-      const isSameLine = sourceCluster && targetCluster && sourceCluster === targetCluster;
-      const lineColor = isSameLine ? instance.getNodeAttribute(edge.source, "baseColor") : INTERCHANGE_EDGE_COLOR;
+      const isSameLine =
+        sourceCluster && targetCluster && sourceCluster === targetCluster;
+      const lineColor = isSameLine
+        ? instance.getNodeAttribute(edge.source, "baseColor")
+        : INTERCHANGE_EDGE_COLOR;
       const lineWidth = isSameLine ? 3.2 : 1.2;
 
       const edgeKey = edge.id ?? `${edge.source}->${edge.target}-${index}`;
@@ -201,7 +219,11 @@ export function GraphRenderer({
       if (graph.hasNode(nodeId)) {
         const attrs = graph.getNodeAttributes(nodeId);
         graph.setNodeAttribute(nodeId, "color", PATH_NODE_COLOR);
-        graph.setNodeAttribute(nodeId, "size", (attrs.baseSize ?? attrs.size) * 1.18);
+        graph.setNodeAttribute(
+          nodeId,
+          "size",
+          (attrs.baseSize ?? attrs.size) * 1.18,
+        );
       }
     }
 
@@ -216,18 +238,33 @@ export function GraphRenderer({
     if (focusedNodeId && graph.hasNode(focusedNodeId)) {
       const focusNode = graph.getNodeAttributes(focusedNodeId);
       graph.setNodeAttribute(focusedNodeId, "color", HIGHLIGHT_COLOR);
-      graph.setNodeAttribute(focusedNodeId, "size", (focusNode.baseSize ?? focusNode.size) * 1.28);
+      graph.setNodeAttribute(
+        focusedNodeId,
+        "size",
+        (focusNode.baseSize ?? focusNode.size) * 1.28,
+      );
 
       const renderer = rendererRef.current;
       if (renderer) {
-        renderer.getCamera().animate({ x: focusNode.x, y: focusNode.y, ratio: 0.32 }, { duration: 450 });
+        renderer
+          .getCamera()
+          .animate(
+            { x: focusNode.x, y: focusNode.y, ratio: 0.32 },
+            { duration: 450 },
+          );
       }
     }
   }, [focusedNodeId, highlightedNodeIds, highlightedPathEdgeKeys, graph]);
 
   return (
     <div className="relative">
-      <div ref={containerRef} className={className ?? "h-[620px] w-full rounded-lg border border-slate-700 bg-slate-950"} />
+      <div
+        ref={containerRef}
+        className={
+          className ??
+          "h-[620px] w-full rounded-lg border border-slate-700 bg-slate-950"
+        }
+      />
       {clusterLabels.map((label) => (
         <div
           key={label.name}
