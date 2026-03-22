@@ -1,146 +1,43 @@
 # Wikipedia Knowledge Subway
 
-A full-stack TypeScript web application for exploring Wikipedia topics as an interactive subway-style graph.
+Clean split repository with two top-level apps:
 
-## Stack
+- `frontend/` → Next.js + TypeScript UI (Sigma.js graph explorer)
+- `backend/` → Node.js + TypeScript API (Graphology graph engine)
 
-- **Next.js (App Router)**
-- **TypeScript**
-- **Tailwind CSS**
-- **Sigma.js + Graphology**
-- **Supabase PostgreSQL**
-- **Next.js API routes**
-
-## Project Structure
-
-```text
-app/          # routes, pages, and API handlers
-components/   # UI components
-lib/          # server/client shared utilities
-scripts/      # operational scripts (seed, data collection)
-types/        # shared TypeScript types
-api/          # typed client API wrappers
-data/         # generated graph artifacts
-```
-
-## Environment Variables
-
-Copy `.env.example` to `.env.local` and fill in values:
-
-- `SUPABASE_URL`
-- `SUPABASE_ANON_KEY`
-- `OPENAI_API_KEY`
-
-## Getting Started
+## Frontend
 
 ```bash
+cd frontend
 npm install
 npm run dev
 ```
 
-
-## Frontend architecture
-
-- `lib/backend-api.ts`: centralized API service layer with lightweight response caching.
-- `lib/frontend-store.ts`: global client state store for selected station, route path, hover state, and graph data.
-- `components/GraphCanvas.tsx`: Sigma.js canvas with zoom/pan, hover highlighting, selection, and route edge highlighting.
-- `components/SearchBar.tsx`: debounced fuzzy backend search and jump-to-node selection.
-- `components/StationPanel.tsx`: dynamic station metadata panel from backend station endpoint.
-- `components/RouteViewer.tsx`: route controls that call shortest-path API and animate/highlight path.
-
-## Seed Supabase
+Frontend checks:
 
 ```bash
-npm run seed
+cd frontend
+npm run typecheck
+npm run build
 ```
 
-Ensure a `wikipedia_edges` table exists with the expected schema.
-
-## Collect Wikipedia Graph Data
-
-Run the graph collector script (writes to `data/wiki_graph.json` by default):
+## Backend
 
 ```bash
-npm run collect:wiki
+cd backend
+npm install
+npm run dev
 ```
 
-Override defaults:
+Backend checks:
 
 ```bash
-node scripts/collect-wikipedia-graph.js \
-  --seeds='["Artificial Intelligence","Physics"]' \
-  --max-articles=2000 \
-  --batch-size=20 \
-  --rate-limit-ms=250
+cd backend
+npm run typecheck
+npm run test
 ```
 
-Or use a seed file containing a JSON array of topic strings:
+## Notes
 
-```bash
-node scripts/collect-wikipedia-graph.js --seed-file ./data/seeds.json
-```
-
-## Process Collected Graph
-
-Compute degree, centrality, and Louvain communities from `data/wiki_graph.json` and export `data/processed_graph.json`:
-
-```bash
-npm run process:graph
-```
-
-## Build Graph Layout
-
-Run ForceAtlas2 on `data/processed_graph.json`, iterate until convergence, normalize coordinates, and export `data/layout_graph.json`:
-
-```bash
-npm run layout:graph
-```
-
-## PostgreSQL Graph Schema (Supabase)
-
-Schema SQL is provided at `scripts/sql/graph_schema.sql` and includes:
-
-- `articles(id, title, summary, cluster, x, y, degree, created_at, updated_at)`
-- `links(id, source, target, created_at)`
-
-Apply it in Supabase SQL editor, then use the TypeScript data helpers in `lib/graph-data.ts`:
-
-- `insertArticles()`
-- `insertEdges()`
-- `getGraphData()`
-
-## API Endpoints
-
-- `GET /api/graph?page=1&pageSize=100&cluster=AI`
-  - Returns paginated graph payload with `{ nodes, edges, pagination }`
-- `GET /api/article/[title]?page=1&pageSize=50`
-  - Returns article details and paginated `connections` with `{ title, summary, connections, cluster, pagination }`
-
-Both routes include cache headers (`s-maxage` + `stale-while-revalidate`) for fast repeated reads.
-
-## Export Current Graph View
-
-From the Subway Map toolbar, click **Export PNG** to download a high-resolution image of the current visible graph, including:
-
-- visible nodes and edges
-- highlighted route path state
-- cluster labels
-- subway line legend
-
-
-
-## Backend (Conflict-Resolved Baseline)
-
-The backend implementation lives in `backend/` and is started with:
-
-```bash
-npm run backend:dev
-```
-
-Backend test suite:
-
-```bash
-npm run backend:test
-```
-
-This repository treats `public/data/layout_graph.json` as the canonical graph dataset path for the backend graph loader.
+- Frontend talks to backend via `NEXT_PUBLIC_BACKEND_URL` (defaults to `http://localhost:4000`).
+- Backend uses `backend/data/layout_graph.json` as canonical graph dataset.

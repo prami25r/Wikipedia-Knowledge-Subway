@@ -1,26 +1,20 @@
-# Wikipedia Knowledge Subway Backend
+# Backend
 
-Production-oriented backend modules for graph exploration APIs.
+Standalone Node/TypeScript backend for Wikipedia Knowledge Subway.
 
-## Architecture
+## Structure
 
-- `src/graph`: graph loading/building and graph algorithms.
-- `src/services`: domain services (graph, route, search, metadata).
-- `src/api`: endpoint handlers mapped to REST contracts.
-- `src/middleware`: rate limit and structured error handling.
-- `src/utils/id.ts`: canonical station ID normalization.
-- `public/data/layout_graph.json`: startup dataset with nodes and edges.
-- `tests`: unit tests for graph loading, BFS routing, search, and ID normalization.
-
-## Endpoint behavior
-
-- All requests use normalized paths (`/api/graph` and `/api/graph/` behave identically).
-- Station IDs are normalized (trim + space/hyphen to underscore + lowercase).
-- Dynamic station/neighbors routes reject empty IDs with HTTP 400.
-- Unknown routes return structured HTTP 404 JSON errors.
+- `src/api`: endpoint handlers
+- `src/services`: graph/search/route/metadata service layer
+- `src/graph`: Graphology loader and utilities
+- `src/middleware`: structured errors + rate limiter
+- `src/utils`: ID normalization
+- `data/layout_graph.json`: canonical graph dataset
+- `tests`: backend unit tests
 
 ## Endpoints
 
+- `GET /health`
 - `GET /api/graph`
 - `GET /api/station/:id`
 - `GET /api/search?q=`
@@ -30,22 +24,17 @@ Production-oriented backend modules for graph exploration APIs.
 - `GET /api/export/graph.json`
 - `GET /api/export/stations.csv`
 
-## Startup flow
-
-1. Load `public/data/layout_graph.json` from absolute path (`process.cwd()`).
-2. Normalize and build Graphology graph in memory once.
-3. Compute stats.
-4. Build Fuse.js search index.
-5. Start Node HTTP server.
-
-## Run
+## Run backend only
 
 ```bash
-npm run backend:dev
-npm run backend:test
+cd backend
+npm install
+npm run dev
 ```
 
+## Test backend only
 
-## Canonical dataset source
-
-Use only `public/data/layout_graph.json` as the backend runtime dataset source to avoid duplicate-file merge conflicts.
+```bash
+cd backend
+npm run test
+```

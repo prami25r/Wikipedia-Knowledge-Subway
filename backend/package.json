@@ -1,0 +1,22 @@
+{
+  "name": "wikipedia-knowledge-subway-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "test": "node scripts/run-tests.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.2",
+    "fuse.js": "^7.0.0",
+    "graphology": "^0.26.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.15",
+    "tsx": "^4.19.3",
+    "typescript": "^5.9.3"
+  }
+}

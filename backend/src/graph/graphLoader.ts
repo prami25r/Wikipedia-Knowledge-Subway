@@ -1,10 +1,29 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import Graph from 'graphology';
 import type { GraphDataset } from '../types/graph.js';
 import { normalizeNodeId } from '../utils/id.js';
 
-export function loadGraphDataset(filePath = path.join(process.cwd(), 'public/data/layout_graph.json')): GraphDataset {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const DEFAULT_DATASET_PATHS = [
+  path.resolve(__dirname, '../../data/layout_graph.json'),
+  path.resolve(__dirname, '../../../data/layout_graph.json'),
+];
+
+function resolveDefaultGraphDatasetPath(): string {
+  for (const candidate of DEFAULT_DATASET_PATHS) {
+    if (fs.existsSync(candidate)) return candidate;
+  }
+
+  throw new Error(
+    `Unable to locate graph dataset. Checked: ${DEFAULT_DATASET_PATHS.join(', ')}`,
+  );
+}
+
+export function loadGraphDataset(filePath = resolveDefaultGraphDatasetPath()): GraphDataset {
   const raw = fs.readFileSync(filePath, 'utf8');
   const parsed = JSON.parse(raw) as GraphDataset;
 
