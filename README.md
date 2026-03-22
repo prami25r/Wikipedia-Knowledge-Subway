@@ -1,119 +1,59 @@
-# Wikipedia Knowledge Subway
+# Wikipedia Knowledge Subway Monorepo
 
-A full-stack TypeScript web application for exploring Wikipedia topics as an interactive subway-style graph.
+Wikipedia Knowledge Subway models **knowledge as infrastructure**:
+- Articles → stations
+- Categories → subway lines
+- Cross-links → transfers
+- Exploration → routes across a deterministic knowledge map
 
-## Stack
-
-- **Next.js (App Router)**
-- **TypeScript**
-- **Tailwind CSS**
-- **Sigma.js + Graphology**
-- **Supabase PostgreSQL**
-- **Next.js API routes**
-
-## Project Structure
+## Monorepo layout
 
 ```text
-app/          # routes, pages, and API handlers
-components/   # UI components
-lib/          # server/client shared utilities
-scripts/      # operational scripts (seed, data collection)
-types/        # shared TypeScript types
-api/          # typed client API wrappers
-data/         # generated graph artifacts
+apps/
+  frontend/          Next.js rendering engine (interaction + visualization)
+  backend/           Node.js API/pipeline runtime
+packages/
+  shared-types/      Contract-first schemas shared across apps
+  graph-core/        Raw ingestion normalization + typed knowledge graph build
+  subway-engine/     Deterministic graph→subway transformation
+  layout-engine/     Stable deterministic layout algorithms
 ```
 
-## Environment Variables
+## Data pipeline architecture
 
-Copy `.env.example` to `.env.local` and fill in values:
+1. **Ingestion**: raw wiki data loaded in backend services.
+2. **Graph Core**: normalized typed graph (`KnowledgeGraph`).
+3. **Subway Engine**: categories become lines, stations and transfers inferred.
+4. **Layout Engine**: deterministic layout (`LayoutMap`) with stable checksums.
+5. **API Layer**: versioned endpoints (`/v1/graph`, `/v1/subway`, `/v1/layout`, `/v1/explore`) and compatibility endpoints under `/api/*`.
 
+## Run frontend
+
+```bash
+npm --prefix apps/frontend install
+npm --prefix apps/frontend run dev
+```
+
+## Run backend
+
+```bash
+npm --prefix apps/backend install
+npm --prefix apps/backend run dev
+```
+
+## Validation
+
+```bash
+npm --prefix apps/frontend run typecheck
+npm --prefix apps/backend run typecheck
+npm --prefix apps/backend run test
+```
+
+## Environment
+
+Frontend (`apps/frontend/.env.local`) supports:
+- `NEXT_PUBLIC_BACKEND_URL` (defaults to `http://localhost:4000`)
+
+Backend uses optional Supabase metadata env vars:
 - `SUPABASE_URL`
-- `SUPABASE_ANON_KEY`
-- `OPENAI_API_KEY`
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-## Seed Supabase
-
-```bash
-npm run seed
-```
-
-Ensure a `wikipedia_edges` table exists with the expected schema.
-
-## Collect Wikipedia Graph Data
-
-Run the graph collector script (writes to `data/wiki_graph.json` by default):
-
-```bash
-npm run collect:wiki
-```
-
-Override defaults:
-
-```bash
-node scripts/collect-wikipedia-graph.js \
-  --seeds='["Artificial Intelligence","Physics"]' \
-  --max-articles=2000 \
-  --batch-size=20 \
-  --rate-limit-ms=250
-```
-
-Or use a seed file containing a JSON array of topic strings:
-
-```bash
-node scripts/collect-wikipedia-graph.js --seed-file ./data/seeds.json
-```
-
-## Process Collected Graph
-
-Compute degree, centrality, and Louvain communities from `data/wiki_graph.json` and export `data/processed_graph.json`:
-
-```bash
-npm run process:graph
-```
-
-## Build Graph Layout
-
-Run ForceAtlas2 on `data/processed_graph.json`, iterate until convergence, normalize coordinates, and export `data/layout_graph.json`:
-
-```bash
-npm run layout:graph
-```
-
-## PostgreSQL Graph Schema (Supabase)
-
-Schema SQL is provided at `scripts/sql/graph_schema.sql` and includes:
-
-- `articles(id, title, summary, cluster, x, y, degree, created_at, updated_at)`
-- `links(id, source, target, created_at)`
-
-Apply it in Supabase SQL editor, then use the TypeScript data helpers in `lib/graph-data.ts`:
-
-- `insertArticles()`
-- `insertEdges()`
-- `getGraphData()`
-
-## API Endpoints
-
-- `GET /api/graph?page=1&pageSize=100&cluster=AI`
-  - Returns paginated graph payload with `{ nodes, edges, pagination }`
-- `GET /api/article/[title]?page=1&pageSize=50`
-  - Returns article details and paginated `connections` with `{ title, summary, connections, cluster, pagination }`
-
-Both routes include cache headers (`s-maxage` + `stale-while-revalidate`) for fast repeated reads.
-
-## Export Current Graph View
-
-From the Subway Map toolbar, click **Export PNG** to download a high-resolution image of the current visible graph, including:
-
-- visible nodes and edges
-- highlighted route path state
-- cluster labels
-- subway line legend
-
+- `SUPABASE_SERVICE_ROLE_KEY`
