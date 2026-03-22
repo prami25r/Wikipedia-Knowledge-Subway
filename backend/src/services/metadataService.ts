@@ -1,9 +1,9 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { createClient, type SupabaseClient } from '@supabase/supabase-js';
-import type { StationMetadata } from '../types/graph.js';
-import { normalizeNodeId } from '../utils/id.js';
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import type { StationMetadata } from "../types/graph.js";
+import { normalizeNodeId } from "../utils/id.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,29 +28,28 @@ export class MetadataService {
     const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
     if (supabaseUrl && supabaseKey) {
-      this.supabase = createClient(supabaseUrl, supabaseKey, { auth: { persistSession: false } });
+      this.supabase = createClient(supabaseUrl, supabaseKey, {
+        auth: { persistSession: false },
+      });
     }
   }
 
   private loadLocalData(): void {
-<<<<<<< HEAD
-    const filePath = path.resolve(__dirname, '../../data/articles.json');
-=======
-    const filePath = path.resolve(__dirname, '../../../data/articles.json');
->>>>>>> main
+    const filePath = path.resolve(__dirname, "../../data/articles.json");
     if (!fs.existsSync(filePath)) return;
 
-    const raw = fs.readFileSync(filePath, 'utf8');
+    const raw = fs.readFileSync(filePath, "utf8");
     const parsed = JSON.parse(raw) as LocalArticlesFile;
 
     for (const article of parsed.nodes ?? []) {
       this.localMap.set(normalizeNodeId(article.id), {
         id: normalizeNodeId(article.id),
         title: article.id,
-        summary: '',
+        summary: "",
         categories: article.line ? [article.line] : [],
         wikipedia_url:
-          article.url?.replaceAll('\\_', '_') ?? `https://en.wikipedia.org/wiki/${encodeURIComponent(article.id)}`,
+          article.url?.replaceAll("\\_", "_") ??
+          `https://en.wikipedia.org/wiki/${encodeURIComponent(article.id)}`,
       });
     }
   }
@@ -60,16 +59,16 @@ export class MetadataService {
 
     if (this.supabase) {
       const { data } = await this.supabase
-        .from('wikipedia_articles')
-        .select('id,title,summary,categories,wikipedia_url')
-        .eq('id', normalizedId)
+        .from("wikipedia_articles")
+        .select("id,title,summary,categories,wikipedia_url")
+        .eq("id", normalizedId)
         .maybeSingle();
 
       if (data) {
         return {
           id: normalizeNodeId(data.id),
           title: data.title,
-          summary: data.summary ?? '',
+          summary: data.summary ?? "",
           categories: data.categories ?? [],
           wikipedia_url: data.wikipedia_url,
         };
@@ -80,7 +79,7 @@ export class MetadataService {
       this.localMap.get(normalizedId) ?? {
         id: normalizedId,
         title: id,
-        summary: '',
+        summary: "",
         categories: [],
         wikipedia_url: `https://en.wikipedia.org/wiki/${encodeURIComponent(id)}`,
       }

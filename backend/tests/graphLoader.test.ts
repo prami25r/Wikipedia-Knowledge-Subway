@@ -18,7 +18,7 @@ test('graph loader loads dataset and builds graph with degrees', () => {
 });
 
 
-test('loadGraphDataset uses canonical public dataset', () => {
+test('loadGraphDataset uses the canonical backend dataset path', () => {
   const dataset = loadGraphDataset();
   assert.ok(Array.isArray(dataset.nodes));
   assert.ok(Array.isArray(dataset.edges));
