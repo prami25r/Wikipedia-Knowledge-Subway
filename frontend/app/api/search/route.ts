@@ -4,5 +4,5 @@ import { proxyBackendGet } from '@/lib/backend-proxy';
 export const runtime = 'nodejs';
 
 export async function GET(request: NextRequest) {
-  return proxyBackendGet(request, '/api/graph');
+  return proxyBackendGet(request, '/api/search');
 }

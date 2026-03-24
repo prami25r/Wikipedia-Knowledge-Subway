@@ -39,15 +39,34 @@ export function RouteViewer() {
     <section className='rounded-xl border border-slate-700 bg-slate-900/80 p-4'>
       <h3 className='mb-3 text-sm font-semibold text-cyan-300'>Route Viewer</h3>
       <div className='grid grid-cols-1 gap-2 md:grid-cols-2'>
-        <input list='station-options' value={start} onChange={(e) => setStart(e.target.value)} placeholder='Start station id' className='rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm' />
-        <input list='station-options' value={end} onChange={(e) => setEnd(e.target.value)} placeholder='End station id' className='rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm' />
+        <input
+          list='station-options'
+          value={start}
+          onChange={(e) => setStart(e.target.value)}
+          suppressHydrationWarning
+          placeholder='Start station id'
+          className='rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm'
+        />
+        <input
+          list='station-options'
+          value={end}
+          onChange={(e) => setEnd(e.target.value)}
+          suppressHydrationWarning
+          placeholder='End station id'
+          className='rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm'
+        />
       </div>
       <datalist id='station-options'>
         {options.map((option) => (
           <option key={option} value={option} />
         ))}
       </datalist>
-      <button type='button' onClick={() => void findRoute()} className='mt-3 rounded bg-cyan-600 px-3 py-2 text-sm font-medium text-white hover:bg-cyan-500'>
+      <button
+        type='button'
+        onClick={() => void findRoute()}
+        suppressHydrationWarning
+        className='mt-3 rounded bg-cyan-600 px-3 py-2 text-sm font-medium text-white hover:bg-cyan-500'
+      >
         {loading ? 'Finding...' : 'Find shortest path'}
       </button>
       {error ? <p className='mt-2 text-sm text-red-300'>{error}</p> : null}

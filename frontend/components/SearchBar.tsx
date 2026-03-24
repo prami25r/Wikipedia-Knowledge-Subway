@@ -53,6 +53,7 @@ export function SearchBar() {
         }}
         onFocus={() => setOpen(true)}
         onBlur={() => setTimeout(() => setOpen(false), 120)}
+        suppressHydrationWarning
         placeholder='Search stations...'
         className='w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-slate-100 focus:border-cyan-500 focus:outline-none'
       />

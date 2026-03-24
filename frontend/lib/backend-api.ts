@@ -6,27 +6,25 @@ import type {
   BackendStatsResponse,
 } from '@/types/backend';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL?.replace(/\/$/, '') ?? 'http://localhost:4000';
 const CACHE_TTL_MS = 30_000;
 
 const cache = new Map<string, { expiresAt: number; value: unknown }>();
 
 async function getJson<T>(path: string, useCache = true): Promise<T> {
-  const url = `${BASE_URL}${path}`;
-  const cached = cache.get(url);
+  const cached = cache.get(path);
 
   if (useCache && cached && cached.expiresAt > Date.now()) {
     return cached.value as T;
   }
 
-  const response = await fetch(url, { method: 'GET', cache: 'no-store' });
+  const response = await fetch(path, { method: 'GET', cache: 'no-store' });
   if (!response.ok) {
     throw new Error(`Backend request failed (${response.status}) for ${path}`);
   }
 
   const data = (await response.json()) as T;
   if (useCache) {
-    cache.set(url, { expiresAt: Date.now() + CACHE_TTL_MS, value: data });
+    cache.set(path, { expiresAt: Date.now() + CACHE_TTL_MS, value: data });
   }
 
   return data;
