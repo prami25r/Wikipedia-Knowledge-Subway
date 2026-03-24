@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { getSupabaseClient } from "@/lib/supabase";
 
 const CACHE_SECONDS = 180;
 const MAX_PAGE_SIZE = 200;
@@ -34,6 +34,7 @@ export async function GET(
   request: NextRequest,
   context: { params: Promise<{ title: string }> },
 ) {
+  const supabase = getSupabaseClient();
   const { title: rawTitle } = await context.params;
   const title = decodeURIComponent(rawTitle).trim();
 

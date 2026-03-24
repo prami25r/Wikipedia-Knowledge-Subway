@@ -1,5 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { supabase } from "@/lib/supabase";
+import { getSupabaseClient } from "@/lib/supabase";
 import type { Database } from "@/types/database";
 
 type DbClient = SupabaseClient;
@@ -29,7 +29,7 @@ function chunkArray<T>(items: T[], size: number): T[][] {
 
 export async function insertArticles(
   articles: ArticleRecord[],
-  client: DbClient = supabase,
+  client: DbClient = getSupabaseClient(),
   batchSize = 500,
 ): Promise<ArticleRow[]> {
   if (articles.length === 0) {
@@ -56,7 +56,7 @@ export async function insertArticles(
 
 export async function insertEdges(
   links: LinkRecord[],
-  client: DbClient = supabase,
+  client: DbClient = getSupabaseClient(),
   batchSize = 1000,
 ): Promise<LinkRow[]> {
   if (links.length === 0) {
@@ -81,7 +81,7 @@ export async function insertEdges(
   return inserted;
 }
 
-export async function getGraphData(client: DbClient = supabase): Promise<GraphDataResponse> {
+export async function getGraphData(client: DbClient = getSupabaseClient()): Promise<GraphDataResponse> {
   const [{ data: articles, error: articleError }, { data: links, error: linkError }] = await Promise.all([
     client.from("articles").select("id,title,summary,cluster,x,y,degree,created_at,updated_at"),
     client.from("links").select("id,source,target,created_at"),
