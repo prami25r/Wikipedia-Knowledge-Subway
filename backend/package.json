@@ -6,7 +6,14 @@
   "scripts": {
     "dev": "tsx src/server.ts",
     "test": "node scripts/run-tests.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "seed": "tsx scripts/seed.ts",
+    "collect:wiki": "node scripts/collect-wikipedia-graph.js",
+    "process:graph": "tsx scripts/process-graph.ts",
+    "layout:graph": "tsx scripts/layout-graph.ts",
+    "parse:wiki": "node scripts/parseWikiFiles.js",
+    "build:graph": "node scripts/buildGraph.js",
+    "layout:curated": "node scripts/layoutGraph.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.2",

@@ -1,11 +1,13 @@
 'use client';
 
 import { useSyncExternalStore } from 'react';
-import type { BackendGraphResponse, BackendStationResponse, BackendStatsResponse } from '@/types/backend';
+import type { BackendGraphResponse, BackendLineSummary, BackendStationResponse, BackendStatsResponse } from '@/types/backend';
 
 type SubwayState = {
   graph: BackendGraphResponse | null;
   stats: BackendStatsResponse | null;
+  lines: BackendLineSummary[];
+  activeLineId: string | null;
   selectedNodeId: string | null;
   hoveredNodeId: string | null;
   routeStart: string | null;
@@ -18,6 +20,8 @@ const store = {
   state: {
     graph: null,
     stats: null,
+    lines: [],
+    activeLineId: null,
     selectedNodeId: null,
     hoveredNodeId: null,
     routeStart: null,
@@ -54,6 +58,12 @@ export const subwayActions = {
   },
   setStats(stats: BackendStatsResponse) {
     setState({ stats });
+  },
+  setLines(lines: BackendLineSummary[]) {
+    setState({ lines });
+  },
+  setActiveLine(activeLineId: string | null) {
+    setState({ activeLineId });
   },
   selectNode(nodeId: string | null) {
     setState({ selectedNodeId: nodeId, station: null });

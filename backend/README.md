@@ -4,13 +4,13 @@ Standalone Node/TypeScript backend for Wikipedia Knowledge Subway.
 
 ## Structure
 
-- `src/api`: endpoint handlers
-- `src/services`: graph/search/route/metadata service layer
-- `src/graph`: Graphology loader and utilities
-- `src/middleware`: structured errors + rate limiter
-- `src/utils`: ID normalization
-- `data/layout_graph.json`: canonical graph dataset
-- `tests`: backend unit tests
+- `src/api` -> endpoint handlers and request validation
+- `src/services` -> graph, search, route, metadata, and line summary service layer
+- `src/graph` -> Graphology loader and utility functions
+- `src/middleware` -> structured errors and in-memory rate limiting
+- `src/utils` -> ID normalization helpers
+- `data/layout_graph.json` -> canonical runtime graph dataset
+- `tests` -> backend unit tests
 
 ## Endpoints
 
@@ -21,6 +21,8 @@ Standalone Node/TypeScript backend for Wikipedia Knowledge Subway.
 - `GET /api/neighbors/:id`
 - `GET /api/route?start=&end=`
 - `GET /api/stats`
+- `GET /api/lines`
+- `GET /api/line/:cluster`
 - `GET /api/export/graph.json`
 - `GET /api/export/stations.csv`
 

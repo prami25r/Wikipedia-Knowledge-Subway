@@ -6,6 +6,23 @@
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-slate-950 text-slate-100 antialiased;
+}
+
+a,
+button,
+input {
+  transition-property: color, background-color, border-color, box-shadow, transform;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.3);
+  color: #f8fafc;
 }

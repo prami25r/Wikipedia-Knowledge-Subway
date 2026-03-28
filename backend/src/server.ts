@@ -3,6 +3,8 @@ import { URL } from 'node:url';
 import { createAppContext } from './api/context.js';
 import { exportGraphJsonHandler, exportStationsCsvHandler } from './api/export.js';
 import { getGraphHandler } from './api/graph.js';
+import { lineHandler } from './api/line.js';
+import { linesHandler } from './api/lines.js';
 import { neighborsHandler } from './api/neighbors.js';
 import { routeHandler } from './api/route.js';
 import { searchHandler } from './api/search.js';
@@ -41,6 +43,7 @@ const server = http.createServer(async (req, res) => {
 
     // Static routes first
     if (pathname === '/api/graph') return sendJson(res, 200, getGraphHandler(context));
+    if (pathname === '/api/lines') return sendJson(res, 200, linesHandler(context));
     if (pathname === '/api/search') return sendJson(res, 200, searchHandler(context, Object.fromEntries(url.searchParams.entries())));
     if (pathname === '/api/route') return sendJson(res, 200, routeHandler(context, Object.fromEntries(url.searchParams.entries())));
     if (pathname === '/api/stats') return sendJson(res, 200, statsHandler(context));
@@ -56,6 +59,14 @@ const server = http.createServer(async (req, res) => {
         throw new ApiError(400, 'INVALID_PARAMS', 'Station id must not be empty.');
       }
       return sendJson(res, 200, await stationHandler(context, { id }));
+    }
+
+    if (pathname.startsWith('/api/line/')) {
+      const cluster = decodeURIComponent(pathname.split('/').pop() || '');
+      if (!cluster.trim()) {
+        throw new ApiError(400, 'INVALID_PARAMS', 'Line id must not be empty.');
+      }
+      return sendJson(res, 200, lineHandler(context, { cluster }));
     }
 
     if (pathname.startsWith('/api/neighbors/')) {

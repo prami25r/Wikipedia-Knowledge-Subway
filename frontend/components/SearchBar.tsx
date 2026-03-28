@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { backendApi } from '@/lib/backend-api';
-import { subwayActions } from '@/lib/frontend-store';
+import { humanizeCluster } from '@/lib/cluster';
+import { subwayActions, useSubwayStore } from '@/lib/frontend-store';
 import type { BackendSearchItem } from '@/types/backend';
 
 function useDebounced<T>(value: T, delay = 220): T {
@@ -15,6 +16,7 @@ function useDebounced<T>(value: T, delay = 220): T {
 }
 
 export function SearchBar() {
+  const activeLineId = useSubwayStore((state) => state.activeLineId);
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<BackendSearchItem[]>([]);
   const [open, setOpen] = useState(false);
@@ -30,7 +32,8 @@ export function SearchBar() {
       }
       try {
         const response = await backendApi.search(debounced);
-        if (active) setResults(response.results.slice(0, 8));
+        const filtered = activeLineId ? response.results.filter((item) => item.cluster === activeLineId) : response.results;
+        if (active) setResults(filtered.slice(0, 8));
       } catch {
         if (active) setResults([]);
       }
@@ -41,7 +44,7 @@ export function SearchBar() {
     return () => {
       active = false;
     };
-  }, [debounced]);
+  }, [activeLineId, debounced]);
 
   return (
     <div className='relative w-full'>
@@ -54,7 +57,7 @@ export function SearchBar() {
         onFocus={() => setOpen(true)}
         onBlur={() => setTimeout(() => setOpen(false), 120)}
         suppressHydrationWarning
-        placeholder='Search stations...'
+        placeholder={activeLineId ? `Search ${activeLineId} line...` : 'Search stations...'}
         className='w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-slate-100 focus:border-cyan-500 focus:outline-none'
       />
       {open && results.length > 0 ? (
@@ -72,7 +75,7 @@ export function SearchBar() {
               }}
             >
               {item.title}
-              <span className='ml-2 text-xs text-slate-400'>({item.cluster})</span>
+              <span className='ml-2 text-xs text-slate-400'>({humanizeCluster(item.cluster)})</span>
             </button>
           ))}
         </div>

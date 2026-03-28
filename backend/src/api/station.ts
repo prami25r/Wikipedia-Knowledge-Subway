@@ -35,6 +35,14 @@ export async function stationHandler(context: AppContext, params: Record<string,
     cluster: neighbor.cluster,
     degree: neighbor.degree,
   }));
+  const neighborClustersMap = new Map<string, number>();
+  for (const neighbor of neighbors) {
+    neighborClustersMap.set(neighbor.cluster, (neighborClustersMap.get(neighbor.cluster) ?? 0) + 1);
+  }
+  const neighbor_clusters = Array.from(neighborClustersMap.entries())
+    .map(([cluster, count]) => ({ cluster, count }))
+    .sort((left, right) => right.count - left.count || left.cluster.localeCompare(right.cluster));
+  const is_transfer_station = neighbor_clusters.some((entry) => entry.cluster !== station.cluster);
 
   return {
     id: station.id,
@@ -44,6 +52,8 @@ export async function stationHandler(context: AppContext, params: Record<string,
     categories: metadata.categories,
     degree: station.degree,
     neighbors,
+    neighbor_clusters,
+    is_transfer_station,
     wikipedia_url: metadata.wikipedia_url,
   };
 }

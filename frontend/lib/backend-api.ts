@@ -1,5 +1,7 @@
 import type {
   BackendGraphResponse,
+  BackendLineDetailResponse,
+  BackendLinesResponse,
   BackendRouteResponse,
   BackendSearchResponse,
   BackendStationResponse,
@@ -42,6 +44,12 @@ export const backendApi = {
   },
   getRoute(start: string, end: string) {
     return getJson<BackendRouteResponse>(`/api/route?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}`, false);
+  },
+  getLines() {
+    return getJson<BackendLinesResponse>('/api/lines');
+  },
+  getLine(cluster: string) {
+    return getJson<BackendLineDetailResponse>(`/api/line/${encodeURIComponent(cluster)}`);
   },
   getStats() {
     return getJson<BackendStatsResponse>('/api/stats');

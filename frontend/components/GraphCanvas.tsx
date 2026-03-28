@@ -21,6 +21,7 @@ function edgeKey(source: string, target: string): string {
 
 export function GraphCanvas() {
   const graphData = useSubwayStore((state) => state.graph);
+  const activeLineId = useSubwayStore((state) => state.activeLineId);
   const selectedNodeId = useSubwayStore((state) => state.selectedNodeId);
   const hoveredNodeId = useSubwayStore((state) => state.hoveredNodeId);
   const routePath = useSubwayStore((state) => state.routePath);
@@ -61,6 +62,8 @@ export function GraphCanvas() {
         color: '#334155',
         size: 1,
         pathKey: edgeKey(edge.source, edge.target),
+        sourceCluster: g.getNodeAttribute(edge.source, 'cluster'),
+        targetCluster: g.getNodeAttribute(edge.target, 'cluster'),
       });
     });
 
@@ -119,6 +122,22 @@ export function GraphCanvas() {
       graph.setEdgeAttribute(edge, 'size', 1);
     });
 
+    if (activeLineId) {
+      graph.forEachNode((node, attrs) => {
+        if (attrs.cluster !== activeLineId) {
+          graph.setNodeAttribute(node, 'color', '#162032');
+          graph.setNodeAttribute(node, 'size', Math.max(1.6, attrs.baseSize * 0.82));
+        }
+      });
+
+      graph.forEachEdge((edge, attrs) => {
+        if (attrs.sourceCluster !== activeLineId || attrs.targetCluster !== activeLineId) {
+          graph.setEdgeAttribute(edge, 'color', '#1f2937');
+          graph.setEdgeAttribute(edge, 'size', 0.45);
+        }
+      });
+    }
+
     if (hoveredNodeId && graph.hasNode(hoveredNodeId)) {
       const neighborhood = new Set([hoveredNodeId, ...graph.neighbors(hoveredNodeId)]);
       graph.forEachNode((node) => {
@@ -146,7 +165,7 @@ export function GraphCanvas() {
     }
 
     sigmaRef.current.refresh();
-  }, [graph, selectedNodeId, hoveredNodeId, highlightedEdges]);
+  }, [activeLineId, graph, selectedNodeId, hoveredNodeId, highlightedEdges]);
 
   return <div ref={containerRef} className='h-[72vh] w-full rounded-xl border border-slate-700 bg-slate-950' />;
 }

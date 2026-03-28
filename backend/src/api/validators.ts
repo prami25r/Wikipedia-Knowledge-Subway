@@ -8,6 +8,10 @@ export const stationIdParamSchema = z.object({
   id: z.string().min(1).max(200),
 });
 
+export const clusterParamSchema = z.object({
+  cluster: z.string().min(1).max(120),
+});
+
 export const searchQuerySchema = z.object({
   q: z.string().min(1).max(120),
   limit: z.coerce.number().int().min(1).max(100).optional(),

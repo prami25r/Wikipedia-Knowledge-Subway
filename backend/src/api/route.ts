@@ -25,5 +25,36 @@ export function routeHandler(context: AppContext, query: Record<string, unknown>
     throw new ApiError(404, 'ROUTE_NOT_FOUND', `No route found from ${parsed.data.start} to ${parsed.data.end}`);
   }
 
-  return result;
+  const steps = result.path.map((nodeId, index, path) => {
+    const node = context.graphService.getNode(nodeId);
+    if (!node) {
+      throw new ApiError(500, 'ROUTE_NODE_MISSING', `Route node ${nodeId} could not be resolved.`);
+    }
+
+    const previousCluster = index > 0 ? context.graphService.getNode(path[index - 1])?.cluster ?? node.cluster : node.cluster;
+    const nextCluster = index < path.length - 1 ? context.graphService.getNode(path[index + 1])?.cluster ?? node.cluster : node.cluster;
+
+    return {
+      id: node.id,
+      title: node.label,
+      cluster: node.cluster,
+      degree: node.degree,
+      is_transfer: previousCluster !== node.cluster || nextCluster !== node.cluster,
+    };
+  });
+
+  const clusters = Array.from(new Set(steps.map((step) => step.cluster)));
+  let line_change_count = 0;
+  for (let i = 1; i < steps.length; i += 1) {
+    if (steps[i - 1].cluster !== steps[i].cluster) {
+      line_change_count += 1;
+    }
+  }
+
+  return {
+    ...result,
+    steps,
+    clusters,
+    line_change_count,
+  };
 }

@@ -8,16 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit",
-    "seed": "tsx scripts/seed.ts",
-    "collect:wiki": "node scripts/collect-wikipedia-graph.js",
-    "process:graph": "tsx scripts/process-graph.ts",
-    "layout:graph": "tsx scripts/layout-graph.ts",
-    "parse-wiki": "node scripts/parseWikiFiles.js",
-    "build-graph": "node scripts/buildGraph.js",
-    "layout-graph": "node scripts/layoutGraph.js",
-    "backend:dev": "tsx backend/src/server.ts",
-    "backend:test": "tsx --test backend/tests/**/*.test.ts"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@sigma/edge-curve": "^3.1.0",
