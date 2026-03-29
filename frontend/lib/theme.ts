@@ -1,33 +1,14 @@
-export type ThemeId = 'metro' | 'cyberpunk' | 'light';
+export type ThemeId = 'dark' | 'light';
 
 export const THEME_STORAGE_KEY = 'wikipedia-subway-theme';
 
-export const THEMES = [
-  {
-    id: 'metro',
-    label: 'Neo Metro',
-    shortLabel: 'Metro',
-  },
-  {
-    id: 'cyberpunk',
-    label: 'Infra Glow',
-    shortLabel: 'Infra',
-  },
-  {
-    id: 'light',
-    label: 'Soft Grid',
-    shortLabel: 'Soft',
-  },
-] as const satisfies ReadonlyArray<{ id: ThemeId; label: string; shortLabel: string }>;
-
 export const THEME_CLASS_BY_ID: Record<ThemeId, string> = {
-  metro: 'theme-metro',
-  cyberpunk: 'theme-cyberpunk',
+  dark: 'theme-dark',
   light: 'theme-light',
 };
 
 export function isThemeId(value: unknown): value is ThemeId {
-  return value === 'metro' || value === 'cyberpunk' || value === 'light';
+  return value === 'dark' || value === 'light';
 }
 
 export function getThemeClass(theme: ThemeId): string {
@@ -36,14 +17,10 @@ export function getThemeClass(theme: ThemeId): string {
 
 export function getSystemThemePreference(): ThemeId {
   if (typeof window === 'undefined') {
-    return 'metro';
+    return 'dark';
   }
 
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'metro';
-}
-
-export function resolveThemePreference(value: unknown): ThemeId {
-  return isThemeId(value) ? value : getSystemThemePreference();
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 }
 
 export function applyThemeToDocument(theme: ThemeId): void {
@@ -55,7 +32,7 @@ export function applyThemeToDocument(theme: ThemeId): void {
   root.classList.remove(...Object.values(THEME_CLASS_BY_ID));
   root.classList.add(getThemeClass(theme));
   root.dataset.theme = theme;
-  root.style.colorScheme = theme === 'light' ? 'light' : 'dark';
+  root.style.colorScheme = theme;
 }
 
 export function getThemeInitScript(): string {
@@ -63,7 +40,7 @@ export function getThemeInitScript(): string {
     (() => {
       const storageKey = ${JSON.stringify(THEME_STORAGE_KEY)};
       const themeClassById = ${JSON.stringify(THEME_CLASS_BY_ID)};
-      const isThemeId = (value) => value === 'metro' || value === 'cyberpunk' || value === 'light';
+      const isThemeId = (value) => value === 'dark' || value === 'light';
 
       let storedTheme = null;
       try {
@@ -72,13 +49,13 @@ export function getThemeInitScript(): string {
 
       const theme = isThemeId(storedTheme)
         ? storedTheme
-        : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'metro');
+        : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
 
       const root = document.documentElement;
       root.classList.remove(...Object.values(themeClassById));
       root.classList.add(themeClassById[theme]);
       root.dataset.theme = theme;
-      root.style.colorScheme = theme === 'light' ? 'light' : 'dark';
+      root.style.colorScheme = theme;
     })();
   `;
 }
@@ -90,17 +67,17 @@ function readVar(styles: CSSStyleDeclaration, name: string): string {
 export function readThemeGraphPalette() {
   if (typeof document === 'undefined') {
     return {
-      clusterColors: ['#00D1FF', '#33D7FF', '#4EBAFF', '#8B5CF6', '#A36BFF', '#6E84FF', '#2EE1FF', '#B794FF'],
-      defaultEdgeColor: '#29435B',
-      mutedEdgeColor: '#162435',
-      mutedNodeColor: '#172332',
-      fadedNodeColor: '#1B2A3B',
-      selectedNodeColor: '#EAF7FF',
-      routeHighlightColor: '#FDBA3B',
-      labelColor: '#F5FAFF',
-      hoverFillColor: '#0F1722',
-      hoverShadowColor: '#000000',
-      hoverTextColor: '#F5FAFF',
+      clusterColors: ['#4DA3FF', '#78B5F2', '#6B86A6', '#F2A65A', '#D48C52', '#8FA56E', '#5B87A8', '#B68C6A'],
+      defaultEdgeColor: '#415161',
+      mutedEdgeColor: '#24313D',
+      mutedNodeColor: '#25303A',
+      fadedNodeColor: '#1A232C',
+      selectedNodeColor: '#E6EAF0',
+      routeHighlightColor: '#D9BA84',
+      labelColor: '#E6EAF0',
+      hoverFillColor: '#151C23',
+      hoverShadowColor: 'rgba(7, 10, 13, 0.34)',
+      hoverTextColor: '#E6EAF0',
     };
   }
 

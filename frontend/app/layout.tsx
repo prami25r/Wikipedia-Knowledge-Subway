@@ -19,7 +19,7 @@ const navItems = [
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang='en' className='theme-metro' suppressHydrationWarning>
+    <html lang='en' className='theme-dark' suppressHydrationWarning>
       <body>
         <Script id='theme-init' strategy='beforeInteractive'>
           {getThemeInitScript()}
