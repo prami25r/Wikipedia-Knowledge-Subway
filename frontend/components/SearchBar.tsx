@@ -58,15 +58,15 @@ export function SearchBar() {
         onBlur={() => setTimeout(() => setOpen(false), 120)}
         suppressHydrationWarning
         placeholder={activeLineId ? `Search ${activeLineId} line...` : 'Search stations...'}
-        className='w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-slate-100 focus:border-cyan-500 focus:outline-none'
+        className='w-full rounded-xl border border-theme-border bg-theme-panel px-4 py-3 text-sm text-theme-text shadow-theme-soft focus:border-theme-primary focus:outline-none'
       />
       {open && results.length > 0 ? (
-        <div className='absolute z-20 mt-2 w-full overflow-hidden rounded-lg border border-slate-700 bg-slate-900'>
+        <div className='absolute z-20 mt-2 w-full overflow-hidden rounded-2xl border border-theme-border bg-theme-panel shadow-theme-strong'>
           {results.map((item) => (
             <button
               key={item.id}
               type='button'
-              className='block w-full border-b border-slate-800 px-4 py-2 text-left text-sm text-slate-100 hover:bg-slate-800'
+              className='block w-full border-b border-theme-border px-4 py-2 text-left text-sm text-theme-text last:border-b-0 hover:bg-theme-card'
               onMouseDown={(event) => event.preventDefault()}
               onClick={() => {
                 setQuery(item.title);
@@ -75,7 +75,7 @@ export function SearchBar() {
               }}
             >
               {item.title}
-              <span className='ml-2 text-xs text-slate-400'>({humanizeCluster(item.cluster)})</span>
+              <span className='ml-2 text-xs text-theme-muted'>({humanizeCluster(item.cluster)})</span>
             </button>
           ))}
         </div>

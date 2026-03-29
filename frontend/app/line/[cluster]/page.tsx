@@ -16,22 +16,22 @@ export default async function LinePage({ params }: { params: Promise<{ cluster: 
     return (
       <main className='mx-auto flex min-h-screen w-full max-w-[1320px] flex-col gap-6 px-4 py-6 md:px-8 md:py-10'>
         <div className='space-y-4'>
-          <Link href='/' className='text-sm font-medium text-cyan-300 transition hover:text-cyan-200'>
+          <Link href='/' className='text-sm font-medium text-theme-primary hover:text-theme-secondary'>
             Back to explorer
           </Link>
-          <section className='rounded-[32px] border border-slate-800 bg-[linear-gradient(145deg,rgba(15,23,42,0.96),rgba(8,47,73,0.88),rgba(34,197,94,0.08))] p-6 md:p-8'>
+          <section className='rounded-[32px] border border-theme-border-strong bg-theme-hero p-6 shadow-theme-glow md:p-8'>
             <div className='flex flex-wrap items-start justify-between gap-4'>
               <div className='space-y-3'>
-                <p className='text-xs font-semibold uppercase tracking-[0.32em] text-cyan-200'>Line Overview</p>
-                <h1 className='text-3xl font-semibold tracking-tight text-white md:text-5xl'>{line.name}</h1>
-                <p className='max-w-3xl text-sm leading-6 text-slate-300 md:text-base'>
+                <p className='text-xs font-semibold uppercase tracking-[0.32em] text-theme-primary'>Line Overview</p>
+                <h1 className='text-3xl font-semibold tracking-tight text-theme-text md:text-5xl'>{line.name}</h1>
+                <p className='max-w-3xl text-sm leading-6 text-theme-muted md:text-base'>
                   {humanizeCluster(line.id)} is one of the main knowledge corridors in the subway. Use this page to inspect hubs, connected lines,
                   and the stations that define the line today.
                 </p>
               </div>
               <Link
                 href='/route'
-                className='rounded-full border border-slate-700 px-4 py-2.5 text-sm text-slate-100 transition hover:border-cyan-500/70 hover:text-cyan-200'
+                className='rounded-full border border-theme-border bg-theme-card px-4 py-2.5 text-sm text-theme-text hover:border-theme-primary hover:text-theme-primary'
               >
                 Plan a route
               </Link>
@@ -40,61 +40,61 @@ export default async function LinePage({ params }: { params: Promise<{ cluster: 
         </div>
 
         <section className='grid gap-3 md:grid-cols-2 xl:grid-cols-4'>
-          <div className='rounded-[24px] border border-slate-800 bg-slate-900/75 p-5'>
-            <p className='text-sm text-slate-500'>Stations</p>
-            <p className='mt-2 text-3xl font-semibold text-slate-50'>{line.station_count}</p>
+          <div className='rounded-[24px] border border-theme-border bg-theme-panel p-5 shadow-theme-soft'>
+            <p className='text-sm text-theme-soft'>Stations</p>
+            <p className='mt-2 text-3xl font-semibold text-theme-text'>{line.station_count}</p>
           </div>
-          <div className='rounded-[24px] border border-slate-800 bg-slate-900/75 p-5'>
-            <p className='text-sm text-slate-500'>Internal links</p>
-            <p className='mt-2 text-3xl font-semibold text-slate-50'>{line.internal_edge_count}</p>
+          <div className='rounded-[24px] border border-theme-border bg-theme-panel p-5 shadow-theme-soft'>
+            <p className='text-sm text-theme-soft'>Internal links</p>
+            <p className='mt-2 text-3xl font-semibold text-theme-text'>{line.internal_edge_count}</p>
           </div>
-          <div className='rounded-[24px] border border-slate-800 bg-slate-900/75 p-5'>
-            <p className='text-sm text-slate-500'>Transfers</p>
-            <p className='mt-2 text-3xl font-semibold text-slate-50'>{line.transfer_station_count}</p>
+          <div className='rounded-[24px] border border-theme-border bg-theme-panel p-5 shadow-theme-soft'>
+            <p className='text-sm text-theme-soft'>Transfers</p>
+            <p className='mt-2 text-3xl font-semibold text-theme-text'>{line.transfer_station_count}</p>
           </div>
-          <div className='rounded-[24px] border border-slate-800 bg-slate-900/75 p-5'>
-            <p className='text-sm text-slate-500'>Average degree</p>
-            <p className='mt-2 text-3xl font-semibold text-slate-50'>{line.average_degree}</p>
+          <div className='rounded-[24px] border border-theme-border bg-theme-panel p-5 shadow-theme-soft'>
+            <p className='text-sm text-theme-soft'>Average degree</p>
+            <p className='mt-2 text-3xl font-semibold text-theme-text'>{line.average_degree}</p>
           </div>
         </section>
 
         <section className='grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)]'>
           <div className='space-y-4'>
-            <article className='rounded-[24px] border border-slate-800 bg-slate-900/75 p-5'>
-              <h2 className='text-lg font-semibold text-slate-50'>Top hubs on this line</h2>
+            <article className='rounded-[24px] border border-theme-border bg-theme-panel p-5 shadow-theme-soft'>
+              <h2 className='text-lg font-semibold text-theme-text'>Top hubs on this line</h2>
               <div className='mt-4 grid gap-3 md:grid-cols-2'>
                 {line.top_hubs.map((hub) => (
                   <Link
                     key={hub.id}
                     href={`/station/${encodeURIComponent(hub.id)}`}
-                    className='rounded-2xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-cyan-500/70'
+                    className='rounded-2xl border border-theme-border bg-theme-subcard p-4 shadow-theme-soft hover:border-theme-primary'
                   >
-                    <p className='text-base font-semibold text-slate-100'>{hub.title}</p>
-                    <p className='mt-2 text-sm text-slate-400'>{hub.degree} links</p>
+                    <p className='text-base font-semibold text-theme-text'>{hub.title}</p>
+                    <p className='mt-2 text-sm text-theme-muted'>{hub.degree} links</p>
                   </Link>
                 ))}
               </div>
             </article>
 
-            <article className='rounded-[24px] border border-slate-800 bg-slate-900/75 p-5'>
-              <h2 className='text-lg font-semibold text-slate-50'>Stations</h2>
+            <article className='rounded-[24px] border border-theme-border bg-theme-panel p-5 shadow-theme-soft'>
+              <h2 className='text-lg font-semibold text-theme-text'>Stations</h2>
               <div className='mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3'>
                 {line.stations.map((station) => (
                   <Link
                     key={station.id}
                     href={`/station/${encodeURIComponent(station.id)}`}
-                    className='rounded-2xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-cyan-500/70'
+                    className='rounded-2xl border border-theme-border bg-theme-subcard p-4 shadow-theme-soft hover:border-theme-primary'
                   >
                     <div className='flex items-start justify-between gap-3'>
-                      <p className='text-base font-semibold text-slate-100'>{station.title}</p>
+                      <p className='text-base font-semibold text-theme-text'>{station.title}</p>
                       {station.is_transfer_station ? (
-                        <span className='rounded-full border border-amber-400/60 bg-amber-500/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-200'>
+                        <span className='rounded-full border border-theme-transfer bg-theme-transfer-soft px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-theme-transfer'>
                           Transfer
                         </span>
                       ) : null}
                     </div>
-                    <p className='mt-3 text-sm text-slate-400'>{station.degree} links</p>
-                    <p className='mt-1 text-sm text-slate-400'>{station.neighbor_count} neighbors</p>
+                    <p className='mt-3 text-sm text-theme-muted'>{station.degree} links</p>
+                    <p className='mt-1 text-sm text-theme-muted'>{station.neighbor_count} neighbors</p>
                   </Link>
                 ))}
               </div>
@@ -102,38 +102,38 @@ export default async function LinePage({ params }: { params: Promise<{ cluster: 
           </div>
 
           <div className='space-y-4'>
-            <article className='rounded-[24px] border border-slate-800 bg-slate-900/75 p-5'>
-              <h2 className='text-lg font-semibold text-slate-50'>Connected lines</h2>
+            <article className='rounded-[24px] border border-theme-border bg-theme-panel p-5 shadow-theme-soft'>
+              <h2 className='text-lg font-semibold text-theme-text'>Connected lines</h2>
               <div className='mt-4 space-y-3'>
                 {line.connected_lines.map((connectedLine) => (
                   <Link
                     key={connectedLine.cluster}
                     href={`/line/${encodeURIComponent(connectedLine.cluster)}`}
-                    className='flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-950/70 px-4 py-3 transition hover:border-cyan-500/70'
+                    className='flex items-center justify-between rounded-2xl border border-theme-border bg-theme-subcard px-4 py-3 shadow-theme-soft hover:border-theme-primary'
                   >
-                    <span className='text-slate-100'>{connectedLine.name}</span>
-                    <span className='text-sm text-slate-400'>{connectedLine.count} cross-line links</span>
+                    <span className='text-theme-text'>{connectedLine.name}</span>
+                    <span className='text-sm text-theme-muted'>{connectedLine.count} cross-line links</span>
                   </Link>
                 ))}
               </div>
             </article>
 
-            <article className='rounded-[24px] border border-slate-800 bg-slate-900/75 p-5'>
-              <h2 className='text-lg font-semibold text-slate-50'>Transfer stations</h2>
+            <article className='rounded-[24px] border border-theme-border bg-theme-panel p-5 shadow-theme-soft'>
+              <h2 className='text-lg font-semibold text-theme-text'>Transfer stations</h2>
               <div className='mt-4 space-y-3'>
                 {line.transfer_stations.length > 0 ? (
                   line.transfer_stations.map((station) => (
                     <Link
                       key={station.id}
                       href={`/station/${encodeURIComponent(station.id)}`}
-                      className='block rounded-2xl border border-slate-800 bg-slate-950/70 px-4 py-3 transition hover:border-cyan-500/70'
+                      className='block rounded-2xl border border-theme-border bg-theme-subcard px-4 py-3 shadow-theme-soft hover:border-theme-primary'
                     >
-                      <p className='text-slate-100'>{station.title}</p>
-                      <p className='mt-1 text-sm text-slate-400'>{station.connected_clusters.map(humanizeCluster).join(', ')}</p>
+                      <p className='text-theme-text'>{station.title}</p>
+                      <p className='mt-1 text-sm text-theme-muted'>{station.connected_clusters.map(humanizeCluster).join(', ')}</p>
                     </Link>
                   ))
                 ) : (
-                  <p className='text-sm text-slate-400'>No transfer stations were identified for this line in the current dataset.</p>
+                  <p className='text-sm text-theme-muted'>No transfer stations were identified for this line in the current dataset.</p>
                 )}
               </div>
             </article>

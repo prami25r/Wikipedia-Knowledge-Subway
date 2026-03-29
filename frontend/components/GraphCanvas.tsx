@@ -2,24 +2,87 @@
 
 import { useEffect, useMemo, useRef } from 'react';
 import Graph from 'graphology';
+import { useTheme } from '@/components/ThemeProvider';
 import { subwayActions, useSubwayStore } from '@/lib/frontend-store';
-
-const CLUSTER_COLORS = ['#22d3ee', '#38bdf8', '#818cf8', '#a78bfa', '#34d399', '#f97316', '#fb7185', '#facc15'];
+import { readThemeGraphPalette } from '@/lib/theme';
 
 type SigmaLike = {
   on: (event: string, listener: (payload: { node: string }) => void) => void;
   setSetting: (key: string, value: unknown) => void;
-  getCamera: () => { on: (event: 'updated', listener: () => void) => void; animate: (state: { x: number; y: number; ratio?: number }, options?: { duration: number }) => void };
+  getCamera: () => {
+    on: (event: 'updated', listener: () => void) => void;
+    animate: (state: { x: number; y: number; ratio?: number }, options?: { duration: number }) => void;
+  };
   refresh: () => void;
   kill: () => void;
 };
 
+type HoverSettings = {
+  labelFont: string;
+  labelSize: number;
+  labelWeight: string | number;
+};
+
+type HoverNodeData = {
+  label?: string | null;
+  size: number;
+  x: number;
+  y: number;
+};
 
 function edgeKey(source: string, target: string): string {
   return source < target ? `${source}::${target}` : `${target}::${source}`;
 }
 
+function drawThemedNodeHover(
+  context: CanvasRenderingContext2D,
+  node: HoverNodeData,
+  settings: HoverSettings,
+  colors: ReturnType<typeof readThemeGraphPalette>,
+) {
+  const padding = 6;
+  const labelSize = settings.labelSize;
+
+  context.font = `${settings.labelWeight} ${labelSize}px ${settings.labelFont}`;
+  context.fillStyle = colors.hoverFillColor;
+  context.shadowOffsetX = 0;
+  context.shadowOffsetY = 0;
+  context.shadowBlur = 14;
+  context.shadowColor = colors.hoverShadowColor;
+
+  if (typeof node.label === 'string') {
+    const textWidth = context.measureText(node.label).width;
+    const chipWidth = Math.round(textWidth + 12);
+    const chipHeight = Math.round(labelSize + 2 * padding);
+    const radius = Math.max(node.size, labelSize / 2) + padding;
+    const angle = Math.asin(chipHeight / 2 / radius);
+    const offset = Math.sqrt(Math.abs(radius ** 2 - (chipHeight / 2) ** 2));
+
+    context.beginPath();
+    context.moveTo(node.x + offset, node.y + chipHeight / 2);
+    context.lineTo(node.x + radius + chipWidth, node.y + chipHeight / 2);
+    context.lineTo(node.x + radius + chipWidth, node.y - chipHeight / 2);
+    context.lineTo(node.x + offset, node.y - chipHeight / 2);
+    context.arc(node.x, node.y, radius, angle, -angle);
+    context.closePath();
+    context.fill();
+  } else {
+    context.beginPath();
+    context.arc(node.x, node.y, node.size + padding, 0, Math.PI * 2);
+    context.closePath();
+    context.fill();
+  }
+
+  context.shadowBlur = 0;
+
+  if (typeof node.label === 'string') {
+    context.fillStyle = colors.hoverTextColor;
+    context.fillText(node.label, node.x + node.size + 8, node.y + labelSize / 3);
+  }
+}
+
 export function GraphCanvas() {
+  useTheme();
   const graphData = useSubwayStore((state) => state.graph);
   const activeLineId = useSubwayStore((state) => state.activeLineId);
   const selectedNodeId = useSubwayStore((state) => state.selectedNodeId);
@@ -28,6 +91,8 @@ export function GraphCanvas() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const sigmaRef = useRef<SigmaLike | null>(null);
 
+  const graphTheme = readThemeGraphPalette();
+
   const highlightedEdges = useMemo(() => {
     const keys = new Set<string>();
     for (let i = 0; i < routePath.length - 1; i += 1) {
@@ -35,31 +100,41 @@ export function GraphCanvas() {
     }
     return keys;
   }, [routePath]);
+  const initialGraphThemeRef = useRef(graphTheme);
 
   const graph = useMemo(() => {
     const g = new Graph();
     if (!graphData) return g;
+    const initialGraphTheme = initialGraphThemeRef.current;
 
-    const clusterColors = new Map<string, string>();
+    const clusterIndexes = new Map<string, number>();
     for (const node of graphData.nodes) {
-      const color = clusterColors.get(node.cluster) ?? CLUSTER_COLORS[clusterColors.size % CLUSTER_COLORS.length];
-      clusterColors.set(node.cluster, color);
+      if (!clusterIndexes.has(node.cluster)) {
+        clusterIndexes.set(node.cluster, clusterIndexes.size);
+      }
+
+      const clusterIndex = clusterIndexes.get(node.cluster) ?? 0;
+      const color = initialGraphTheme.clusterColors[clusterIndex % initialGraphTheme.clusterColors.length];
+      const size = Math.max(2, Math.min(15, Math.sqrt(node.degree) + 2));
+
       g.addNode(node.id, {
         x: node.x,
         y: node.y,
         label: node.label,
         cluster: node.cluster,
+        clusterIndex,
         baseColor: color,
         color,
-        baseSize: Math.max(2, Math.min(15, Math.sqrt(node.degree) + 2)),
-        size: Math.max(2, Math.min(15, Math.sqrt(node.degree) + 2)),
+        baseSize: size,
+        size,
       });
     }
 
     graphData.edges.forEach((edge, index) => {
       if (!g.hasNode(edge.source) || !g.hasNode(edge.target)) return;
       g.addEdgeWithKey(`${edge.source}-${edge.target}-${index}`, edge.source, edge.target, {
-        color: '#334155',
+        baseColor: initialGraphTheme.defaultEdgeColor,
+        color: initialGraphTheme.defaultEdgeColor,
         size: 1,
         pathKey: edgeKey(edge.source, edge.target),
         sourceCluster: g.getNodeAttribute(edge.source, 'cluster'),
@@ -75,13 +150,24 @@ export function GraphCanvas() {
     let disposed = false;
 
     const mount = async () => {
+      const initialGraphTheme = initialGraphThemeRef.current;
       const { default: Sigma } = await import('sigma');
       if (disposed || !containerRef.current) return;
 
       const sigma = new Sigma(graph, containerRef.current, {
-        renderEdgeLabels: false,
+        defaultEdgeColor: initialGraphTheme.defaultEdgeColor,
+        defaultNodeColor: initialGraphTheme.clusterColors[0],
+        defaultDrawNodeHover: (
+          context: CanvasRenderingContext2D,
+          node: HoverNodeData,
+          settings: HoverSettings,
+        ) => drawThemedNodeHover(context, node, settings, initialGraphTheme),
+        labelColor: {
+          color: initialGraphTheme.labelColor,
+        },
         labelDensity: 0.05,
         labelRenderedSizeThreshold: 10,
+        renderEdgeLabels: false,
       });
 
       const renderer = sigma as unknown as SigmaLike;
@@ -112,27 +198,41 @@ export function GraphCanvas() {
   useEffect(() => {
     if (!sigmaRef.current) return;
 
+    sigmaRef.current.setSetting('defaultEdgeColor', graphTheme.defaultEdgeColor);
+    sigmaRef.current.setSetting('defaultNodeColor', graphTheme.clusterColors[0]);
+    sigmaRef.current.setSetting('labelColor', { color: graphTheme.labelColor });
+    sigmaRef.current.setSetting('defaultDrawNodeHover', (context: CanvasRenderingContext2D, node: HoverNodeData, settings: HoverSettings) =>
+      drawThemedNodeHover(context, node, settings, graphTheme),
+    );
+  }, [graphTheme]);
+
+  useEffect(() => {
+    if (!sigmaRef.current) return;
+
     graph.forEachNode((node, attrs) => {
-      graph.setNodeAttribute(node, 'color', attrs.baseColor);
+      const baseColor = graphTheme.clusterColors[attrs.clusterIndex % graphTheme.clusterColors.length];
+      graph.setNodeAttribute(node, 'baseColor', baseColor);
+      graph.setNodeAttribute(node, 'color', baseColor);
       graph.setNodeAttribute(node, 'size', attrs.baseSize);
     });
 
     graph.forEachEdge((edge) => {
-      graph.setEdgeAttribute(edge, 'color', '#334155');
+      graph.setEdgeAttribute(edge, 'baseColor', graphTheme.defaultEdgeColor);
+      graph.setEdgeAttribute(edge, 'color', graphTheme.defaultEdgeColor);
       graph.setEdgeAttribute(edge, 'size', 1);
     });
 
     if (activeLineId) {
       graph.forEachNode((node, attrs) => {
         if (attrs.cluster !== activeLineId) {
-          graph.setNodeAttribute(node, 'color', '#162032');
+          graph.setNodeAttribute(node, 'color', graphTheme.mutedNodeColor);
           graph.setNodeAttribute(node, 'size', Math.max(1.6, attrs.baseSize * 0.82));
         }
       });
 
       graph.forEachEdge((edge, attrs) => {
         if (attrs.sourceCluster !== activeLineId || attrs.targetCluster !== activeLineId) {
-          graph.setEdgeAttribute(edge, 'color', '#1f2937');
+          graph.setEdgeAttribute(edge, 'color', graphTheme.mutedEdgeColor);
           graph.setEdgeAttribute(edge, 'size', 0.45);
         }
       });
@@ -141,19 +241,19 @@ export function GraphCanvas() {
     if (hoveredNodeId && graph.hasNode(hoveredNodeId)) {
       const neighborhood = new Set([hoveredNodeId, ...graph.neighbors(hoveredNodeId)]);
       graph.forEachNode((node) => {
-        if (!neighborhood.has(node)) graph.setNodeAttribute(node, 'color', '#1e293b');
+        if (!neighborhood.has(node)) graph.setNodeAttribute(node, 'color', graphTheme.fadedNodeColor);
       });
     }
 
     if (selectedNodeId && graph.hasNode(selectedNodeId)) {
       const attrs = graph.getNodeAttributes(selectedNodeId);
-      graph.setNodeAttribute(selectedNodeId, 'color', '#f8fafc');
+      graph.setNodeAttribute(selectedNodeId, 'color', graphTheme.selectedNodeColor);
       graph.setNodeAttribute(selectedNodeId, 'size', attrs.baseSize * 1.25);
     }
 
     graph.forEachEdge((edge, attrs) => {
       if (highlightedEdges.has(attrs.pathKey)) {
-        graph.setEdgeAttribute(edge, 'color', '#f59e0b');
+        graph.setEdgeAttribute(edge, 'color', graphTheme.routeHighlightColor);
         graph.setEdgeAttribute(edge, 'size', 3);
       }
     });
@@ -165,7 +265,7 @@ export function GraphCanvas() {
     }
 
     sigmaRef.current.refresh();
-  }, [activeLineId, graph, selectedNodeId, hoveredNodeId, highlightedEdges]);
+  }, [activeLineId, graph, graphTheme, highlightedEdges, hoveredNodeId, selectedNodeId]);
 
-  return <div ref={containerRef} className='h-[72vh] w-full rounded-xl border border-slate-700 bg-slate-950' />;
+  return <div ref={containerRef} className='h-[72vh] w-full rounded-[28px] border border-theme-border bg-theme-subcard shadow-theme-soft' />;
 }

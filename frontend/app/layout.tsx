@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import Script from 'next/script';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import { ThemeProvider, ThemeToggle } from '@/components/ThemeProvider';
+import { getThemeInitScript } from '@/lib/theme';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -16,37 +19,45 @@ const navItems = [
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang='en'>
+    <html lang='en' className='theme-metro' suppressHydrationWarning>
       <body>
-        <div className='min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(14,116,144,0.2),transparent_28%),radial-gradient(circle_at_top_right,rgba(245,158,11,0.14),transparent_24%),linear-gradient(180deg,#020617_0%,#020617_30%,#08111f_100%)]'>
-          <header className='border-b border-slate-800/80 bg-slate-950/75 backdrop-blur supports-[backdrop-filter]:bg-slate-950/60'>
-            <div className='mx-auto flex w-full max-w-[1480px] items-center justify-between gap-4 px-4 py-4 md:px-8'>
-              <Link href='/' className='flex items-center gap-3 text-slate-50'>
-                <span className='inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-cyan-500/50 bg-cyan-500/10 text-sm font-semibold text-cyan-200'>
-                  WS
-                </span>
-                <div>
-                  <p className='text-sm font-semibold uppercase tracking-[0.28em] text-cyan-200'>Wikipedia Knowledge Subway</p>
-                  <p className='text-xs text-slate-500'>Knowledge as transit infrastructure</p>
+        <Script id='theme-init' strategy='beforeInteractive'>
+          {getThemeInitScript()}
+        </Script>
+        <ThemeProvider>
+          <div className='min-h-screen bg-theme-app'>
+            <header className='border-b border-theme-border bg-theme-header backdrop-blur'>
+              <div className='mx-auto flex w-full max-w-[1480px] flex-wrap items-center justify-between gap-4 px-4 py-4 md:px-8'>
+                <Link href='/' className='flex items-center gap-3 text-theme-text'>
+                  <span className='inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-theme-primary bg-theme-primary-soft text-sm font-semibold text-theme-primary shadow-theme-soft'>
+                    WS
+                  </span>
+                  <div>
+                    <p className='text-sm font-semibold uppercase tracking-[0.28em] text-theme-primary'>Wikipedia Knowledge Subway</p>
+                    <p className='text-xs text-theme-soft'>Knowledge as transit infrastructure</p>
+                  </div>
+                </Link>
+
+                <div className='flex flex-wrap items-center justify-end gap-2 md:gap-3'>
+                  <nav className='flex flex-wrap items-center gap-2'>
+                    {navItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className='rounded-full border border-theme-border bg-theme-panel px-3 py-2 text-sm text-theme-muted hover:border-theme-primary hover:text-theme-text'
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </nav>
+                  <ThemeToggle />
                 </div>
-              </Link>
+              </div>
+            </header>
 
-              <nav className='flex flex-wrap items-center gap-2'>
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className='rounded-full border border-slate-700 px-3 py-2 text-sm text-slate-200 transition hover:border-cyan-500/70 hover:text-cyan-200'
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-          </header>
-
-          {children}
-        </div>
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

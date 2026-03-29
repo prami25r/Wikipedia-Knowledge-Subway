@@ -91,17 +91,17 @@ export function RouteViewer() {
   }
 
   return (
-    <section className='rounded-[28px] border border-slate-700 bg-slate-900/80 p-5 shadow-[0_20px_60px_-40px_rgba(245,158,11,0.55)]'>
+    <section className='rounded-[28px] border border-theme-border bg-theme-panel p-5 shadow-theme-strong'>
       <div className='flex flex-wrap items-start justify-between gap-4'>
         <div className='space-y-2'>
-          <p className='text-xs font-semibold uppercase tracking-[0.28em] text-amber-300'>Route Planner</p>
-          <h2 className='text-xl font-semibold text-slate-50'>Find the shortest conceptual route between two stations.</h2>
-          <p className='max-w-2xl text-sm text-slate-400'>
+          <p className='text-xs font-semibold uppercase tracking-[0.28em] text-theme-highlight'>Route Planner</p>
+          <h2 className='text-xl font-semibold text-theme-text'>Find the shortest conceptual route between two stations.</h2>
+          <p className='max-w-2xl text-sm text-theme-muted'>
             Enter article titles or ids. The planner resolves them against the current graph and returns the shortest path, the lines it crosses,
             and the transfer intensity of the trip.
           </p>
         </div>
-        <Link href='/route' className='text-sm font-medium text-cyan-300 transition hover:text-cyan-200'>
+        <Link href='/route' className='text-sm font-medium text-theme-primary hover:text-theme-secondary'>
           Open dedicated planner
         </Link>
       </div>
@@ -113,7 +113,7 @@ export function RouteViewer() {
           onChange={(event) => setStart(event.target.value)}
           suppressHydrationWarning
           placeholder='Start station title or id'
-          className='rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm text-slate-100'
+          className='rounded-xl border border-theme-border bg-theme-subcard px-3 py-3 text-sm text-theme-text shadow-theme-soft focus:border-theme-primary focus:outline-none'
         />
         <input
           list='station-options'
@@ -121,7 +121,7 @@ export function RouteViewer() {
           onChange={(event) => setEnd(event.target.value)}
           suppressHydrationWarning
           placeholder='End station title or id'
-          className='rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm text-slate-100'
+          className='rounded-xl border border-theme-border bg-theme-subcard px-3 py-3 text-sm text-theme-text shadow-theme-soft focus:border-theme-primary focus:outline-none'
         />
       </div>
 
@@ -136,22 +136,22 @@ export function RouteViewer() {
           type='button'
           onClick={() => void findRoute()}
           suppressHydrationWarning
-          className='rounded-full bg-amber-400 px-4 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-amber-300'
+          className='rounded-full bg-theme-highlight px-4 py-2.5 text-sm font-semibold text-theme-bg shadow-theme-soft hover:bg-theme-primary hover:text-theme-text'
         >
           {loading ? 'Finding route...' : 'Find shortest path'}
         </button>
         {summary ? (
-          <p className='text-sm text-slate-300'>
-            {summary.distance} stops · {summary.line_change_count} line changes · {summary.clusters.map(humanizeCluster).join(' -> ')}
+          <p className='text-sm text-theme-muted'>
+            {summary.distance} stops - {summary.line_change_count} line changes - {summary.clusters.map(humanizeCluster).join(' -> ')}
           </p>
         ) : null}
       </div>
 
-      {error ? <p className='mt-3 text-sm text-red-300'>{error}</p> : null}
+      {error ? <p className='mt-3 text-sm text-theme-danger'>{error}</p> : null}
 
       {routePath.length > 0 ? (
-        <div className='mt-4 rounded-2xl border border-slate-800 bg-slate-950/75 p-4'>
-          <p className='text-xs uppercase tracking-[0.24em] text-slate-500'>Route steps</p>
+        <div className='mt-4 rounded-2xl border border-theme-border bg-theme-subcard p-4'>
+          <p className='text-xs uppercase tracking-[0.24em] text-theme-soft'>Route steps</p>
           <div className='mt-3 flex flex-wrap gap-2'>
             {steps.map((step, index) => {
               const isLast = index === steps.length - 1;
@@ -160,13 +160,15 @@ export function RouteViewer() {
                 <div key={step.id} className='flex items-center gap-2'>
                   <Link
                     href={`/station/${encodeURIComponent(step.id)}`}
-                    className={`rounded-full border px-3 py-1.5 text-xs transition ${
-                      step.is_transfer ? 'border-amber-500/70 text-amber-100 hover:border-amber-400' : 'border-slate-700 text-slate-200 hover:border-cyan-500/70 hover:text-cyan-200'
+                    className={`rounded-full border px-3 py-1.5 text-xs ${
+                      step.is_transfer
+                        ? 'border-theme-transfer bg-theme-transfer-soft text-theme-transfer hover:border-theme-highlight'
+                        : 'border-theme-border bg-theme-card text-theme-text hover:border-theme-primary hover:text-theme-primary'
                     }`}
                   >
                     {step.title}
                   </Link>
-                  {!isLast ? <span className='text-slate-500'>→</span> : null}
+                  {!isLast ? <span className='text-theme-soft'>-&gt;</span> : null}
                 </div>
               );
             })}
