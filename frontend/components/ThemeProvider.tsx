@@ -23,7 +23,16 @@ function persistTheme(theme: ThemeId) {
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
   const nextTheme = theme === 'dark' ? 'light' : 'dark';
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <button
@@ -57,16 +66,16 @@ export function ThemeToggle() {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<ThemeId>(() => {
-    if (typeof document === 'undefined') {
-      return 'dark';
-    }
-
-    const initialTheme = document.documentElement.dataset.theme;
-    return isThemeId(initialTheme) ? initialTheme : 'dark';
-  });
+  const [theme, setThemeState] = useState<ThemeId>('dark');
 
   useEffect(() => {
+    const initialTheme = isThemeId(document.documentElement.dataset.theme) ? document.documentElement.dataset.theme : getSystemThemePreference();
+    applyThemeToDocument(initialTheme);
+
+    startTransition(() => {
+      setThemeState(initialTheme);
+    });
+
     const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
 
     const handleSystemThemeChange = () => {
