@@ -50,12 +50,12 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
                       </Link>
                     ))}
                   </nav>
-                  <ThemeToggle />
                 </div>
               </div>
             </header>
 
-            {children}
+            <div className='pb-24 md:pb-28'>{children}</div>
+            <ThemeToggle />
           </div>
         </ThemeProvider>
       </body>

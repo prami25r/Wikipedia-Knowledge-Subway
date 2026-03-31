@@ -23,31 +23,34 @@ function persistTheme(theme: ThemeId) {
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
+  const nextTheme = theme === 'dark' ? 'light' : 'dark';
 
   return (
     <button
       type='button'
       role='switch'
       aria-checked={theme === 'dark'}
-      aria-label='Toggle appearance'
-      title='Toggle appearance'
+      aria-label={`Switch to ${nextTheme} theme`}
+      title={`Switch to ${nextTheme} theme`}
       onClick={toggleTheme}
       className='theme-toggle'
     >
-      <span aria-hidden='true' className='theme-toggle__track'>
-        <span className='theme-toggle__stars'>
-          <span className='theme-toggle__star theme-toggle__star--one' />
-          <span className='theme-toggle__star theme-toggle__star--two' />
-          <span className='theme-toggle__star theme-toggle__star--three' />
-          <span className='theme-toggle__star theme-toggle__star--four' />
-        </span>
-        <span className='theme-toggle__dots'>
-          <span className='theme-toggle__dot theme-toggle__dot--large' />
-          <span className='theme-toggle__dot theme-toggle__dot--small' />
-        </span>
-        <span className='theme-toggle__thumb'>
-          <span className='theme-toggle__moon-cutout' />
-        </span>
+      <span aria-hidden='true' className='theme-toggle__icon-shell'>
+        {theme === 'dark' ? (
+          <svg viewBox='0 0 24 24' className='theme-toggle__icon' fill='none'>
+            <path
+              d='M20 14.2A7.8 7.8 0 1 1 9.8 4 6.3 6.3 0 1 0 20 14.2Z'
+              stroke='currentColor'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+            />
+          </svg>
+        ) : (
+          <svg viewBox='0 0 24 24' className='theme-toggle__icon' fill='none'>
+            <circle cx='12' cy='12' r='4.25' stroke='currentColor' />
+            <path d='M12 2.75v2.1M12 19.15v2.1M21.25 12h-2.1M4.85 12h-2.1M18.54 5.46l-1.49 1.49M6.95 17.05l-1.49 1.49M18.54 18.54l-1.49-1.49M6.95 6.95 5.46 5.46' stroke='currentColor' strokeLinecap='round' />
+          </svg>
+        )}
       </span>
     </button>
   );
