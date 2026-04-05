@@ -13,3 +13,6 @@ tsconfig.tsbuildinfo
 data/wiki_graph.json
 data/processed_graph.json
 data/layout_graph.json
+*.pem
+*.key
+node_modules/
