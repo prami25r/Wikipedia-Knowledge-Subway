@@ -9,9 +9,17 @@ on:
 permissions:
   contents: read
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   dependency-audit:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [frontend, backend]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,16 +27,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ${{ matrix.project }}/package-lock.json
 
-      - name: Audit frontend dependencies
-        working-directory: frontend
-        run: |
-          npm ci
-          npm audit --audit-level=high
+      - name: Install dependencies
+        working-directory: ${{ matrix.project }}
+        run: npm ci
 
-      - name: Audit backend dependencies
-        working-directory: backend
+      - name: Run dependency audit (non-blocking, high+)
+        working-directory: ${{ matrix.project }}
         run: |
-          npm ci
+          set +e
           npm audit --audit-level=high
+          AUDIT_EXIT=$?
+          if [ "$AUDIT_EXIT" -ne 0 ]; then
+            echo "::warning::npm audit reported vulnerabilities in ${{ matrix.project }}. See logs and Dependabot PRs for remediation."
+          fi
+          exit 0

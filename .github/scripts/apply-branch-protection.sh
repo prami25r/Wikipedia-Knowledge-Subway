@@ -24,7 +24,8 @@ gh api \
   -H "Accept: application/vnd.github+json" \
   "/repos/${REPO}/branches/main/protection" \
   -f required_status_checks.strict=true \
-  -f required_status_checks.contexts[]='Security CI / dependency-audit' \
+  -f required_status_checks.contexts[]='Security CI / dependency-audit (frontend)' \
+  -f required_status_checks.contexts[]='Security CI / dependency-audit (backend)' \
   -f enforce_admins=true \
   -F required_pull_request_reviews.dismiss_stale_reviews=true \
   -F required_pull_request_reviews.require_code_owner_reviews=true \

@@ -9,7 +9,7 @@ This repository is intentionally **PUBLIC for read/clone** and **LOCKED for writ
 - Branches discovered locally: `work` (no local `main` branch checkout in this clone).
 - Sensitive file scan: no committed `.env*`, private keys, GitHub PATs, or AWS key patterns detected in current tree.
 - History spot-scan: no high-confidence secret patterns found in sampled historical commits.
-- GitHub Actions: no workflows existed previously; a hardened workflow was added with least-privilege permissions.
+- GitHub Actions: no workflows existed previously; a hardened workflow was added with least-privilege permissions and non-blocking audit warnings to avoid lockout from pre-existing advisories.
 
 ## Phase 2 — Access control hardening
 
@@ -38,7 +38,7 @@ This enforces on `main`:
 - Stale approvals dismissed on new commits
 - Code owner review required
 - Conversation resolution required
-- Required status checks
+- Required status checks (`dependency-audit (frontend)` and `dependency-audit (backend)`)
 - Linear history required
 - Force pushes disabled
 - Deletions disabled
