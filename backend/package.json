@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.2",
-    "fuse.js": "^7.0.0",
+    "fuse.js": "^7.3.0",
     "graphology": "^0.26.0",
     "zod": "^3.24.2"
   },
