@@ -1,0 +1,44 @@
+name: Security CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-audit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [frontend, backend]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: ${{ matrix.project }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ${{ matrix.project }}
+        run: npm ci
+
+      - name: Run dependency audit (non-blocking, high+)
+        working-directory: ${{ matrix.project }}
+        run: |
+          set +e
+          npm audit --audit-level=high
+          AUDIT_EXIT=$?
+          if [ "$AUDIT_EXIT" -ne 0 ]; then
+            echo "::warning::npm audit reported vulnerabilities in ${{ matrix.project }}. See logs and Dependabot PRs for remediation."
+          fi
+          exit 0
