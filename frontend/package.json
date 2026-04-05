@@ -13,7 +13,7 @@
   "dependencies": {
     "@sigma/edge-curve": "^3.1.0",
     "@supabase/supabase-js": "^2.49.2",
-    "fuse.js": "^7.0.0",
+    "fuse.js": "^7.3.0",
     "graphology": "^0.26.0",
     "next": "^15.2.0",
     "openai": "^4.87.3",
