@@ -7,6 +7,7 @@ import { humanizeCluster } from '@/lib/cluster';
 import { subwayActions, useSubwayStore } from '@/lib/frontend-store';
 import { GraphCanvas } from '@/components/GraphCanvas';
 import { HubHighlights } from '@/components/HubHighlights';
+import { KnowledgeSystemsPanel } from '@/components/KnowledgeSystemsPanel';
 import { LineExplorer } from '@/components/LineExplorer';
 import { RouteViewer } from '@/components/RouteViewer';
 import { SearchBar } from '@/components/SearchBar';
@@ -50,8 +51,7 @@ export function GraphPanel() {
             Explore Wikipedia as a subway system with routes, hubs, line filters, and transfer-heavy ideas.
           </h1>
           <p className='mt-4 max-w-3xl text-sm leading-6 text-theme-muted md:text-base'>
-            The explorer now pairs the live graph with line overviews and station pages, so the repository feels more like a product that
-            supports navigation, not just visualization.
+            Visualize how your mind explores knowledge: build personalized maps, join challenges, compare rankings, and share your journey.
           </p>
           <div className='mt-6 flex flex-wrap gap-3'>
             <Link
@@ -66,6 +66,18 @@ export function GraphPanel() {
             >
               Browse a Line
             </Link>
+
+            <button
+              type='button'
+              onClick={() => {
+                if (!graph?.nodes.length) return;
+                const randomNode = graph.nodes[Math.floor(Math.random() * graph.nodes.length)];
+                subwayActions.selectNode(randomNode.id);
+              }}
+              className='rounded-full border border-theme-border bg-theme-card px-4 py-2.5 text-sm font-semibold text-theme-text hover:border-theme-primary hover:text-theme-primary'
+            >
+              Random Start
+            </button>
           </div>
         </article>
 
@@ -94,6 +106,8 @@ export function GraphPanel() {
       </div>
 
       {error ? <p className='rounded-xl border border-theme-danger bg-theme-danger-soft p-3 text-sm text-theme-danger'>{error}</p> : null}
+
+      <KnowledgeSystemsPanel />
 
       <LineExplorer />
 

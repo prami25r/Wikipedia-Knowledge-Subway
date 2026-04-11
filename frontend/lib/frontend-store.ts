@@ -1,6 +1,7 @@
 'use client';
 
 import { useSyncExternalStore } from 'react';
+import { trackNodeVisit } from '@/lib/journey-engine';
 import type { BackendGraphResponse, BackendLineSummary, BackendStationResponse, BackendStatsResponse } from '@/types/backend';
 
 type SubwayState = {
@@ -67,6 +68,11 @@ export const subwayActions = {
   },
   selectNode(nodeId: string | null) {
     setState({ selectedNodeId: nodeId, station: null });
+    if (!nodeId || !store.state.graph) return;
+    const node = store.state.graph.nodes.find((entry) => entry.id === nodeId);
+    if (node) {
+      trackNodeVisit(node);
+    }
   },
   hoverNode(nodeId: string | null) {
     setState({ hoveredNodeId: nodeId });
