@@ -34,6 +34,27 @@ function edgeKey(source: string, target: string): string {
   return source < target ? `${source}::${target}` : `${target}::${source}`;
 }
 
+function getNodesWithinRadius(graph: Graph, centerNode: string, radius: number): Set<string> {
+  const visited = new Set<string>([centerNode]);
+  let frontier = new Set<string>([centerNode]);
+
+  for (let depth = 0; depth < radius; depth += 1) {
+    const next = new Set<string>();
+    frontier.forEach((nodeId) => {
+      graph.neighbors(nodeId).forEach((neighbor) => {
+        if (!visited.has(neighbor)) {
+          visited.add(neighbor);
+          next.add(neighbor);
+        }
+      });
+    });
+    frontier = next;
+    if (frontier.size === 0) break;
+  }
+
+  return visited;
+}
+
 function drawThemedNodeHover(
   context: CanvasRenderingContext2D,
   node: HoverNodeData,
@@ -195,6 +216,24 @@ export function GraphCanvas() {
     };
   }, [graph]);
 
+
+  useEffect(() => {
+    if (!graphData?.nodes.length) return;
+
+    const key = 'wks_demo_seen_v1';
+    try {
+      if (window.localStorage.getItem(key)) return;
+      window.localStorage.setItem(key, '1');
+    } catch {
+      return;
+    }
+
+    const demoNodes = graphData.nodes.slice(0, 4);
+    demoNodes.forEach((node, index) => {
+      window.setTimeout(() => subwayActions.selectNode(node.id), index * 700);
+    });
+  }, [graphData]);
+
   useEffect(() => {
     if (!sigmaRef.current) return;
 
@@ -246,6 +285,14 @@ export function GraphCanvas() {
     }
 
     if (selectedNodeId && graph.hasNode(selectedNodeId)) {
+      const visibleRadius = getNodesWithinRadius(graph, selectedNodeId, 2);
+      graph.forEachNode((node, attrs) => {
+        if (!visibleRadius.has(node)) {
+          graph.setNodeAttribute(node, 'color', graphTheme.fadedNodeColor);
+          graph.setNodeAttribute(node, 'size', Math.max(1.2, attrs.baseSize * 0.72));
+        }
+      });
+
       const attrs = graph.getNodeAttributes(selectedNodeId);
       graph.setNodeAttribute(selectedNodeId, 'color', graphTheme.selectedNodeColor);
       graph.setNodeAttribute(selectedNodeId, 'size', attrs.baseSize * 1.25);
@@ -264,7 +311,8 @@ export function GraphCanvas() {
       camera.animate({ x: attrs.x, y: attrs.y, ratio: 0.35 }, { duration: 350 });
     }
 
-    sigmaRef.current.refresh();
+    const refreshTimer = setTimeout(() => sigmaRef.current?.refresh(), 16);
+    return () => clearTimeout(refreshTimer);
   }, [activeLineId, graph, graphTheme, highlightedEdges, hoveredNodeId, selectedNodeId]);
 
   return <div ref={containerRef} className='h-[72vh] w-full rounded-[28px] border border-theme-border bg-theme-subcard shadow-theme-soft' />;
