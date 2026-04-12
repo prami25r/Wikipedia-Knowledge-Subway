@@ -16,7 +16,7 @@
     "layout:curated": "node scripts/layoutGraph.js"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.49.2",
+    "@supabase/supabase-js": "^2.103.0",
     "fuse.js": "^7.0.0",
     "graphology": "^0.26.0",
     "zod": "^3.24.2"
