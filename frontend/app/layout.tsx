@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 };
 
 const navItems = [
-  { href: '/', label: 'Explorer' },
-  { href: '/route', label: 'Route Planner' },
-  { href: '/line/technology', label: 'Lines' },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/about#how-it-works', label: 'How it Works' },
 ];
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
@@ -26,36 +26,33 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         </Script>
         <ThemeProvider>
           <div className='min-h-screen bg-theme-app'>
-            <header className='border-b border-theme-border bg-theme-header backdrop-blur'>
-              <div className='mx-auto flex w-full max-w-[1480px] flex-wrap items-center justify-between gap-4 px-4 py-4 md:px-8'>
+            <header className='sticky top-0 z-30 border-b border-theme-border bg-theme-header backdrop-blur-xl'>
+              <div className='mx-auto flex h-auto w-full max-w-[1480px] flex-wrap items-center justify-between gap-3 px-4 py-3 md:h-16 md:px-8'>
                 <Link href='/' className='flex items-center gap-3 text-theme-text'>
-                  <span className='inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-theme-primary bg-theme-primary-soft text-sm font-semibold text-theme-primary shadow-theme-soft'>
-                    WS
+                  <span className='inline-flex h-9 w-9 items-center justify-center rounded-md bg-theme-primary text-base font-semibold text-white shadow-theme-soft'>
+                    W
                   </span>
-                  <div>
-                    <p className='text-sm font-semibold uppercase tracking-[0.28em] text-theme-primary'>Wikipedia Knowledge Subway</p>
-                    <p className='text-xs text-theme-soft'>Knowledge as transit infrastructure</p>
-                  </div>
+                  <p className='text-sm font-semibold text-theme-primary md:text-base'>Wikipedia Knowledge Subway</p>
                 </Link>
 
-                <div className='flex flex-wrap items-center justify-end gap-2 md:gap-3'>
-                  <nav className='flex flex-wrap items-center gap-2'>
+                <div className='flex flex-wrap items-center justify-end gap-2 md:gap-4'>
+                  <nav className='flex flex-wrap items-center gap-1 md:gap-2'>
                     {navItems.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className='rounded-full border border-theme-border bg-theme-panel px-3 py-2 text-sm text-theme-muted hover:border-theme-primary hover:text-theme-text'
+                        className='rounded-md px-3 py-2 text-xs font-medium text-theme-muted hover:bg-theme-primary-soft hover:text-theme-primary md:text-sm'
                       >
                         {item.label}
                       </Link>
                     ))}
                   </nav>
+                  <ThemeToggle />
                 </div>
               </div>
             </header>
 
-            <div className='pb-24 md:pb-28'>{children}</div>
-            <ThemeToggle />
+            <div className='pb-10'>{children}</div>
           </div>
         </ThemeProvider>
       </body>

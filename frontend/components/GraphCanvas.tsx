@@ -315,5 +315,5 @@ export function GraphCanvas() {
     return () => clearTimeout(refreshTimer);
   }, [activeLineId, graph, graphTheme, highlightedEdges, hoveredNodeId, selectedNodeId]);
 
-  return <div ref={containerRef} className='h-[72vh] w-full rounded-[28px] border border-theme-border bg-theme-subcard shadow-theme-soft' />;
+  return <div ref={containerRef} className='metro-map-grid h-[68vh] min-h-[460px] w-full rounded-lg border border-theme-border bg-theme-subcard shadow-theme-soft' />;
 }

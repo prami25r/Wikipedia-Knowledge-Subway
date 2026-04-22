@@ -57,7 +57,6 @@ export function KnowledgeSystemsPanel() {
     };
   }, []);
 
-
   useEffect(() => {
     const timer = window.setInterval(() => {
       setActiveJourney(getActiveJourney());
@@ -69,15 +68,16 @@ export function KnowledgeSystemsPanel() {
 
   useEffect(() => {
     if (!activeJourney || activeJourney.steps.length < 3) return;
+    const metrics = computeJourneyMetrics(activeJourney);
     void insightsApi.submitJourney({
       alias: activeJourney.name,
       edges: buildEdges(activeJourney),
       nodes: activeJourney.steps.map((step) => step.nodeId),
       score: scoreJourney(activeJourney),
       totalNodes: activeJourney.steps.length,
-      longestPath: computeJourneyMetrics(activeJourney).longestTraversalPath,
-      domains: computeJourneyMetrics(activeJourney).domainsCovered.length,
-      rareEdgeCount: computeJourneyMetrics(activeJourney).rareTransitions.length,
+      longestPath: metrics.longestTraversalPath,
+      domains: metrics.domainsCovered.length,
+      rareEdgeCount: metrics.rareTransitions.length,
     });
   }, [activeJourney]);
 
@@ -163,88 +163,123 @@ export function KnowledgeSystemsPanel() {
   };
 
   return (
-    <section className='space-y-4 rounded-[28px] border border-theme-border bg-theme-panel p-5 shadow-theme-soft'>
-      <div className='flex flex-wrap items-center justify-between gap-3'>
+    <section className='space-y-4 rounded-lg border border-theme-border bg-theme-card p-4 shadow-theme-soft md:p-5'>
+      <div className='flex flex-wrap items-center justify-between gap-3 border-b border-theme-border pb-4'>
         <div>
-          <p className='text-xs uppercase tracking-[0.28em] text-theme-soft'>Exploration identity</p>
-          <h2 className='mt-2 text-2xl font-semibold text-theme-text'>My Knowledge Map</h2>
+          <p className='text-xs font-semibold uppercase tracking-[0.18em] text-theme-muted'>Exploration Identity</p>
+          <h2 className='mt-1 text-lg font-semibold text-theme-text'>My Knowledge Map</h2>
         </div>
-        <div className='flex gap-2'>
-          <button className='rounded-full border border-theme-border px-3 py-1.5 text-sm text-theme-text' onClick={startFreeJourney}>Free Explore</button>
-          <button className='rounded-full bg-theme-primary px-3 py-1.5 text-sm font-semibold text-theme-bg' onClick={startChallengeJourney}>Challenge Mode</button>
+        <div className='flex flex-wrap gap-2'>
+          <button className='rounded-md border border-theme-border bg-theme-subcard px-3 py-2 text-sm text-theme-text hover:border-theme-primary' onClick={startFreeJourney}>
+            Free Explore
+          </button>
+          <button className='rounded-md bg-theme-primary px-3 py-2 text-sm font-semibold text-white hover:bg-theme-secondary' onClick={startChallengeJourney}>
+            Challenge Mode
+          </button>
         </div>
       </div>
 
       <div className='grid gap-3 md:grid-cols-4'>
-        <div className='rounded-2xl border border-theme-border bg-theme-subcard p-3'>Visited: {metrics?.uniqueNodesVisited ?? 0}</div>
-        <div className='rounded-2xl border border-theme-border bg-theme-subcard p-3'>Longest path: {metrics?.longestTraversalPath ?? 0}</div>
-        <div className='rounded-2xl border border-theme-border bg-theme-subcard p-3'>Domains: {metrics?.domainsCovered.length ?? 0}</div>
-        <div className='rounded-2xl border border-theme-border bg-theme-subcard p-3'>Streak: {streak.currentStreak} days</div>
+        <div className='rounded-lg border border-theme-border bg-theme-subcard p-3 text-sm text-theme-muted'>
+          Visited: <span className='font-semibold text-theme-text'>{metrics?.uniqueNodesVisited ?? 0}</span>
+        </div>
+        <div className='rounded-lg border border-theme-border bg-theme-subcard p-3 text-sm text-theme-muted'>
+          Longest path: <span className='font-semibold text-theme-text'>{metrics?.longestTraversalPath ?? 0}</span>
+        </div>
+        <div className='rounded-lg border border-theme-border bg-theme-subcard p-3 text-sm text-theme-muted'>
+          Domains: <span className='font-semibold text-theme-text'>{metrics?.domainsCovered.length ?? 0}</span>
+        </div>
+        <div className='rounded-lg border border-theme-border bg-theme-subcard p-3 text-sm text-theme-muted'>
+          Streak: <span className='font-semibold text-theme-text'>{streak.currentStreak} days</span>
+        </div>
       </div>
 
       <div className='grid gap-4 lg:grid-cols-2'>
-        <article className='rounded-2xl border border-theme-border bg-theme-subcard p-4'>
-          <h3 className='text-sm font-semibold uppercase tracking-[0.2em] text-theme-soft'>Curiosity intelligence</h3>
-          <p className='mt-2 text-sm text-theme-muted'>Trending paths and rare discoveries based on anonymized traversal weights.</p>
+        <article className='rounded-lg border border-theme-border bg-theme-subcard p-4'>
+          <h3 className='text-sm font-semibold text-theme-text'>Curiosity Intelligence</h3>
           <ul className='mt-3 space-y-1 text-sm text-theme-text'>
             {trendingPaths.map((edge) => (
-              <li key={`${edge.source}-${edge.target}`}>{edge.source} → {edge.target} ({edge.weight})</li>
+              <li key={`${edge.source}-${edge.target}`}>
+                {edge.source} -&gt; {edge.target} ({edge.weight})
+              </li>
             ))}
           </ul>
-          <p className='mt-3 text-xs text-theme-soft'>Rare paths: {rarePaths.map((edge) => `${edge.source}→${edge.target}`).join(', ') || 'Not enough data yet.'}</p>
+          <p className='mt-3 text-xs text-theme-soft'>
+            Rare paths: {rarePaths.map((edge) => `${edge.source}->${edge.target}`).join(', ') || 'Not enough data yet.'}
+          </p>
         </article>
 
-        <article className='rounded-2xl border border-theme-border bg-theme-subcard p-4'>
-          <h3 className='text-sm font-semibold uppercase tracking-[0.2em] text-theme-soft'>Leaderboard</h3>
-          <p className='mt-2 text-sm text-theme-muted'>Global rankings: weekly exploration depth, diversity, and rare-path discovery.</p>
+        <article className='rounded-lg border border-theme-border bg-theme-subcard p-4'>
+          <h3 className='text-sm font-semibold text-theme-text'>Leaderboard</h3>
           <ul className='mt-3 space-y-1 text-sm text-theme-text'>
             {topJourneys.map((entry, index) => (
-              <li key={entry.id}>#{index + 1} {entry.alias} — score {entry.score}</li>
+              <li key={entry.id}>
+                #{index + 1} {entry.alias} - score {entry.score}
+              </li>
             ))}
           </ul>
-          {metrics ? <p className='mt-2 text-xs text-theme-soft'>Personal rank percentile: Top {100 - getPercentile(snapshot?.journeys ?? [], scoreJourney(activeJourney!))}%</p> : null}
+          {metrics ? (
+            <p className='mt-2 text-xs text-theme-soft'>Personal rank percentile: Top {100 - getPercentile(snapshot?.journeys ?? [], scoreJourney(activeJourney!))}%</p>
+          ) : null}
         </article>
       </div>
 
       <div className='grid gap-4 lg:grid-cols-3'>
-        <article className='rounded-2xl border border-theme-border bg-theme-subcard p-4'>
-          <h3 className='text-sm font-semibold uppercase tracking-[0.2em] text-theme-soft'>Achievements</h3>
+        <article className='rounded-lg border border-theme-border bg-theme-subcard p-4'>
+          <h3 className='text-sm font-semibold text-theme-text'>Achievements</h3>
           <ul className='mt-3 space-y-1 text-sm'>
             {achievements.map((achievement) => (
-              <li key={achievement.id} className={achievement.unlocked ? 'text-theme-primary' : 'text-theme-muted'}>{achievement.unlocked ? '✓' : '○'} {achievement.title}</li>
+              <li key={achievement.id} className={achievement.unlocked ? 'text-theme-primary' : 'text-theme-muted'}>
+                {achievement.unlocked ? 'Done' : 'Open'}: {achievement.title}
+              </li>
             ))}
           </ul>
         </article>
 
-        <article className='rounded-2xl border border-theme-border bg-theme-subcard p-4'>
-          <h3 className='text-sm font-semibold uppercase tracking-[0.2em] text-theme-soft'>Share my journey</h3>
-          <p className='mt-2 text-sm text-theme-muted'>Generate an image card + copy summary for X/LinkedIn/Instagram.</p>
-          <div className='mt-3 flex gap-2'>
-            <button className='rounded-full border border-theme-border px-3 py-1 text-sm text-theme-text' onClick={shareJourney}>Copy Summary</button>
-            <button className='rounded-full border border-theme-border px-3 py-1 text-sm text-theme-text' onClick={downloadCard}>Download Card</button>
-            <button className='rounded-full border border-theme-border px-3 py-1 text-sm text-theme-text' onClick={replayJourney}>5-10s Replay</button>
+        <article className='rounded-lg border border-theme-border bg-theme-subcard p-4'>
+          <h3 className='text-sm font-semibold text-theme-text'>Share My Journey</h3>
+          <div className='mt-3 flex flex-wrap gap-2'>
+            <button className='rounded-md border border-theme-border bg-theme-card px-3 py-1.5 text-sm text-theme-text hover:border-theme-primary' onClick={shareJourney}>
+              Copy Summary
+            </button>
+            <button className='rounded-md border border-theme-border bg-theme-card px-3 py-1.5 text-sm text-theme-text hover:border-theme-primary' onClick={downloadCard}>
+              Download Card
+            </button>
+            <button className='rounded-md border border-theme-border bg-theme-card px-3 py-1.5 text-sm text-theme-text hover:border-theme-primary' onClick={replayJourney}>
+              Replay
+            </button>
           </div>
         </article>
 
-        <article className='rounded-2xl border border-theme-border bg-theme-subcard p-4'>
-          <h3 className='text-sm font-semibold uppercase tracking-[0.2em] text-theme-soft'>Multiplayer room</h3>
-          <p className='mt-2 text-sm text-theme-muted'>Real-time collaboration via shared room channel.</p>
-          <input value={roomId} onChange={(event) => setRoomId(event.target.value)} className='mt-2 w-full rounded-lg border border-theme-border bg-theme-panel px-2 py-1 text-sm text-theme-text' />
+        <article className='rounded-lg border border-theme-border bg-theme-subcard p-4'>
+          <h3 className='text-sm font-semibold text-theme-text'>Multiplayer Room</h3>
+          <input
+            value={roomId}
+            onChange={(event) => setRoomId(event.target.value)}
+            className='mt-3 h-9 w-full rounded-md border border-theme-border bg-theme-card px-3 text-sm text-theme-text'
+          />
           <p className='mt-2 text-xs text-theme-soft'>Live explorers in room: {liveMembers}</p>
         </article>
       </div>
 
-      <article className='rounded-2xl border border-theme-border bg-theme-subcard p-4'>
-        <h3 className='text-sm font-semibold uppercase tracking-[0.2em] text-theme-soft'>Discovery feed</h3>
-        <p className='mt-2 text-sm text-theme-muted'>Trending journeys, weirdest paths, and efficient exploration shortcuts.</p>
+      <article className='rounded-lg border border-theme-border bg-theme-subcard p-4'>
+        <h3 className='text-sm font-semibold text-theme-text'>Discovery Feed</h3>
         <div className='mt-3 flex flex-wrap gap-2'>
           {journeys.slice(0, 4).map((journey) => (
-            <button key={journey.id} className='rounded-full border border-theme-border px-3 py-1 text-xs text-theme-text' onClick={() => setActiveJourney(journey)}>
+            <button
+              key={journey.id}
+              className='rounded-md border border-theme-border bg-theme-card px-3 py-1.5 text-xs text-theme-text hover:border-theme-primary'
+              onClick={() => setActiveJourney(journey)}
+            >
               Follow: {journey.name}
             </button>
           ))}
         </div>
-        {dailyChallenge ? <p className='mt-3 text-xs text-theme-soft'>Daily challenge: start at {dailyChallenge.start.label}, reach {dailyChallenge.target.label}.</p> : null}
+        {dailyChallenge ? (
+          <p className='mt-3 text-xs text-theme-soft'>
+            Daily challenge: start at {dailyChallenge.start.label}, reach {dailyChallenge.target.label}.
+          </p>
+        ) : null}
       </article>
     </section>
   );

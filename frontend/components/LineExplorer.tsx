@@ -3,6 +3,10 @@
 import Link from 'next/link';
 import { subwayActions, useSubwayStore } from '@/lib/frontend-store';
 
+function lineColor(index: number): string {
+  return `var(--theme-line-${(index % 8) + 1})`;
+}
+
 export function LineExplorer() {
   const lines = useSubwayStore((state) => state.lines);
   const activeLineId = useSubwayStore((state) => state.activeLineId);
@@ -12,19 +16,16 @@ export function LineExplorer() {
   }
 
   return (
-    <section className='rounded-[28px] border border-theme-border bg-theme-panel p-5 shadow-theme-glow'>
-      <div className='flex flex-wrap items-start justify-between gap-4'>
-        <div className='max-w-2xl space-y-2'>
-          <p className='text-xs font-semibold uppercase tracking-[0.28em] text-theme-primary'>Lines</p>
-          <h2 className='text-xl font-semibold text-theme-text md:text-2xl'>Switch between knowledge lines and inspect the network like a transit map.</h2>
-          <p className='text-sm text-theme-muted md:text-base'>
-            Each line clusters a domain of knowledge. Filter the explorer, inspect transfer-heavy areas, and jump into dedicated line pages.
-          </p>
+    <section className='rounded-lg border border-theme-border bg-theme-card p-4 shadow-theme-soft md:p-5'>
+      <div className='flex flex-wrap items-start justify-between gap-4 border-b border-theme-border pb-4'>
+        <div>
+          <p className='text-xs font-semibold uppercase tracking-[0.18em] text-theme-muted'>Lines</p>
+          <h2 className='mt-1 text-lg font-semibold text-theme-text'>Knowledge Lines</h2>
         </div>
         <button
           type='button'
           onClick={() => subwayActions.setActiveLine(null)}
-          className={`rounded-full border px-3 py-2 text-sm ${
+          className={`rounded-md border px-3 py-2 text-sm ${
             activeLineId === null
               ? 'border-theme-primary bg-theme-primary-soft text-theme-primary shadow-theme-soft'
               : 'border-theme-border bg-theme-card text-theme-muted hover:border-theme-primary hover:text-theme-text'
@@ -35,27 +36,30 @@ export function LineExplorer() {
       </div>
 
       <div className='mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3'>
-        {lines.map((line) => {
+        {lines.map((line, index) => {
           const isActive = activeLineId === line.id;
 
           return (
             <article
               key={line.id}
-              className={`rounded-2xl border p-4 ${
+              className={`rounded-lg border p-4 ${
                 isActive
-                  ? 'border-theme-primary bg-theme-primary-soft shadow-theme-glow'
+                  ? 'border-theme-primary bg-theme-primary-soft shadow-theme-soft'
                   : 'border-theme-border bg-theme-subcard shadow-theme-soft hover:border-theme-border-strong'
               }`}
             >
               <div className='flex items-start justify-between gap-3'>
-                <div className='space-y-1'>
-                  <h3 className='text-base font-semibold text-theme-text'>{line.name}</h3>
+                <div className='flex min-w-0 gap-3'>
+                  <span className='mt-1 h-3 w-3 flex-none rounded-full' style={{ backgroundColor: lineColor(index) }} />
+                  <div className='min-w-0 space-y-1'>
+                    <h3 className='truncate text-base font-semibold text-theme-text'>{line.name}</h3>
                   <p className='text-xs uppercase tracking-[0.24em] text-theme-soft'>{line.id}</p>
+                  </div>
                 </div>
                 <button
                   type='button'
                   onClick={() => subwayActions.setActiveLine(isActive ? null : line.id)}
-                  className={`rounded-full border px-3 py-1.5 text-xs font-medium ${
+                  className={`rounded-md border px-3 py-1.5 text-xs font-medium ${
                     isActive
                       ? 'border-theme-primary bg-theme-card text-theme-primary'
                       : 'border-theme-border bg-theme-card text-theme-muted hover:border-theme-primary hover:text-theme-text'
@@ -66,19 +70,19 @@ export function LineExplorer() {
               </div>
 
               <div className='mt-4 grid grid-cols-2 gap-2 text-sm'>
-                <div className='rounded-xl border border-theme-border bg-theme-card p-3'>
+                <div className='rounded-md border border-theme-border bg-theme-card p-3'>
                   <p className='text-theme-soft'>Stations</p>
                   <p className='mt-1 text-lg font-semibold text-theme-text'>{line.station_count}</p>
                 </div>
-                <div className='rounded-xl border border-theme-border bg-theme-card p-3'>
+                <div className='rounded-md border border-theme-border bg-theme-card p-3'>
                   <p className='text-theme-soft'>Transfers</p>
                   <p className='mt-1 text-lg font-semibold text-theme-text'>{line.transfer_station_count}</p>
                 </div>
-                <div className='rounded-xl border border-theme-border bg-theme-card p-3'>
+                <div className='rounded-md border border-theme-border bg-theme-card p-3'>
                   <p className='text-theme-soft'>Internal links</p>
                   <p className='mt-1 text-lg font-semibold text-theme-text'>{line.internal_edge_count}</p>
                 </div>
-                <div className='rounded-xl border border-theme-border bg-theme-card p-3'>
+                <div className='rounded-md border border-theme-border bg-theme-card p-3'>
                   <p className='text-theme-soft'>Avg degree</p>
                   <p className='mt-1 text-lg font-semibold text-theme-text'>{line.average_degree}</p>
                 </div>
@@ -94,7 +98,7 @@ export function LineExplorer() {
                   <Link
                     key={station.id}
                     href={`/station/${encodeURIComponent(station.id)}`}
-                    className='rounded-full border border-theme-border bg-theme-card px-3 py-1.5 text-xs text-theme-text hover:border-theme-primary hover:text-theme-primary'
+                    className='rounded-md border border-theme-border bg-theme-card px-3 py-1.5 text-xs text-theme-text hover:border-theme-primary hover:text-theme-primary'
                   >
                     {station.title}
                   </Link>

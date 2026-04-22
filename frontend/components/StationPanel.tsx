@@ -44,28 +44,28 @@ export function StationPanel() {
 
   if (!selectedNodeId) {
     return (
-      <aside className='rounded-[24px] border border-theme-border bg-theme-panel p-5 text-sm text-theme-muted shadow-theme-soft'>
+      <aside className='rounded-lg border border-theme-border bg-theme-card p-5 text-sm text-theme-muted shadow-theme-soft'>
         Select a station in the graph or search results to inspect its line, neighbors, and transfer potential.
       </aside>
     );
   }
 
   return (
-    <aside className='rounded-[24px] border border-theme-border bg-theme-panel p-5 shadow-theme-glow'>
-      <div className='flex flex-wrap items-start justify-between gap-3'>
+    <aside className='rounded-lg border border-theme-border bg-theme-card p-5 shadow-theme-soft'>
+      <div className='flex flex-wrap items-start justify-between gap-3 border-b border-theme-border pb-4'>
         <div>
-          <p className='text-xs uppercase tracking-[0.28em] text-theme-primary'>Station Details</p>
+          <p className='text-xs font-semibold uppercase tracking-[0.18em] text-theme-muted'>Station Details</p>
           {station ? <h3 className='mt-2 text-xl font-semibold text-theme-text'>{station.title}</h3> : null}
         </div>
         {station ? (
           <span
-            className={`rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] ${
+            className={`rounded-md border px-2.5 py-1 text-xs font-semibold ${
               station.is_transfer_station
                 ? 'border-theme-transfer bg-theme-transfer-soft text-theme-transfer'
                 : 'border-theme-primary bg-theme-primary-soft text-theme-primary'
             }`}
           >
-            {station.is_transfer_station ? 'Transfer station' : 'Single-line station'}
+            {station.is_transfer_station ? 'Transfer' : 'Direct'}
           </span>
         ) : null}
       </div>
@@ -75,7 +75,7 @@ export function StationPanel() {
 
       {station ? (
         <div className='mt-4 space-y-4 text-sm'>
-          <div className='rounded-2xl border border-theme-border bg-theme-subcard p-4'>
+          <div className='rounded-lg border border-theme-border bg-theme-subcard p-4'>
             <div className='flex items-center justify-between gap-2'>
               <p className='text-theme-text'>{humanizeCluster(station.cluster)} Line</p>
               <Link href={`/line/${encodeURIComponent(station.cluster)}`} className='text-theme-primary hover:text-theme-secondary'>
@@ -86,22 +86,22 @@ export function StationPanel() {
           </div>
 
           <div className='grid grid-cols-2 gap-3'>
-            <div className='rounded-2xl border border-theme-border bg-theme-subcard p-4'>
+            <div className='rounded-lg border border-theme-border bg-theme-subcard p-4'>
               <p className='text-theme-soft'>Degree</p>
               <p className='mt-2 text-2xl font-semibold text-theme-text'>{station.degree}</p>
             </div>
-            <div className='rounded-2xl border border-theme-border bg-theme-subcard p-4'>
+            <div className='rounded-lg border border-theme-border bg-theme-subcard p-4'>
               <p className='text-theme-soft'>Neighbors</p>
               <p className='mt-2 text-2xl font-semibold text-theme-text'>{station.neighbors.length}</p>
             </div>
           </div>
 
-          <div className='rounded-2xl border border-theme-border bg-theme-subcard p-4'>
+          <div className='rounded-lg border border-theme-border bg-theme-subcard p-4'>
             <p className='text-theme-soft'>Neighbor lines</p>
             <div className='mt-3 flex flex-wrap gap-2'>
               {station.neighbor_clusters.length > 0 ? (
                 station.neighbor_clusters.map((entry) => (
-                  <span key={entry.cluster} className='rounded-full border border-theme-border bg-theme-card px-3 py-1 text-xs text-theme-text'>
+                  <span key={entry.cluster} className='rounded-md border border-theme-border bg-theme-card px-3 py-1 text-xs text-theme-text'>
                     {humanizeCluster(entry.cluster)} - {entry.count}
                   </span>
                 ))
@@ -111,12 +111,12 @@ export function StationPanel() {
             </div>
           </div>
 
-          <div className='rounded-2xl border border-theme-border bg-theme-subcard p-4'>
+          <div className='rounded-lg border border-theme-border bg-theme-subcard p-4'>
             <p className='text-theme-soft'>Categories</p>
             <div className='mt-3 flex flex-wrap gap-2'>
               {station.categories.length > 0 ? (
                 station.categories.slice(0, 8).map((category) => (
-                  <span key={category} className='rounded-full border border-theme-border bg-theme-card px-3 py-1 text-xs text-theme-text'>
+                  <span key={category} className='rounded-md border border-theme-border bg-theme-card px-3 py-1 text-xs text-theme-text'>
                     {category}
                   </span>
                 ))
@@ -126,16 +126,17 @@ export function StationPanel() {
             </div>
           </div>
 
-          <div className='rounded-2xl border border-theme-border bg-theme-subcard p-4'>
+          <div className='rounded-lg border border-theme-border bg-theme-subcard p-4'>
             <p className='text-theme-soft'>Connected stations</p>
-            <div className='mt-3 flex flex-wrap gap-2'>
+            <div className='mt-3 space-y-2'>
               {station.neighbors.slice(0, 8).map((neighbor) => (
                 <Link
                   key={neighbor.id}
                   href={`/station/${encodeURIComponent(neighbor.id)}`}
-                  className='rounded-full border border-theme-border bg-theme-card px-3 py-1 text-xs text-theme-text hover:border-theme-primary hover:text-theme-primary'
+                  className='flex items-center justify-between rounded-md border border-theme-border bg-theme-card px-3 py-2 text-xs text-theme-text hover:border-theme-primary hover:text-theme-primary'
                 >
-                  {neighbor.title}
+                  <span className='truncate'>{neighbor.title}</span>
+                  <span className='ml-3 text-theme-soft'>Open</span>
                 </Link>
               ))}
             </div>
@@ -144,7 +145,7 @@ export function StationPanel() {
           <div className='flex flex-wrap gap-3'>
             <Link
               href={`/station/${encodeURIComponent(station.id)}`}
-              className='rounded-full bg-theme-primary px-4 py-2 text-sm font-semibold text-theme-bg shadow-theme-soft hover:bg-theme-secondary hover:text-theme-text'
+              className='rounded-md bg-theme-primary px-4 py-2 text-sm font-semibold text-white shadow-theme-soft hover:bg-theme-secondary'
             >
               Open station page
             </Link>
@@ -152,7 +153,7 @@ export function StationPanel() {
               href={station.wikipedia_url}
               target='_blank'
               rel='noreferrer'
-              className='rounded-full border border-theme-border bg-theme-card px-4 py-2 text-sm text-theme-text hover:border-theme-primary hover:text-theme-primary'
+              className='rounded-md border border-theme-border bg-theme-card px-4 py-2 text-sm text-theme-text hover:border-theme-primary hover:text-theme-primary'
             >
               Open on Wikipedia
             </a>
